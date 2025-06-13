@@ -1,0 +1,41 @@
+.se_connecter_button {
+  background: linear-gradient(to right, #2efeb4, #2eeffe); 
+  color: white;  
+  border: none;
+  border-radius: 30px;  
+  padding: 10px 25px;  
+  font-size: 15px;  
+  cursor: pointer;
+  position: relative;  
+  left: 85%;  
+  transform: translateX(-50%);  
+ 
+}
+
+.se_connecter_button:hover {
+  background: linear-gradient(to right, #28b8a3, #28b8d8);  /* Effet de survol avec une autre couleur */
+}
+
+
+/* Style de la boîte modale */
+.modal {
+  display: none; /* Cache la popup par défaut */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+}
+
+/* Style du contenu de la popup */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 30px;
+}
