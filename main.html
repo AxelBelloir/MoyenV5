@@ -1,0 +1,82 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Popup</title>
+  <link rel="stylesheet" href="MoyenV5.css">
+  <script id="Welcome_nom">var nom = "Axel"</script>
+  <script>
+    function open_popup_se_connecter() {
+      document.getElementById('popup_create_compte').style.display = 'none';
+      document.getElementById('Home').style.display = 'none';
+      document.getElementById('popup_se_connecter').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function close_popup_se_connecter() {
+      document.getElementById('popup_se_connecter').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function open_popup_create_compte() {
+      document.getElementById('popup_se_connecter').style.display = 'none';
+      document.getElementById('Home').style.display = 'none';
+      document.getElementById('popup_create_compte').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function close_popup_create_compte() {
+      document.getElementById('popup_create_compte').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function open_div_Home() {
+      document.getElementById('popup_se_connecter').style.display = 'none';
+      document.getElementById('popup_create_compte').style.display = 'none';
+      document.getElementById('Home').style.display = 'block';
+      // Optionnel : cacher l'overlay si tu veux pas le fond sombre pour Home
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function close_div_Home() {
+      document.getElementById('Home').style.display = 'none';
+    }
+    document.getElementById('overlay').addEventListener('click', function() {
+      // Fermer toutes les popups et overlay quand on clique dessus
+      closeAllPopups();
+    });
+    function close_dic_Home() {
+      document.getElementById('Home').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <div class="Barre_task">
+    <button class="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
+    <button class="Home_button" onclick="open_div_Home()">Home</button>
+  </div>
+
+  <!-- Overlay pour fond sombre -->
+  <div id="overlay" onclick="close_popup_se_connecter()"></div>
+
+  <!-- Fenêtre popup connexion -->
+  <div class="popup_se_connecter" id="popup_se_connecter">
+    <p class="decors1">__</p>
+    <h2 class="h2_connexion">Connexion</h2>
+    <p class="Inserez_votre_identifiants">Inserez votre identifiants</p>
+    <input type="text" class="input_id">
+    <p class="Inserez_votre_mp">Inserez votre mot de passe</p>
+    <input type="text" class="input_mp">
+    <button class="create_account" type="button" onclick="open_popup_create_compte()">Creer</button>
+    <button class="popup_se_connecter_button" onclick="close_popup_se_connecter()">Suivant</button>
+  </div>
+
+  <!-- Deuxième overlay -->
+  <div id="overlay" onclick="close_popup_create_compte()"></div>
+
+  <!-- Popup création de compte et Home -->
+  <div class="popup_create_compte" id="popup_create_compte">
+    <button class="popup_create_compte_button">Creer</button>
+    <div class="Home" id="Home">
+      <h1 id="Welcome" class="Welcome">
+        Welcome <script id="Welcome_nom">document.write(nom)</script>
+      </h1>
+      <div id="Home_div_left"><p></p></div>
+    </div>
+  </div>
+</body>
+</html>
