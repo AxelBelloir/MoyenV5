@@ -1,0 +1,140 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+/* Barre latérale */
+.Barre_task {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000 0%, #000 40%, #004DFF 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
+  padding-top: 25px;
+}
+/* Boutons */
+.Home_button, .buton_se_connecter {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.buton_se_connecter { top: 30px; }
+.Home_button { top: 100px; }
+/* Overlay */
+#overlay {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+/* Popup connexion */
+#popup_se_connecter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%; left: 70%;
+  transform: translate(-50%,-50%);
+  background: white;
+  padding: 50px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  color: black;
+  min-height: 250px;
+  max-height: 400px;
+  min-width: 200px;
+  max-width: 500px;
+  text-align: center;
+}
+/* Popup création compte */
+#popup_create_compte {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1010;
+  display: none;
+}
+/* Boutons popup */
+.popup_se_connecter_button, .create_account {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+}
+.create_account { left: 20px; font-size: 21px; }
+.popup_se_connecter_button { right: 20px; font-size: 20px; color: black; }
+/* Inputs */
+.input_id, .input_mp {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.input_id { top: 150px; }
+.input_mp { top: 220px; }
+/* Titres et textes */
+.h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
+.Inserez_votre_identifiants {
+  position: absolute; top: 100px; left: 30%;
+  transform: translate(-20%,-50%); font-weight: bold;
+}
+.Inserez_votre_mp {
+  position: absolute; top: 170px; left: 30%;
+  transform: translate(-20%,-50%); font-weight: bold;
+}
+/* Section Home */
+#Home {
+  position: fixed; top: 0; left: 150px; right: 0;
+  padding: 100px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 500px;
+  height: 100vh;
+}
+.decors1 {
+  position: absolute; top: 45px; left: 46%;
+}
+.Welcome {
+  position: absolute; top: 20%; left: 33%;
+  font-size: 50px;
+}
+#Home_div_left {
+  position: fixed; top: 350px; left: 250px;
+  width: 300px; height: 700px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: white;
+  border-radius: 15px;
+}
+/* Réactif */
+@media (max-width: 768px) {
+  #popup_se_connecter {
+    width: 90%;
+    padding: 30px;
+    height: 90%;
+  }
+  #Home {
+    width: 90%;
+    padding: 50px;
+  }
+}
