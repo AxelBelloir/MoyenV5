@@ -121,8 +121,8 @@ body {
   font-size: 50px;
 }
 #Home_div_left {
-  position: fixed; top: 275px; left: 250px;
-  width: 300px; height: 700px;
+  position: absolute; top: 275px; left: 250px;
+  width: 300px; height: 70%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
