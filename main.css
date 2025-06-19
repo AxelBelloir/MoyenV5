@@ -117,11 +117,11 @@ body {
   position: absolute; top: 45px; left: 46%;
 }
 .Welcome {
-  position: absolute; top: 20%; left: 33%;
+  position: absolute; top: 10%; left: 33%;
   font-size: 50px;
 }
 #Home_div_left {
-  position: fixed; top: 350px; left: 250px;
+  position: fixed; top: 275px; left: 250px;
   width: 300px; height: 700px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
