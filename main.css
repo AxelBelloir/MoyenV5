@@ -64,15 +64,24 @@ body {
 }
 /* Popup création compte */
 #popup_create_compte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
-  top: 50%; left: 50%;
+  z-index:1000;
+  top: 50%; left: 70%;
   transform: translate(-50%,-50%);
   background: white;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  z-index: 1010;
-  display: none;
+  padding: 50px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  color: black;
+  min-height: 250px;
+  max-height: 400px;
+  min-width: 200px;
+  max-width: 500px;
+  text-align: center;
 }
 /* Boutons popup */
 .popup_se_connecter_button, .create_account {
@@ -82,7 +91,7 @@ body {
   position: absolute;
   bottom: 20px;
 }
-.create_account { left: 20px; font-size: 21px;color:black;}
+.create_account { left: 20px; font-size: 20px;color:black;}
 .popup_se_connecter_button { right: 20px; font-size: 20px; color: black; }
 /* Inputs */
 .input_id, .input_mp {
@@ -127,6 +136,27 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
+}
+.popup_create_compte_button{ right: 20px; font-size: 20px; color: black; }
+.ruturn_create_account{ left: 20px; font-size: 20px; color: black; }
+.h1_create_account{ position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
+.inserez_id_create_account{
+  
+}
+.inserez_mp_create_account{
+  
+}
+.confirm_mp_create_account{
+  
+}
+.input_mp_create_account{
+  
+}
+.input_confirm_mp_create_account{
+  
+}
+.input_id_create_account{
+  
 }
 /* Réactif */
 @media (max-width: 768px) {
