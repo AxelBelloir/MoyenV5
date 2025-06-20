@@ -137,8 +137,8 @@ body {
   background: white;
   border-radius: 15px;
 }
-.popup_create_compte_button{ right: 20px; font-size: 20px; color: black; }
-.ruturn_create_account{ left: 20px; font-size: 20px; color: black; }
+.popup_create_compte_button{ right: 20px;bottom:10px;font-size: 20px; color: black; }
+.ruturn_create_account{ left: 20px;bottom:10px font-size: 20px; color: black; }
 .h2_create_account{ position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .inserez_id_create_account{
   
