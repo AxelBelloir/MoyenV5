@@ -46,7 +46,6 @@
     // Fonctions popup et affichages
     function open_popup_se_connecter() {
       document.getElementById('popup_create_compte').style.display = 'none';
-      document.getElementById('Home').style.display = 'none';
       document.getElementById('popup_se_connecter').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
     }
@@ -56,7 +55,6 @@
     }
     function open_popup_create_compte() {
       document.getElementById('popup_se_connecter').style.display = 'none';
-      document.getElementById('Home').style.display = 'none';
       document.getElementById('popup_create_compte').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
     }
@@ -76,7 +74,6 @@
     function closeAllPopups() {
       close_popup_se_connecter();
       close_popup_create_compte();
-      close_div_Home();
     }
     document.getElementById('overlay').addEventListener('click', closeAllPopups);
   </script>
