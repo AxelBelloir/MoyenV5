@@ -79,7 +79,7 @@ body {
   color: black;
   min-height: 250px;
   max-height: 400px;
-  min-width: 300px;
+  min-width: 250px;
   max-width: 500px;
   text-align: center;
 }
@@ -139,7 +139,7 @@ body {
 }
 .popup_create_compte_button{ right: 20px; font-size: 20px; color: black; }
 .ruturn_create_account{ left: 20px; font-size: 20px; color: black; }
-.h2_create_account{ position: absolute; top: 15px; left: 40%; transform: translate(-50%,-50%); }
+.h2_create_account{ position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .inserez_id_create_account{
   
 }
