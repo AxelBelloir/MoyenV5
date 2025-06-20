@@ -99,8 +99,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.input_id { top: 150px; }
-.input_mp { top: 220px; }
+.input_id { top: 160px; }
+.input_mp { top: 250px; }
 /* Titres et textes */
 .h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .Inserez_votre_identifiants {
@@ -108,7 +108,7 @@ body {
   transform: translate(-20%,-50%); font-weight: bold;
 }
 .Inserez_votre_mp {
-  position: absolute; top: 170px; left: 30%;
+  position: absolute; top: 190px; left: 30%;
   transform: translate(-20%,-50%); font-weight: bold;
 }
 /* Section Home */
