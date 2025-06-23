@@ -19,7 +19,7 @@ body {
   padding-top: 25px;
 }
 /* Boutons */
-.Home_button, .buton_se_connecter {
+.Home_button, .buton_se_connecter, .buton_Moyen {
   position: absolute;
   background: transparent;
   border: none;
@@ -112,7 +112,7 @@ body {
   transform: translate(-20%,-50%); font-weight: bold;
 }
 /* Section Home */
-#Home {
+#Home, #Moyen {
   position: fixed; top: 0; left: 150px; right: 0;
   padding: 100px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -179,7 +179,7 @@ body {
     padding: 30px;
     height: 90%;
   }
-  #Home {
+  #Home, #Moyen {
     width: 90%;
     padding: 50px;
   }
