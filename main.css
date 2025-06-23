@@ -137,41 +137,41 @@ body {
   background: white;
   border-radius: 15px;
 }
-.popup_create_compte_button{ background:none;position:absolute;right: 20px;bottom:10px;font-size: 20px; color: black;font-weight:bold; }
-.ruturn_create_account{ background:none;position:absolute;left: 20px;bottom:10px;font-size: 20px; color: black;font-weight:bold;}
-.h2_create_account{ position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
+.popup_create_compte_button{ background:none;position:absolute;right: 40px;bottom:20px;font-size: 20px; color: black;font-weight:bold; }
+.ruturn_create_account{ background:none;position:absolute;left: 40px;bottom:20px;font-size: 20px; color: black;font-weight:bold;}
+.h2_create_account{ position: absolute; top: 30px; left: 50%; transform: translate(-50%,-50%); }
 .inserez_id_create_account{
-  position: absolute; top: 100px; left: 50%;
+  position: absolute; top: 115px; left: 50%;
   transform: translate(-50%,-50%); font-weight: bold;
 }
 .inserez_mp_create_account{
-  position: absolute; top: 190px; left: 50%;
+  position: absolute; top: 205px; left: 50%;
   transform: translate(-50%,-50%); font-weight: bold;
 }
 .confirm_mp_create_account{
-  position: absolute; top: 280px; left: 50%;
+  position: absolute; top: 295px; left: 50%;
   transform: translate(-50%,-50%); font-weight: bold;
 }
 .input_mp_create_account{ 
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 160px; 
+  top: 175px; 
 }
 .input_confirm_mp_create_account{ 
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 250px; 
+  top: 265px; 
 }
 .input_id_create_account{
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 340px; 
+  top: 355px; 
 }
 .decors2 {
-  position: absolute; top: 45px; left: 46%;
+  position: absolute; top: 60px; left: 46%;
 /* Réactif */
 @media (max-width: 768px) {
   #popup_se_connecter {
