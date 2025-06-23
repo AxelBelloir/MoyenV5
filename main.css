@@ -11,7 +11,7 @@ body {
   left: 0;
   width: 150px;
   height: 100vh;
-  background: linear-gradient(to bottom, #59C7FF 0%, #FFFFFF 60%);
+  background: linear-gradient(to bottom, #0082FF 0%, #36D3FF 60%);
   display: flex;
   flex-direction: column;
   align-items: center;
