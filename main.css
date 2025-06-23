@@ -141,12 +141,12 @@ body {
 .ruturn_create_account{ background:none;position:absolute;left: 20px;bottom:10px;font-size: 20px; color: black; }
 .h2_create_account{ position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .inserez_id_create_account{
-  position: absolute; top: 100px; left: 30%;
-  transform: translate(-20%,-50%); font-weight: bold;
+  position: absolute; top: 100px; left: 50%;
+  transform: translate(-50%,-50%); font-weight: bold;
 }
 .inserez_mp_create_account{
   position: absolute; top: 190px; left: 50%;
-  transform: translate(-5p%,-50%); font-weight: bold;
+  transform: translate(-50%,-50%); font-weight: bold;
 }
 .confirm_mp_create_account{
   position: absolute; top: 280px; left: 50%;
