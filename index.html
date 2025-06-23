@@ -10,6 +10,7 @@
   <div class="Barre_task">
     <button class="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
     <button class="Home_button" onclick="open_div_Home()">Home</button>
+    <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
   </div>
 
   <!-- Overlay pour fond sombre -->
@@ -46,6 +47,9 @@
     <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
     <div id="Home_div_left"><p></p></div>
   </div>
+  <div class="popup_Moyen" id="popup_Moyen">
+    
+  </div>
 
   <script>
     // Variable nom
@@ -53,6 +57,15 @@
     document.getElementById('Welcome_nom').textContent = nom;
 
     // Fonctions popup et affichages
+    function open_popup_Moyen() {
+      document.getElementById('Home').style.display = 'none';
+      document.getElementById('popup_Moyen').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function close_popup_Moyen() {
+      document.getElementById('popup_Moyen').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
     function open_popup_se_connecter() {
       document.getElementById('popup_create_compte').style.display = 'none';
       document.getElementById('popup_se_connecter').style.display = 'block';
@@ -81,8 +94,10 @@
       document.getElementById('Home').style.display = 'none';
     }
     function closeAllPopups() {
+      open_div_Home();
       close_popup_se_connecter();
       close_popup_create_compte();
+      close_popup_Moyen();
     }
     document.getElementById('overlay').addEventListener('click', closeAllPopups);
   </script>
