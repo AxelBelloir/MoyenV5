@@ -173,6 +173,11 @@ body {
 }
 .decors2 {
   position: absolute; top: 60px; left: 46%;
+.btn-calculer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /* Réactif */
 @media (max-width: 768px) {
   #popup_se_connecter {
