@@ -150,7 +150,7 @@ document.getElementById('btn_calculer').addEventListener('click', async () => {
       moyenne ? `📘 Votre moyenne est ${moyenne}/20` : "Aucune note disponible.";
 
   } catch (e) {
-    document.getElementById('resultat-moyenne').innerText = "⚠️ Erreur : " + e.message;
+    document.getElementById('resultat_moyenne').innerText = "⚠️ Erreur : " + e.message;
   }
 });
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
