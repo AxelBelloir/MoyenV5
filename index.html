@@ -153,9 +153,7 @@ document.getElementById('btn-calculer').addEventListener('click', async () => {
     document.getElementById('resultat-moyenne').innerText = "⚠️ Erreur : " + e.message;
   }
 });
+  document.getElementById('overlay').addEventListener('click', closeAllPopups);
 </script>
-
-    document.getElementById('overlay').addEventListener('click', closeAllPopups);
-  </script>
 </body>
 </html>
