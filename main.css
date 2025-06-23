@@ -30,6 +30,7 @@ body {
 }
 .buton_se_connecter { top: 30px; }
 .Home_button { top: 100px; }
+.buton_Moyen { top: 150px; }
 /* Overlay */
 #overlay {
   display: none;
