@@ -152,9 +152,24 @@ body {
   position: absolute; top: 280px; left: 30%;
   transform: translate(-20%,-50%); font-weight: bold;
 }
-.input_mp_create_account{ top: 160px; }
-.input_confirm_mp_create_account{ top: 250px; }
-.input_id_create_account{ top: 340px; }
+.input_mp_create_account{ 
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 160px; 
+}
+.input_confirm_mp_create_account{ 
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 250px; 
+}
+.input_id_create_account{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 340px; 
+}
 .decors2 {
   position: absolute; top: 45px; left: 46%;
 /* Réactif */
