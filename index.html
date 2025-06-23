@@ -48,7 +48,8 @@
     <div id="Home_div_left"><p></p></div>
   </div>
   <div class="popup_Moyen" id="popup_Moyen">
-    
+    <button id="btn-calculer">Calculer ma moyenne</button>
+    <div id="resultat-moyenne"></div>
   </div>
 
   <script>
@@ -97,6 +98,64 @@
       close_popup_create_compte();
       close_popup_Moyen();
     }
+    <script>
+document.getElementById('btn-calculer').addEventListener('click', async () => {
+  const idUser = prompt("Identifiant ÉcoleDirecte :");
+  const mdp = prompt("Mot de passe ÉcoleDirecte :");
+
+  if (!idUser || !mdp) {
+    alert("Identifiant ou mot de passe manquant !");
+    return;
+  }
+
+  try {
+    // Étape 1 : Récupérer le token
+    const respLogin = await fetch("https://api.ecoledirecte.com/v3/login.awp", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `data=${encodeURIComponent(JSON.stringify({identifiant: idUser, motdepasse: mdp}))}`
+    });
+    const dataLogin = await respLogin.json();
+    if (dataLogin.code !== 200) {
+      throw new Error("Erreur connexion : " + (dataLogin.message || "Identifiants incorrects"));
+    }
+    const token = dataLogin.token;
+    const idAccount = dataLogin.data.accounts[0].id;
+
+    // Étape 2 : Récupérer les notes
+    const respNotes = await fetch(`https://api.ecoledirecte.com/v3/eleves/${idAccount}/notes.awp?verbe=get`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Authorization": token
+      },
+      body: "data=" + encodeURIComponent("{}")
+    });
+    const dataNotes = await respNotes.json();
+    const notes = dataNotes.data.notes;
+
+    // Étape 3 : Calculer la moyenne
+    let total = 0, coeffTotal = 0;
+    notes.forEach(note => {
+      const v = parseFloat(note.valeur.replace(",", "."));
+      const coef = parseFloat(note.coefficient || 1);
+      if (!isNaN(v) && !isNaN(coef)) {
+        total += v * coef;
+        coeffTotal += coef;
+      }
+    });
+    const moyenne = coeffTotal ? (total / coeffTotal).toFixed(2) : null;
+
+    // Étape 4 : Afficher le résultat
+    document.getElementById('resultat-moyenne').innerText =
+      moyenne ? `📘 Votre moyenne est ${moyenne}/20` : "Aucune note disponible.";
+
+  } catch (e) {
+    document.getElementById('resultat-moyenne').innerText = "⚠️ Erreur : " + e.message;
+  }
+});
+</script>
+
     document.getElementById('overlay').addEventListener('click', closeAllPopups);
   </script>
 </body>
