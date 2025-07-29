@@ -19,30 +19,31 @@
   <!-- Fenêtre popup connexion -->
   <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
     <p class="decors1">__</p>
-    <h2 class="h2_connexion">Conexion</h2>
-    <p class="Inserez_votre_identifiants">Inserez votre identifiants</p>
+    <h2 class="h2_connexion">Connexion</h2>
+    <p class="Inserez_votre_identifiants">Insérez votre identifiant</p>
     <input type="text" class="input_id" id="input_id" />
-    <p class="Inserez_votre_mp">Inserez votre mot de passe</p>
+    <p class="Inserez_votre_mp">Insérez votre mot de passe</p>
     <input type="password" class="input_mp" id="input_mp" />
-    <button class="create_account" type="button" onclick="open_popup_create_compte()">Creer</button>
+    <button class="create_account" type="button" onclick="open_popup_create_compte()">Créer</button>
     <button class="popup_se_connecter_button" onclick="sendName()">Suivant</button>
   </div>
 
   <!-- Popup création de compte -->
   <div class="popup_create_compte" id="popup_create_compte" style="display:none;">
-    <button class="popup_create_compte_button">Creer</button>
+    <button class="popup_create_compte_button">Créer</button>
     <button class="ruturn_create_account" onclick="open_popup_se_connecter()">Retour</button>
-    <h2 class="h2_create_account">Creer un compte</h2>
-    <p class="inserez_id_create_account">Inserez un identifiants</p>
-    <p class="inserez_mp_create_account">Inserez un mot de passe</p>
+    <h2 class="h2_create_account">Créer un compte</h2>
+    <p class="inserez_id_create_account">Insérez un identifiant</p>
+    <p class="inserez_mp_create_account">Insérez un mot de passe</p>
     <p class="confirm_mp_create_account">Confirmez le mot de passe</p>
-    <input type="password"class="input_mp_create_account"/>
-    <input type="text"class="input_confirm_mp_create_account"/>
-    <input type="password" class="input_id_create_account"/>
+    <input type="password" class="input_mp_create_account" />
+    <input type="text" class="input_confirm_mp_create_account" />
+    <input type="password" class="input_id_create_account" />
     <p class="decors2">__</p>
   </div>
+
   <div id="result_div">
-    <p id="result"></p>
+    <p id="result_message"></p> <!-- ID changé ici -->
   </div>
 
   <!-- Home -->
@@ -50,84 +51,97 @@
     <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
     <div id="Home_div_left"><p></p></div>
   </div>
-  <div class="popup_Moyen" id="popup_Moyen">
+
+  <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
     <button id="btn_calculer">Calculer ma moyenne</button>
     <div id="resultat_moyenne"></div>
   </div>
-<div id="popup_result">
-  <p id="result"></p>
-  <p id="nothing">.</p>
-</div>
-  <script>
-    // Variable nom
-    var nom = "Axel";
-    document.getElementById('Welcome_nom').textContent = nom;
 
-    // Fonctions popup et affichages
-    function open_popup_Moyen() {
-      document.getElementById('Home').style.display = 'none';
-      document.getElementById('popup_Moyen').style.display = 'block';
-    }
-    function close_popup_Moyen() {
-      document.getElementById('popup_Moyen').style.display = 'none';
-    }
-    function open_popup_se_connecter() {
-      document.getElementById('popup_create_compte').style.display = 'none';
-      document.getElementById('popup_se_connecter').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-    function close_popup_se_connecter() {
-      document.getElementById('popup_se_connecter').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function open_popup_result() {
-      document.getElementById('popup_result').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-    function close_popup_result() {
-      document.getElementById('popup_result').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function open_popup_create_compte() {
-      document.getElementById('popup_se_connecter').style.display = 'none';
-      document.getElementById('popup_create_compte').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-    function close_popup_create_compte() {
-      document.getElementById('popup_create_compte').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function open_div_Home() {
-      document.getElementById('popup_se_connecter').style.display = 'none';
-      document.getElementById('popup_create_compte').style.display = 'none';
-      document.getElementById('Home').style.display = 'block';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function close_div_Home() {
-      document.getElementById('Home').style.display = 'none';
-    }
-    function closeAllPopups() {
-      open_div_Home();
-      close_popup_se_connecter();
-      close_popup_create_compte();
-      close_popup_Moyen();
-      close_popup_result();
-    }
-    async function sendName() {
-    close_popup_se_connecter()
-    open_popup_result()
+  <div id="popup_result" style="display:none;"> <!-- Affichage caché par défaut -->
+    <p id="result_message"></p> <!-- Attention, ne pas avoir deux éléments avec cet ID -->
+    <p id="nothing">.</p>
+  </div>
+
+<script>
+  // Variable nom
+  var nom = "Axel";
+  document.getElementById('Welcome_nom').textContent = nom;
+
+  // Fonctions popup et affichages
+  function open_popup_Moyen() {
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('popup_Moyen').style.display = 'block';
+  }
+  function close_popup_Moyen() {
+    document.getElementById('popup_Moyen').style.display = 'none';
+  }
+  function open_popup_se_connecter() {
+    document.getElementById('popup_create_compte').style.display = 'none';
+    document.getElementById('popup_se_connecter').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+  function close_popup_se_connecter() {
+    document.getElementById('popup_se_connecter').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+  function open_popup_result() {
+    document.getElementById('popup_result').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+  function close_popup_result() {
+    document.getElementById('popup_result').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+  function open_popup_create_compte() {
+    document.getElementById('popup_se_connecter').style.display = 'none';
+    document.getElementById('popup_create_compte').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+  function close_popup_create_compte() {
+    document.getElementById('popup_create_compte').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+  function open_div_Home() {
+    document.getElementById('popup_se_connecter').style.display = 'none';
+    document.getElementById('popup_create_compte').style.display = 'none';
+    document.getElementById('Home').style.display = 'block';
+    document.getElementById('overlay').style.display = 'none';
+  }
+  function close_div_Home() {
+    document.getElementById('Home').style.display = 'none';
+  }
+  function closeAllPopups() {
+    open_div_Home();
+    close_popup_se_connecter();
+    close_popup_create_compte();
+    close_popup_Moyen();
+    close_popup_result();
+  }
+
+  async function sendName() {
+    close_popup_se_connecter();
+    open_popup_result();
+
     const name = document.getElementById('input_id').value;
     const mp = document.getElementById('input_mp').value;
-   
-    const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
+
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name,mp })
-    });
+        body: JSON.stringify({ name, mp })
+      });
 
-    const data = await response.json();
-    document.getElementById('result').innerText = data.message;
-}
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      document.getElementById('result_message').innerText = data.message;
+    } catch (error) {
+      document.getElementById('result_message').innerText = "Erreur réseau ou serveur : " + error.message;
+    }
+  }
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
 </script>
