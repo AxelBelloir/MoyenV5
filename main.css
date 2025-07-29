@@ -178,7 +178,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#result_div {
+#popup_result {
   position: absolute;
   left:50%;
   top:50%;
@@ -190,6 +190,9 @@ body {
   left:50%;
   top:50%;
   transform:translate(-50%, -50%);
+}
+.nothing{
+  color:white
 }
 /* Réactif */
 @media (max-width: 768px) {
