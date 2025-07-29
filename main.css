@@ -123,6 +123,7 @@ body {
   align-items: center;
   min-width: 500px;
   height: 100vh;
+  z-index: 200;
 }
 .decors1 {
   position: absolute; top: 45px; left: 46%;
