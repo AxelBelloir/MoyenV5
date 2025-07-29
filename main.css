@@ -178,6 +178,19 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#result_div {
+  position: absolute;
+  left:50%;
+  top:50%;
+  border-radius:15px
+}
+.result{
+  color:black;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
 /* Réactif */
 @media (max-width: 768px) {
   #popup_se_connecter {
