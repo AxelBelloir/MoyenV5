@@ -185,7 +185,7 @@ body {
   border-radius:15px;
   z-index:1002;
 }
-.result{
+.result_message{
   color:black;
   position: absolute;
   left:50%;
