@@ -137,8 +137,13 @@
 
     const resultMessage = document.getElementById('result_message');
     resultMessage.innerText = data.message;
+  } catch (error) {
+    // Affiche un message d'erreur en cas de problème (réseau, serveur, etc.)
+    const resultMessage = document.getElementById('result_message');
+    resultMessage.innerText = 'Erreur lors de la connexion : ' + error.message;
   }
-  }
+}
+
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
 </script>
