@@ -80,9 +80,13 @@
     document.getElementById('overlay').style.display = 'none';
   }
   function open_popup_result() {
-    document.getElementById('popup_result').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-  }
+  const popup = document.getElementById('popup_result');
+  popup.style.display = 'flex';  // forcer display flex ici
+  popup.style.justifyContent = 'center';
+  popup.style.alignItems = 'center';
+  document.getElementById('overlay').style.display = 'block';
+}
+
   function close_popup_result() {
     document.getElementById('popup_result').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
