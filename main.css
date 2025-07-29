@@ -192,16 +192,17 @@ body {
   width: 80%;
   height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
   text-align: center;
 }
 
 .result_message {
-  color: black;
   font-size: 18px;
-  position: static; /* ← très important */
-  margin: 0;
+  color: black;
+  position: static; /* pas absolute ! */
+  margin: 0 auto;
 }
 
 /* Réactif */
