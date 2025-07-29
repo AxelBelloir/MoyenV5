@@ -178,7 +178,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#popup_result {
+.popup_result {
   /* remplace display: block par flex */
   display: flex !important;
 
