@@ -201,7 +201,7 @@ body {
     color: black !important;
     z-index: 100000 !important;
   }
-  #bFermeP1 {
+  .bFermeP1 {
     position:absolute;
     top:10%;
     right:5%;
