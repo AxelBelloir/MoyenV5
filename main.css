@@ -210,6 +210,7 @@ body {
   position: relative; /* surtout pas absolute */
   max-width: 90%;
   word-wrap: break-word;
+  z-index:4000;
 }
 
 
