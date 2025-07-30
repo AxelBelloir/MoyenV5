@@ -179,7 +179,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-  #popup_result {
+#popup_result {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
@@ -193,14 +193,14 @@ body {
     padding: 30px !important;
     box-shadow: 0 0 20px rgba(0,0,0,0.8) !important;
     border-radius: 15px !important;
-  }
+}
 
-  #result_message {
+#result_message {
     font-size: 15px !important;
     color: black !important;
     z-index: 100000 !important;
-  }
-  .bFermeP1 {
+}
+.bFermeP1 {
     position:absolute;
     top:10%;
     right:5%;
