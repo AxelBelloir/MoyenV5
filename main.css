@@ -197,9 +197,18 @@ body {
   }
 
   #result_message {
-    font-size: 18px !important;
+    font-size: 15px !important;
     color: black !important;
     z-index: 100000 !important;
+  }
+  #bFermeP1 {
+    position:absolute;
+    top:10%;
+    right:5%;
+    background:none;
+    border:none;
+    color:black;
+    font-size:18px;
   }
 </style>
 
