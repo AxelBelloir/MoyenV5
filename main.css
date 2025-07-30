@@ -192,7 +192,7 @@ body {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  z-index: 2000;
+  z-index: 5000;
   max-width: 500px;
   width: 80%;
   height: 20%;
@@ -203,14 +203,14 @@ body {
 }
 
 
-.result_message {
+#result_message {
   font-size: 18px;
   color: black;
   margin: 0;
   position: relative; /* surtout pas absolute */
   max-width: 90%;
   word-wrap: break-word;
-  z-index:3000;
+  z-index:5001;
 }
 
 
