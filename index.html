@@ -37,9 +37,9 @@
     <p class="inserez_id_create_account">Insérez un identifiant</p>
     <p class="inserez_mp_create_account">Insérez un mot de passe</p>
     <p class="confirm_mp_create_account">Confirmez le mot de passe</p>
-    <input type="password" class="input_mp_create_account" />
-    <input type="text" class="input_confirm_mp_create_account" />
-    <input type="password" class="input_id_create_account" />
+    <input class="input_id_account" id="input_id_account" />
+    <input type="password" class="input_mp_create_account" id="input_mp_create_account" />
+    <input type="password" class="input_confirm_mp_create_account" id="input_confirm_mp_create_account"/>
     <p class="decors2">__</p>
   </div>
 
@@ -130,7 +130,7 @@
   close_popup_create_compte();
   const name = document.getElementById('input_id').value;
   const mp = document.getElementById('input_mp').value;
-  const action = 0
+  const action = 0;
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
       method: 'POST',
@@ -157,8 +157,14 @@
 async function sendName_create() {
   close_popup_se_connecter(); // Ferme la popup de connexion
   close_popup_create_compte();
-  const name = document.getElementById('input_id').value;
-  const mp = document.getElementById('input_mp').value;
+  const name = document.getElementById('input_id_account').value;
+  const firstMp = document.getElementById('input_mp_create_account').value;
+  const secondMp = document.getElementById('input_confirm_mp_create_account').value;
+  if firstMp != secoundMp {
+    const resultMessage = document.getElementById('result_message');
+    resultMessage.innerText = 'Les deux mot-de-passe sont differents';
+    return 0;
+  }
   const action = 1
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
