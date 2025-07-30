@@ -147,6 +147,37 @@
     resultMessage.innerText = 'Erreur lors de la connexion : ' + error.message;
   }
 }
+const popup = document.getElementById('popup_result');
+
+let isDragging = false;
+let offsetY = 0;
+
+popup.addEventListener('mousedown', function (e) {
+  isDragging = true;
+  offsetY = e.clientY - popup.getBoundingClientRect().top;
+  popup.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', function (e) {
+  if (!isDragging) return;
+
+  let newY = e.clientY - offsetY;
+
+  // Déplacer le popup
+  popup.style.top = newY + 'px';
+
+  // Si on atteint le haut de la page, on le cache
+  if (newY <= 0) {
+    popup.style.opacity = '0';
+    setTimeout(() => popup.style.display = 'none', 300);
+    isDragging = false;
+  }
+});
+
+document.addEventListener('mouseup', function () {
+  isDragging = false;
+  popup.style.cursor = 'grab';
+});
 
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
