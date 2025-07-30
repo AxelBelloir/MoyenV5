@@ -126,8 +126,7 @@
   }
 
   async function sendName() {
-  close_popup_se_connecter();
-  open_popup_result();
+  close_popup_se_connecter(); // Ferme la popup de connexion
 
   const name = document.getElementById('input_id').value;
   const mp = document.getElementById('input_mp').value;
@@ -143,12 +142,19 @@
 
     const resultMessage = document.getElementById('result_message');
     resultMessage.innerText = data.message;
+
+    // 👉 Afficher la popup SEULEMENT après avoir reçu le message
+    open_popup_result();
+
   } catch (error) {
-    // Affiche un message d'erreur en cas de problème (réseau, serveur, etc.)
     const resultMessage = document.getElementById('result_message');
     resultMessage.innerText = 'Erreur lors de la connexion : ' + error.message;
+
+    // 👉 Tu peux aussi ouvrir la popup ici pour montrer l’erreur
+    open_popup_result();
   }
 }
+
 const popup = document.getElementById('popup_result');
 
 let isDragging = false;
