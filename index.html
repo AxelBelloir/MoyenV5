@@ -126,70 +126,78 @@
   }
 
   async function sendName_connexion() {
-  close_popup_se_connecter(); // Ferme la popup de connexion
+  close_popup_se_connecter();
   close_popup_create_compte();
-  const name = document.getElementById('input_id').value;
-  const mp = document.getElementById('input_mp').value;
+
+  const name = document.getElementById('input_id').value.trim();
+  const mp = document.getElementById('input_mp').value.trim();
   const action = 0;
+
+  if (!name || !mp) {
+    const resultMessage = document.getElementById('result_message');
+    resultMessage.innerText = 'Veuillez remplir tous les champs.';
+    open_popup_result();
+    return;
+  }
+
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, mp, action})
+      body: JSON.stringify({ name, mp, action })
     });
 
     const data = await response.json();
 
-    const resultMessage = document.getElementById('result_message');
-    resultMessage.innerText = data.message;
-
-    // 👉 Afficher la popup SEULEMENT après avoir reçu le message
+    document.getElementById('result_message').innerText = data.message;
+    document.getElementById('Welcome_nom').textContent = name; // Affichage dynamique
     open_popup_result();
-
   } catch (error) {
-    const resultMessage = document.getElementById('result_message');
-    resultMessage.innerText = 'Erreur lors de la connexion : ' + error.message;
-
-    // 👉 Tu peux aussi ouvrir la popup ici pour montrer l’erreur
+    document.getElementById('result_message').innerText = 'Erreur lors de la connexion : ' + error.message;
     open_popup_result();
   }
 }
+
 async function sendName_create() {
-  close_popup_se_connecter(); // Ferme la popup de connexion
+  close_popup_se_connecter();
   close_popup_create_compte();
-  const name = document.getElementById('input_id_account').value;
-  const firstMp = document.getElementById('input_mp_create_account').value;
-  const secondMp = document.getElementById('input_confirm_mp_create_account').value;
-  if firstMp != secoundMp {
-    const resultMessage = document.getElementById('result_message');
-    resultMessage.innerText = 'Les deux mot-de-passe sont differents';
-    return 0;
+
+  const name = document.getElementById('input_id_account').value.trim();
+  const firstMp = document.getElementById('input_mp_create_account').value.trim();
+  const secondMp = document.getElementById('input_confirm_mp_create_account').value.trim();
+
+  if (!name || !firstMp || !secondMp) {
+    document.getElementById('result_message').innerText = 'Veuillez remplir tous les champs.';
+    open_popup_result();
+    return;
   }
-  const mp = firstMp
-  const action = 1
+
+  if (firstMp !== secondMp) {
+    document.getElementById('result_message').innerText = 'Les deux mots de passe sont différents';
+    open_popup_result();
+    return;
+  }
+
+  const mp = firstMp;
+  const action = 1;
+
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, mp, action})
+      body: JSON.stringify({ name, mp, action })
     });
 
     const data = await response.json();
 
-    const resultMessage = document.getElementById('result_message');
-    resultMessage.innerText = data.message;
-
-    // 👉 Afficher la popup SEULEMENT après avoir reçu le message
+    document.getElementById('result_message').innerText = data.message;
     open_popup_result();
-
   } catch (error) {
-    const resultMessage = document.getElementById('result_message');
-    resultMessage.innerText = 'Erreur lors de la connexion : ' + error.message;
-
-    // 👉 Tu peux aussi ouvrir la popup ici pour montrer l’erreur
+    document.getElementById('result_message').innerText = 'Erreur lors de la création : ' + error.message;
     open_popup_result();
   }
 }
+
 const popup = document.getElementById('popup_result');
 
 let isDragging = false;
