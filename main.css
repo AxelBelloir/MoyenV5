@@ -179,7 +179,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-<style>
   #popup_result {
     position: fixed !important;
     top: 50% !important;
@@ -210,7 +209,6 @@ body {
     color:black;
     font-size:18px;
   }
-</style>
 
 
 /* Réactif */
