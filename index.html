@@ -147,26 +147,30 @@
     close_popup_Moyen();
   }
   async function sendnote() {
-  const id = nom; // Le nom de l'utilisateur connecté
+  const id = nom; // Doit être défini après connexion
   const matiere = document.getElementById('matiere').value.trim();
   const noteStr = document.getElementById('note').value.trim();
   const surStr = document.getElementById('sur').value.trim();
   const coefStr = document.getElementById('coef').value.trim();
-  const autre = ""; // Tu peux ajouter un champ si tu veux plus tard
+  const autre = "";
 
-  // Convertir en float
-  const note = parseFloat(noteStr.replace(',', '.'));
-  const sur = parseFloat(surStr.replace(',', '.'));
-  const coef = parseFloat(coefStr.replace(',', '.'));
-
-  // Vérifier que tout est bien rempli
-  if (!id || !matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
-    document.getElementById('result_message').innerText = 'Remplis tous les champs avec des nombres valides.';
+  // Vérifier que l'utilisateur est connecté
+  if (!id || id === "Invité") {
+    document.getElementById('result_message').innerText = 'Connecte-toi avant d’ajouter une note.';
     open_popup_result();
     return;
   }
 
-  // Envoi de la requête
+  const note = parseFloat(noteStr.replace(',', '.'));
+  const sur = parseFloat(surStr.replace(',', '.'));
+  const coef = parseFloat(coefStr.replace(',', '.'));
+
+  if (!matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
+    document.getElementById('result_message').innerText = 'Tous les champs doivent être remplis avec des nombres valides.';
+    open_popup_result();
+    return;
+  }
+
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
       method: 'POST',
@@ -184,7 +188,6 @@
 
     const data = await response.json();
 
-    // Affichage du message de retour
     document.getElementById('result_message').innerText = data.message || 'Note enregistrée !';
     open_popup_result();
 
