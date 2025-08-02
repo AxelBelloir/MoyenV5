@@ -83,8 +83,9 @@
 
 <script>
   // Variable nom
-  var nom = "Invité";
-  document.getElementById('Welcome_nom').textContent = nom;
+  let nom = "Invité"; // pas var, pas const
+document.getElementById('Welcome_nom').textContent = nom;
+
 
   // Fonctions popup et affichages
   function open_popup_Moyen() {
@@ -227,7 +228,9 @@
     const data = await response.json();
 
     document.getElementById('result_message').innerText = data.message;
-    document.getElementById('Welcome_nom').textContent = name; // Affichage dynamique
+    nom = name; // <--- met à jour la variable globale
+    document.getElementById('Welcome_nom').textContent = nom;
+
     open_popup_result();
   } catch (error) {
     document.getElementById('result_message').innerText = 'Erreur lors de la connexion : ' + error.message;
