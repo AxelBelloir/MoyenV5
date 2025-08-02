@@ -147,35 +147,57 @@
     close_popup_Moyen();
   }
   async function sendnote() {
-  const id = nom;  // ← utilise le nom global (après connexion)
-  const action = 0;
+  const id = nom; // Le nom de l'utilisateur connecté
   const matiere = document.getElementById('matiere').value.trim();
-  const note = parseFloat(document.getElementById('note').value.trim());
-  const coef = parseFloat(document.getElementById('coef').value.trim());
-  const sur = parseFloat(document.getElementById('sur').value.trim());
-  const autre = ""; // ou un champ supplémentaire si nécessaire
+  const noteStr = document.getElementById('note').value.trim();
+  const surStr = document.getElementById('sur').value.trim();
+  const coefStr = document.getElementById('coef').value.trim();
+  const autre = ""; // Tu peux ajouter un champ si tu veux plus tard
 
-  if (!id || !matiere || isNaN(note) || isNaN(coef) || isNaN(sur)) {
-    document.getElementById('result_message').innerText = 'Veuillez remplir tous les champs de note.';
+  // Convertir en float
+  const note = parseFloat(noteStr.replace(',', '.'));
+  const sur = parseFloat(surStr.replace(',', '.'));
+  const coef = parseFloat(coefStr.replace(',', '.'));
+
+  // Vérifier que tout est bien rempli
+  if (!id || !matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
+    document.getElementById('result_message').innerText = 'Remplis tous les champs avec des nombres valides.';
     open_popup_result();
     return;
   }
 
+  // Envoi de la requête
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 0, id, matiere, note, sur, coef, autre })
+      body: JSON.stringify({
+        action: 0,
+        id,
+        matiere,
+        note,
+        sur,
+        coef,
+        autre
+      })
     });
 
-    const data = await response.json(); // Si le backend retourne quelque chose
-    document.getElementById('result_message').innerText = 'Note envoyée avec succès !';
+    const data = await response.json();
+
+    // Affichage du message de retour
+    document.getElementById('result_message').innerText = data.message || 'Note enregistrée !';
     open_popup_result();
+
+    // Vider les champs
+    document.getElementById('note').value = '';
+    document.getElementById('sur').value = '';
+    document.getElementById('coef').value = '';
   } catch (error) {
     document.getElementById('result_message').innerText = 'Erreur lors de l\'envoi de la note : ' + error.message;
     open_popup_result();
   }
 }
+
 
   async function sendName_connexion() {
   close_popup_se_connecter();
