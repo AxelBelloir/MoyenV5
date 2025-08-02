@@ -147,14 +147,36 @@
     close_popup_Moyen();
   }
   async function sendnote() {
-    const id = 
-    const action = 0
-    const matieres = document.getElementById('matiere').value.trim()
-    const note = document.getElementById('note').value.trim()
-    const coef = document.getElementById('coef').value.trim()
-    const sur = document.getElementById('sur').value.trim()
-    const autre = document.getElementById('').value.trim()
+  const id = nom;  // ← utilise le nom global (après connexion)
+  const action = 0;
+  const matiere = document.getElementById('matiere').value.trim();
+  const note = parseFloat(document.getElementById('note').value.trim());
+  const coef = parseFloat(document.getElementById('coef').value.trim());
+  const sur = parseFloat(document.getElementById('sur').value.trim());
+  const autre = ""; // ou un champ supplémentaire si nécessaire
+
+  if (!id || !matiere || isNaN(note) || isNaN(coef) || isNaN(sur)) {
+    document.getElementById('result_message').innerText = 'Veuillez remplir tous les champs de note.';
+    open_popup_result();
+    return;
   }
+
+  try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 0, id, matiere, note, sur, coef, autre })
+    });
+
+    const data = await response.json(); // Si le backend retourne quelque chose
+    document.getElementById('result_message').innerText = 'Note envoyée avec succès !';
+    open_popup_result();
+  } catch (error) {
+    document.getElementById('result_message').innerText = 'Erreur lors de l\'envoi de la note : ' + error.message;
+    open_popup_result();
+  }
+}
+
   async function sendName_connexion() {
   close_popup_se_connecter();
   close_popup_create_compte();
