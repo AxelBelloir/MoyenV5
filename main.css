@@ -27,6 +27,7 @@ body {
   color: white;
   font-size: 15px;
   cursor: pointer;
+  margin-bottom:5px;
 }
 .buton_se_connecter { top: 30px; }
 .Home_button { top: 100px; }
