@@ -100,6 +100,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('Question').style.display = 'none';
   }
   function open_popup_Moyen() {
+    closeAllPopups();
     document.getElementById('Home').style.display = 'none';
     document.getElementById('popup_Moyen').style.display = 'block';
   }
@@ -107,6 +108,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('popup_Moyen').style.display = 'none';
   }
   function open_popup_se_connecter() {
+    closeAllPopups();
     document.getElementById('popup_create_compte').style.display = 'none';
     document.getElementById('popup_se_connecter').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -116,6 +118,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('overlay').style.display = 'none';
   }
   function open_popup_result() {
+  closeAllPopups();
   const popup = document.getElementById('popup_result');
   popup.style.display = 'flex';
   popup.style.zIndex = '99999';
@@ -135,6 +138,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('overlay').style.display = 'none';
   }
   function open_popup_create_compte() {
+    closeAllPopups();
     document.getElementById('popup_se_connecter').style.display = 'none';
     document.getElementById('popup_create_compte').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -144,6 +148,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('overlay').style.display = 'none';
   }
   function open_div_Home() {
+    closeAllPopups();
     document.getElementById('popup_se_connecter').style.display = 'none';
     document.getElementById('popup_create_compte').style.display = 'none';
     document.getElementById('Home').style.display = 'block';
