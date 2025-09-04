@@ -120,6 +120,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   }
   function open_popup_result(){
   const popup = document.getElementById('popup_result');
+  slideInUp(popup)
   popup.style.display = 'flex';
   popup.style.zIndex = '99999';
   popup.style.position = 'fixed';
@@ -326,6 +327,37 @@ document.addEventListener('mouseup', function () {
   isDragging = false;
   popup.style.cursor = 'grab';
 });
+function slideInUp(popup) {
+  // Supprime toute animation existante temporairement
+  popup.style.animation = 'none';
+
+  const animationName = 'slideInUpJS';
+
+  // Vérifie si l'animation a déjà été injectée
+  const alreadyExists = Array.from(document.styleSheets)
+    .some(sheet => Array.from(sheet.cssRules || []).some(rule => rule.name === animationName));
+
+  if (!alreadyExists) {
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `
+      @keyframes ${animationName} {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    `;
+    document.head.appendChild(styleTag);
+  }
+
+  // Appliquer l’animation
+  popup.style.display = 'block';
+  popup.style.animation = `${animationName} 0.5s ease-out forwards`;
+}
 
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
