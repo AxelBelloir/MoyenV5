@@ -92,8 +92,12 @@ document.getElementById('Welcome_nom').textContent = nom;
 
   // Fonctions popup et affichages
   function open_popup_question() {
+    closeAllPopups();
     document.getElementById('Home').style.display = 'none';
-    document.getElementById('Question').style.display = 'block'
+    document.getElementById('Question').style.display = 'block';
+  }
+  function close_popup_question() {
+    document.getElementById('Question').style.display = 'none';
   }
   function open_popup_Moyen() {
     document.getElementById('Home').style.display = 'none';
@@ -153,6 +157,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     close_popup_se_connecter();
     close_popup_create_compte();
     close_popup_Moyen();
+    close_popup_question();
   }
   async function sendnote() {
   const id = nom; // Doit être défini après connexion
