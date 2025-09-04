@@ -19,7 +19,7 @@ body {
   padding-top: 25px;
 }
 /* Boutons */
-.Home_button, .buton_se_connecter, .buton_Moyen {
+.Home_button, .buton_se_connecter, .buton_Moyen, .buton_question {
   position: absolute;
   background: transparent;
   border: none;
