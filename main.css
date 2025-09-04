@@ -166,19 +166,16 @@ body {
 .input_mp_create_account{ 
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
   top: 200px; 
 }
 .input_confirm_mp_create_account{ 
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
   top: 290px; 
 }
 .input_id_create_account{
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
   top: 380px; 
 }
 .decors2 {
