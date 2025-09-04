@@ -12,6 +12,7 @@
     <button class="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
     <button class="Home_button" onclick="open_div_Home()">Home</button>
     <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
+    <button class="buton_question" onclick="open_popup_question()">Question</button>
   </div>
 
   <!-- Overlay pour fond sombre -->
@@ -88,6 +89,9 @@ document.getElementById('Welcome_nom').textContent = nom;
 
 
   // Fonctions popup et affichages
+  function open_popup_question() {
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('Question').style.display = 'block'
   function open_popup_Moyen() {
     document.getElementById('Home').style.display = 'none';
     document.getElementById('popup_Moyen').style.display = 'block';
