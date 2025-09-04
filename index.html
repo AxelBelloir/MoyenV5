@@ -137,13 +137,14 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('popup_result').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
   }
-  function open_popup_create_compte() {
-    closeAllPopups();
-    document.getElementById('Home').style.display = 'block';
-    document.getElementById('popup_se_connecter').style.display = 'none';
-    document.getElementById('popup_create_compte').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-  }
+  function open_popup_se_connecter() {
+  closeAllPopups();
+  document.getElementById('Home').style.display = 'none'; // cacher Home
+  document.getElementById('popup_create_compte').style.display = 'none';
+  document.getElementById('popup_se_connecter').style.display = 'flex'; // flex pour respecter css
+  document.getElementById('overlay').style.display = 'block';
+}
+
   function close_popup_create_compte() {
     document.getElementById('popup_create_compte').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
