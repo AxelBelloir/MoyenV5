@@ -109,6 +109,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   }
   function open_popup_se_connecter() {
     closeAllPopups();
+    document.getElementById('Home').style.display = 'block';
     document.getElementById('popup_create_compte').style.display = 'none';
     document.getElementById('popup_se_connecter').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -139,6 +140,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   }
   function open_popup_create_compte() {
     closeAllPopups();
+    document.getElementById('Home').style.display = 'block';
     document.getElementById('popup_se_connecter').style.display = 'none';
     document.getElementById('popup_create_compte').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
