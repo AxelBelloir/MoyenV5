@@ -93,21 +93,21 @@ body {
   top:250px;
   left:50%;
   transform: translate(-50%, -50%);
-  width:80%;
+  width:50%;
 }
 .input_id_account{
   position:absolute;
   top:160px;
   left:50%;
   transform: translate(-50%, -50%);
-  width:80%;
+  width:50%;
 }
 .input_confirm_mp_create_account{
   position:absolute;
   top:340px;
   left:50%;
   transform: translate(-50%, -50%);
-  width:80%;
+  width:50%;
 }
 /* Boutons popup */
 .popup_se_connecter_button, .create_account {
