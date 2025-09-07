@@ -19,7 +19,7 @@ body {
   padding-top: 25px;
 }
 /* Boutons */
-.Home_button, .buton_se_connecter, .buton_Moyen, .buton_question {
+.Home_button,  .buton_Moyen, .buton_question {
   position: absolute;
   background: transparent;
   border: none;
@@ -29,7 +29,17 @@ body {
   cursor: pointer;
   margin-bottom:5px;
 }
-.buton_se_connecter { top: 30px; }
+.buton_se_connecter { 
+  top: 30px;
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom:5px;
+}
 .Home_button { top: 100px; }
 .buton_Moyen { top: 150px; }
 .buton_question { top: 200px; }
