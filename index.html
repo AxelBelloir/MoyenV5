@@ -169,7 +169,6 @@ document.getElementById('Welcome_nom').textContent = nom;
     close_popup_question();
   }
   async function sendnote() {
-  const id = nom; // Doit être défini après connexion
   const matiere = document.getElementById('matiere').value.trim();
   const noteStr = document.getElementById('note').value.trim();
   const surStr = document.getElementById('sur').value.trim();
@@ -199,7 +198,6 @@ document.getElementById('Welcome_nom').textContent = nom;
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: 0,
-        id,
         matiere,
         note,
         sur,
