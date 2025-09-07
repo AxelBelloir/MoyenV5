@@ -93,6 +93,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   // Fonctions popup et affichages
   function open_popup_question() {
     closeAllPopups();
+    close_div_Home();
     document.getElementById('Home').style.display = 'none';
     document.getElementById('Question').style.display = 'block';
   }
