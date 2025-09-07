@@ -9,10 +9,11 @@
 <body>
   
   <div class="Barre_task" >
-    <button class="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
+    <button class="buton_se_connecter" id="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
     <button class="Home_button" onclick="open_div_Home()">Home</button>
     <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
     <button class="buton_question" onclick="open_popup_question()">Question</button>
+    <p class="buton_se_connecter" id="text_place_button_se_connecter" style="display:none;"></p>
   </div>
 
   <!-- Overlay pour fond sombre -->
@@ -249,7 +250,9 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('result_message').innerText = data.message;
     nom = name; // <--- met à jour la variable globale
     document.getElementById('Welcome_nom').textContent = nom;
-
+    document.getElementById('buton_se_connecter').style.display = 'none';
+    document.getElementById('text_place_button_se_connecter').textContent = nom;
+    document.getElementById('text_place_button_se_connecter').style.display = 'block';
     open_popup_result();
   } catch (error) {
     document.getElementById('result_message').innerText = 'Erreur lors de la connexion : ' + error.message;
