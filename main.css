@@ -92,16 +92,19 @@ body {
   position:flex;
   top:250px;
   left:50%;
+  width:80%;
 }
 .input_id_create_account{
   position:flex;
   top:160px;
   left:50%;
+  width:80%;
 }
 .input_confirm_mp_create_account{
   position:flex;
   top:340px;
   left:50%;
+  width:80%;
 }
 /* Boutons popup */
 .popup_se_connecter_button, .create_account {
