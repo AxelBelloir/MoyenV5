@@ -89,19 +89,19 @@ body {
 }
 
 .input_mp_create_account  {
-  position:flex;
+  position:absolute;
   top:250px;
   left:50%;
   width:80%;
 }
 .input_id_create_account{
-  position:flex;
+  position:absolute;
   top:160px;
   left:50%;
   width:80%;
 }
 .input_confirm_mp_create_account{
-  position:flex;
+  position:absolute;
   top:340px;
   left:50%;
   width:80%;
