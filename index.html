@@ -55,26 +55,27 @@
 
   <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
     <div class="ajouter_notes" id="ajouter_notes">
-      <label for="note">Ta note</label>
-      <label for="sur">Sur combien</label>
-      <label for="coef">Le coef</label>
-      <input id="note" class="note">
-      <input id="sur" class="sur">
-      <input id="coef" class="coef">
-      <label for="matiere">Choisis une matière :</label>
-      <select id="matiere" name="matiere">
-        <option value="Mathématiques">Mathématiques</option>
-        <option value="Physique">Physique</option>
-        <option value="SVT">SVT</option>
-        <option value="Français">Français</option>      
-        <option value="Histoire">Histoire</option>
-        <option value="Anglais">Anglais</option>
-        <option value="Espagnole">Espagnole</option>
-        <option value="Francais">Francais</option>
-        <option value="Sport">Sport</option>
-        <option value="Technologie">Technologie</option>
-        <option value="Musique">Musique</option>
-        <option value="Arts">Arts-plastique</option>
+      <label class="Lnote" for="note">Ta note</label>
+      <label class="Lsur" for="sur">Sur combien</label>
+      <label class="Lcoef" for="coef">Le coef</label>
+      <input id="INnote" class="note">
+      <input id="INsur" class="sur">
+      <input id="INcoef" class="coef">
+      <label class="Math" for="matiere">Choisis une matière :</label>
+      <select class="Math" id="matiere" name="matiere">
+        <option class="math" value="Mathématiques">Mathématiques</option>
+        <option class="phisique" value="Physique">Physique</option>
+        <option class="svt" value="SVT">SVT</option>
+        <option class="fr" value="Français">Français</option>      
+        <option class="histoire" value="Histoire">Histoire</option>
+        <option class="angl" value="Anglais">Anglais</option>
+        <option class="esp" value="Espagnole">Espagnole</option>
+        <option class="sport" value="Sport">Sport</option>
+        <option class="tech" value="Technologie">Technologie</option>
+        <option class="musique" value="Musique">Musique</option>
+        <option class="arts" value="Arts-plastique">Arts-plastique</option>
+        <option class="latin" value="Latin">Latin</option>
+        <option class="chor" value="Chorale">Chorale</option>
       </select>
       <button onclick="sendnote()">Enregistrer la note</button>
     </div>
