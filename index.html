@@ -169,6 +169,12 @@ document.getElementById('Welcome_nom').textContent = nom;
     close_popup_question();
   }
   async function sendnote() {
+  Object.defineProperty(window, 'id', {
+    value: name,
+    writable: false,
+    configurable: false
+  });
+
   const matiere = document.getElementById('matiere').value.trim();
   const noteStr = document.getElementById('note').value.trim();
   const surStr = document.getElementById('sur').value.trim();
@@ -198,6 +204,7 @@ document.getElementById('Welcome_nom').textContent = nom;
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: 0,
+        id,
         matiere,
         note,
         sur,
@@ -247,15 +254,13 @@ document.getElementById('Welcome_nom').textContent = nom;
     const data = await response.json();
 
     document.getElementById('result_message').innerText = data.message;
-    const valeurSecrete = nom;
-    Object.defineProperty(window, 'valeurProtegee', {
-      value: valeurSecrete,
-      writable: false,       // ❌ interdit l'écriture
-      configurable: false,   // ❌ interdit la suppression ou redéfinition
-      enumerable: false      // optionnel : n’apparaît pas dans les boucles
+    Object.defineProperty(window, 'nom', {
+      value: name,
+      writable: false,
+      configurable: false
     });
+document.getElementById('Welcome_nom').textContent = nom;
 
-    nom = name; // <--- met à jour la variable globale
     document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('buton_se_connecter').style.display = 'none';
     document.getElementById('text_place_button_se_connecter').textContent = nom;
