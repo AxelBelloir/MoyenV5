@@ -182,7 +182,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   const autre = "";
 
   // Vérifier que l'utilisateur est connecté
-  if (!id || id === "Invité") {
+  if (!nom || nom === "Invité") {
     document.getElementById('result_message').innerText = 'Connecte-toi avant d’ajouter une note.';
     open_popup_result();
     return;
@@ -254,6 +254,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     const data = await response.json();
 
     document.getElementById('result_message').innerText = data.message;
+    nom = name;
     Object.defineProperty(window, 'nom', {
       value: name,
       writable: false,
