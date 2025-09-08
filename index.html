@@ -247,6 +247,14 @@ document.getElementById('Welcome_nom').textContent = nom;
     const data = await response.json();
 
     document.getElementById('result_message').innerText = data.message;
+    const valeurSecrete = nom;
+    Object.defineProperty(window, 'valeurProtegee', {
+      value: valeurSecrete,
+      writable: false,       // ❌ interdit l'écriture
+      configurable: false,   // ❌ interdit la suppression ou redéfinition
+      enumerable: false      // optionnel : n’apparaît pas dans les boucles
+    });
+
     nom = name; // <--- met à jour la variable globale
     document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('buton_se_connecter').style.display = 'none';
