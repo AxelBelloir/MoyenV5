@@ -1,4 +1,11 @@
-/* Style général */
+button_registe_moyenne{
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  right: 20px
+}
 .Lnote{
   position:absolute;
   top:40px;
