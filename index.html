@@ -254,6 +254,7 @@ document.getElementById('Welcome_nom').textContent = nom;
     const data = await response.json();
 
     document.getElementById('result_message').innerText = data.message;
+    if (!data || data === "Connexion réussie."){
     nom = name;
     Object.defineProperty(window, 'nom', {
       value: name,
@@ -267,9 +268,10 @@ document.getElementById('Welcome_nom').textContent = nom;
     document.getElementById('text_place_button_se_connecter').textContent = nom;
     document.getElementById('text_place_button_se_connecter').style.display = 'block';
     open_popup_result();
-  } catch (error) {
+    catch (error) {
     document.getElementById('result_message').innerText = 'Erreur lors de la connexion : ' + error.message;
     open_popup_result();
+  }
   }
 }
 
