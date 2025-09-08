@@ -3,21 +3,25 @@
   position:absolute;
   top:40px;
   left:40px;
+  font-weight: bold;
 }
 .Lsur{
   position:absolute;
   top:40px;
   left:140px;
+  font-weight: bold;
 }
 .Lcoef{
   position:absolute;
   top:40px;
   left:220px;
+  font-weight: bold;
 }
 .Lmatiere{
   position:absolute;
   top:120px;
   left:10%;
+  font-weight: bold;
 }
 .SELmatiere{
   position:absolute;
