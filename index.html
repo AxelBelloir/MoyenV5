@@ -220,9 +220,9 @@ document.getElementById('Welcome_nom').textContent = nom;
     open_popup_result();
 
     // Vider les champs
-    document.getElementById('note').value = '';
-    document.getElementById('sur').value = '';
-    document.getElementById('coef').value = '';
+    document.getElementById('INnote').value = '';
+    document.getElementById('INsur').value = '';
+    document.getElementById('INcoef').value = '';
   } catch (error) {
     document.getElementById('result_message').innerText = 'Erreur lors de l\'envoi de la note : ' + error.message;
     open_popup_result();
