@@ -1,27 +1,43 @@
 /* Style général */
 .Lnote{
-
+  position:absolute;
+  top:40px;
+  left:40px;
 }
 .Lsur{
-
+  position:absolute;
+  top:40px;
+  left:130px;
 }
 .Lcoef{
-
+  position:absolute;
+  top:220px;
+  left:40px;
 }
 .Lmatiere{
-
+  position:absolute;
+  top:300px;
+  left:50%;
 }
 .SELmatiere{
-
+  position:absolute;
+  top:390px;
+  left:50%;
 }
 .INnote{
-
+  position:absolute;
+  top:130px;
+  left:40px;
 }
 .INsur{
-
+  position:absolute;
+  top:130px;
+  left:130px;
 }
 .INcoef{
-
+  position:absolute;
+  top:130px;
+  left:220px;
 }
 body {
   color:black;
