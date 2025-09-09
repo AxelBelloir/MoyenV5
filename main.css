@@ -198,7 +198,12 @@ body {
 .input_id { top: 160px; }
 .input_mp { top: 250px; }
 /* Titres et textes */
-.h2_connexion, .h2_div_ajouter_notes { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
+.h2_div_ajouter_notes {
+  position: absolute;
+  top: 25px;
+  left:50%;
+}
+.h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .Inserez_votre_identifiants {
   position: absolute; top: 100px; left: 50%;
   transform: translate(-50%,-50%); font-weight: bold;
@@ -236,7 +241,7 @@ body {
 }
 #ajouter_notes {
   position: absolute;left:30%;top: 20%;
-  width:350px; height: 40%;
+  width:335px; height: 40%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
