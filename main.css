@@ -192,7 +192,7 @@ body {
 /* Inputs */
 .input_id, .input_mp {
   position: absolute;
-  left: 50%;
+  left:50%;
   transform: translate(-50%, -50%);
 }
 .input_id { top: 160px; }
@@ -200,8 +200,7 @@ body {
 /* Titres et textes */
 .h2_div_ajouter_notes {
   position: absolute;
-  top: 35px;
-  transform:translate(-50%,-50%);
+  top: 20px;
 }
 .h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .Inserez_votre_identifiants {
