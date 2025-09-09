@@ -242,7 +242,7 @@ body {
   border-radius: 15px;
 }
 #ajouter_notes {
-  position: absolute;left:30%;top: 20%;
+  position: absolute;right:1%;bottom: 2%;
   width:335px; height: 40%;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
