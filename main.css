@@ -201,8 +201,9 @@ body {
 .h2_div_ajouter_notes {
   position: absolute;
   top: 15px;
-  left: 30%;
+  left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 .h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
 .Inserez_votre_identifiants {
