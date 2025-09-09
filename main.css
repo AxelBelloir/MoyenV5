@@ -200,8 +200,8 @@ body {
 /* Titres et textes */
 .h2_div_ajouter_notes {
   position: absolute;
-  top: 20px;
-  left: 50%;
+  top: 15px;
+  left: 30%;
   transform: translateX(-50%);
 }
 .h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
