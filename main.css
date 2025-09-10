@@ -1,9 +1,12 @@
-div_left__popup_Moyen{
+.div_left__popup_Moyen{
   position: flex;
   bottom:10%;
   left:30%;
   width:20%;
   height:40%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: white;
+  border-radius: 15px;
 }
 .button_registe_moyenne{
   background: transparent;
