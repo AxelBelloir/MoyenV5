@@ -107,7 +107,7 @@ chargerNotesInitiales();
 
   // Variable nom
   let nom = "Invité"; // pas var, pas const
-document.getElementById('Welcome_nom').textContent = nom;
+document.getElementById('Welcome_nom').textContent = window.nom;
 
 
   // Fonctions popup et affichages
@@ -187,11 +187,6 @@ document.getElementById('Welcome_nom').textContent = nom;
     close_popup_question();
   }
   async function sendnote() {
-  Object.defineProperty(window, 'id', {
-    value: name,
-    writable: false,
-    configurable: false
-  });
 
   const matiere = document.getElementById('matiere').value.trim();
   const noteStr = document.getElementById('INnote').value.trim();
@@ -201,7 +196,7 @@ document.getElementById('Welcome_nom').textContent = nom;
   const autre = "";
 
   // Vérifier que l'utilisateur est connecté
-  if (!nom || nom === "Invité") {
+  if (!window.nom || window.nom === "Invité") {
     document.getElementById('result_message').innerText = 'Connecte-toi avant d’ajouter une note.';
     open_popup_result();
     return;
@@ -223,7 +218,7 @@ document.getElementById('Welcome_nom').textContent = nom;
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: 0,
-        id: nom,
+        id: window.nom,
         matiere,
         note,
         sur,
