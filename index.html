@@ -88,15 +88,16 @@
   </div>
 
 <script>
-  window.onload = async () => {
-  try {
-    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 1 })
-    });
-  }
-};
+  (async function () {
+  const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 1 })
+  });
+
+  // Traitement éventuel de la réponse ici
+})();
+
 
   // Variable nom
   let nom = "Invité"; // pas var, pas const
