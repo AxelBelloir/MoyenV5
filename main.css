@@ -6,6 +6,27 @@
   background: white;
   border-radius: 15px;
 }
+.h2_div_left__popup_Moyen{
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.L1_div_left__popup_Moyen{
+  position:absolute;
+  top:90px;
+  left:40px;
+  font-weight: bold;
+  color: black;
+}
+.L2_div_left__popup_Moyen{
+  position:absolute;
+  top:90px;
+  left:140px;
+  font-weight: bold;
+  color: black;
+}
 .button_registe_moyenne{
   background: transparent;
   border: none;
