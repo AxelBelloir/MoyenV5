@@ -19,13 +19,15 @@
   left:50%;
   font-weight: bold;
   color: black;
+  white-space: nowrap;
 }
 .L2_div_left__popup_Moyen{
   position:absolute;
-  top:190;
+  top:190px;
   left:50%;
   font-weight: bold;
   color: black;
+  white-space: nowrap;
 }
 .button_registe_moyenne{
   background: transparent;
