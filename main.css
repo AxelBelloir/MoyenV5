@@ -6,6 +6,12 @@
   background: white;
   border-radius: 15px;
 }
+.afficher_moyenG{
+  position:absolute;
+  top:130px;
+  left:50%;
+  transform:translateX(-50%);
+}
 .SELmatiere_div_left__popup_Moyen{
   background: transparent;
   border: none;
