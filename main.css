@@ -6,6 +6,17 @@
   background: white;
   border-radius: 15px;
 }
+.SELmatiere_div_left__popup_Moyen{
+  background: transparent;
+  border: none;
+  font-size: 15px; 
+  color: black;
+  font-weight: bold;
+  position:absolute;
+  top:180px;
+  left:50%;
+  transform: translateX(-50%);
+}
 .h2_div_left__popup_Moyen{
   position: absolute;
   top: 15px;
@@ -24,7 +35,7 @@
 }
 .L2_div_left__popup_Moyen{
   position:absolute;
-  top:190px;
+  top:150px;
   left:50%;
   transform: translateX(-50%);
   font-weight: bold;
