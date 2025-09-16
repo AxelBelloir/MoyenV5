@@ -12,6 +12,12 @@
   left:50%;
   transform:translateX(-50%);
 }
+.afficher_moyenM{
+  position:absolute;
+  top:240px;
+  left:50%;
+  transform:translateX(-50%);
+}
 .SELmatiere_div_left__popup_Moyen{
   background: transparent;
   border: none;
