@@ -16,14 +16,14 @@
 .L1_div_left__popup_Moyen{
   position:absolute;
   top:90px;
-  left:40px;
+  left:50%;
   font-weight: bold;
   color: black;
 }
 .L2_div_left__popup_Moyen{
   position:absolute;
-  top:90px;
-  left:140px;
+  top:190;
+  left:50%;
   font-weight: bold;
   color: black;
 }
