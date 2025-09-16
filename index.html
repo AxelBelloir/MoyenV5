@@ -270,9 +270,9 @@
 
       document.getElementById('result_message').innerText = data.message;
 
-      if (data.message === "Connexion réussie.") {
+      if (data.message === "Connexion réussie.") or (data.message === "Bienvenue admin"){
         Object.defineProperty(window, 'nom', {
-          value: name,
+          value: data.value,
           writable: false,
           configurable: false
         });
