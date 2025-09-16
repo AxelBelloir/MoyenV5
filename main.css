@@ -8,13 +8,13 @@
 }
 .afficher_moyenG{
   position:absolute;
-  top:130px;
+  top:120px;
   left:50%;
   transform:translateX(-50%);
 }
 .afficher_moyenM{
   position:absolute;
-  top:240px;
+  top:235px;
   left:50%;
   transform:translateX(-50%);
 }
