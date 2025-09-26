@@ -382,28 +382,45 @@
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
   const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
-  async function SendMatiere() {
-    const matiere = selectElement.value;
-    const action = 1;
-    try {
-      const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          matiere,
-          action,
-          id: window.nom, 
-        })
-      });
+  const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
 
-      const data = await response.json();
-      document.getElementById('result_message').innerText = data.message;
-      open_popup_result();
-    } catch (error) {
-      document.getElementById('result_message').innerText = 'Erreur lors de la création : ' + error.message;
-      open_popup_result();
-    }
+async function SendMatiere() {
+  const matiere = selectElement.value;
+  const action = 1;
+
+  if (!window.nom || window.nom === "Invité") {
+    document.getElementById('result_message').innerText = 'Connecte-toi avant de voir les moyennes.';
+    open_popup_result();
+    return;
   }
+
+  try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        matiere,
+        action,
+        id: window.nom
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.moyenne !== undefined) {
+      document.getElementById('afficher_moyen_matiere').textContent = `${data.moyenne}/20`;
+    } else {
+      document.getElementById('afficher_moyen_matiere').textContent = data.message || 'Erreur';
+    }
+
+  } catch (error) {
+    document.getElementById('result_message').innerText = 'Erreur lors de la récupération de la moyenne : ' + error.message;
+    open_popup_result();
+  }
+}
+
+selectElement.addEventListener('change', SendMatiere);
+
   selectElement.addEventListener('change', function() {
     SendMatiere();
   }
