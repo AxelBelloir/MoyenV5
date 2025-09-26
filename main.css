@@ -21,11 +21,11 @@
 .listPopupMoyenb1{
   background: transparent;
   border: none;
-  font-size: 20px; 
+  font-size: 15px; 
   color: black;
   font-weight: bold;
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   right: 20px
 }
 .div_left__popup_Moyen{
