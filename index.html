@@ -382,8 +382,24 @@
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
   const selectElement = document.getElementById('SELmatiere_div_left__popup_Moyen');
+  function SendMatiere() {
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectElement })
+      });
+
+      const data = await response.json();
+      document.getElementById('result_message').innerText = data.message;
+      open_popup_result();
+    } catch (error) {
+      document.getElementById('result_message').innerText = 'Erreur lors de la création : ' + error.message;
+      open_popup_result();
+    }
+  }
   selectElement.addEventListener('change', function() {
-    
+    SendMatiere();
   }
 </script>
 </body>
