@@ -1,6 +1,6 @@
 .listPopupMoyen{
   position: absolute;right:10px;top: 2%;
-  width: 600px; height: 300px;
+  width: 650px; height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
@@ -8,6 +8,7 @@
 .listPopupMoyen1{
   position:absolute;
   left:25px;
+  top:30px;
   width: 550px; height: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
