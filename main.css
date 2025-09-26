@@ -5,7 +5,7 @@
   background: white;
   border-radius: 15px;
 }
-.listPopupMoyen1{
+.listPopupMoyen1,listPopupMoyen2{
   position:absolute;
   left:25px;
   top:30px;
@@ -15,10 +15,10 @@
   border-radius: 15px;
   
 }
-.listPopupMoyenp1{
+.listPopupMoyenp1,listPopupMoyenp2{
   
 }
-.listPopupMoyenb1{
+.listPopupMoyenb1,listPopupMoyenb2{
   background: transparent;
   border: none;
   font-size: 15px; 
