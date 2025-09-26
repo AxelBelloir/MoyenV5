@@ -1,6 +1,6 @@
 
 .div_left__popup_Moyen{
-  position: absolute;left:25%;top: 30%;
+  position: absolute;right:403px;bottom: 1px;
   width: 250px; height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
