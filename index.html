@@ -411,13 +411,15 @@
   }
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
-  const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
-  const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
+  // On récupère l'élément <select> pour la matière (une seule déclaration)
+const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
 
+// Fonction qui envoie la matière sélectionnée au serveur et affiche la moyenne par matière
 async function SendMatiere() {
-  const matiere = selectElement.value;
+  const matiere = selectElement.value; // On récupère la matière sélectionnée
   const action = 1;
 
+  // Si pas connecté, on affiche un message d'erreur
   if (!window.nom || window.nom === "Invité") {
     document.getElementById('result_message').innerText = 'Connecte-toi avant de voir les moyennes.';
     open_popup_result();
@@ -425,6 +427,7 @@ async function SendMatiere() {
   }
 
   try {
+    // Envoi des données au serveur
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -437,23 +440,22 @@ async function SendMatiere() {
 
     const data = await response.json();
 
+    // Si on a la moyenne, on l'affiche sinon un message d'erreur
     if (data.moyenne !== undefined) {
       document.getElementById('afficher_moyen_matiere').textContent = `${data.moyenne}/20`;
     } else {
       document.getElementById('afficher_moyen_matiere').textContent = data.message || 'Erreur';
     }
-
   } catch (error) {
+    // En cas d'erreur, affichage du message
     document.getElementById('result_message').innerText = 'Erreur lors de la récupération de la moyenne : ' + error.message;
     open_popup_result();
   }
 }
 
+// On attache la fonction au changement de sélection (une seule fois)
 selectElement.addEventListener('change', SendMatiere);
 
-  selectElement.addEventListener('change', function() {
-    SendMatiere();
-  }
 </script>
 </body>
 </html>
