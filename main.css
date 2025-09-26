@@ -6,6 +6,7 @@
   border-radius: 15px;
 }
 .listPopupMoyen1, .listPopupMoyen2{
+  position:relative;
   margin-top:10px;
   margin-right:10px
   width: 550px; height: 30px;
