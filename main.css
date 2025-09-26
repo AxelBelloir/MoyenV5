@@ -6,7 +6,7 @@
   border-radius: 15px;
 }
 .listPopupMoyen1{
-  position:;
+  position:absolute;
   width: 550px; height: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
