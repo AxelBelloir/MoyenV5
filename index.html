@@ -383,8 +383,8 @@
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
   const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
   async function SendMatiere() {
-    const matiere = selectElement
-    const action = 1
+    const matiere = selectElement;
+    const action = 1;
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
         method: 'POST',
