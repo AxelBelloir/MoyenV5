@@ -1,6 +1,6 @@
 
 .div_left__popup_Moyen{
-  position: absolute;right:403px;bottom: 1px;
+  position: absolute;right:420px;bottom: 2%;
   width: 250px; height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
@@ -303,7 +303,7 @@ body {
   border-radius: 15px;
 }
 #ajouter_notes {
-  position: absolute;right:1%;bottom: 2%;
+  position: absolute;right:10px;bottom: 2%;
   width:400px; height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
