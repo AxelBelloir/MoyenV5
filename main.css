@@ -6,14 +6,12 @@
   border-radius: 15px;
 }
 .listPopupMoyen1, .listPopupMoyen2{
-  position:absolute;
-  left:25px;
-  top:30px;
+  margin-top:10px;
+  margin-right:10px
   width: 550px; height: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
-  
 }
 .listPopupMoyenp1, .listPopupMoyenp2{
   
