@@ -178,6 +178,7 @@
   }
   function open_div_Home() {
     closeAllPopups();
+    loadMoyenneGenerale();
     document.getElementById('popup_se_connecter').style.display = 'none';
     document.getElementById('popup_create_compte').style.display = 'none';
     document.getElementById('Home').style.display = 'block';
@@ -192,6 +193,35 @@
     close_popup_Moyen();
     close_popup_question();
   }
+  async function loadMoyenneGenerale() {
+  const action = 1;
+
+  if (!window.nom || window.nom === "Invité") {
+    document.getElementById('afficher_moyen').textContent = 'Non connecté';
+    return;
+  }
+
+  try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        action,
+        id: window.nom 
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.moyenne_generale !== undefined) {
+      document.getElementById('afficher_moyen').textContent = `${data.moyenne_generale}/20`;
+    } else {
+      document.getElementById('afficher_moyen').textContent = data.message || 'Erreur';
+    }
+  } catch (error) {
+    document.getElementById('afficher_moyen').textContent = 'Erreur : ' + error.message;
+  }
+}
 
   async function sendnote() {
     const matiere = document.getElementById('matiere').value.trim();
