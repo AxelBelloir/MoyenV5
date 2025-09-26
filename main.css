@@ -14,7 +14,7 @@
 }
 .afficher_moyenM{
   position:absolute;
-  top:240px;
+  top:230px;
   left:50%;
   transform:translateX(-50%);
 }
