@@ -14,7 +14,7 @@
 }
 .afficher_moyenM{
   position:absolute;
-  top:230px;
+  top:240px;
   left:50%;
   transform:translateX(-50%);
 }
@@ -25,7 +25,7 @@
   color: black;
   font-style:italic;
   position:absolute;
-  top:210px;
+  top:200px;
   left:50%;
   transform: translateX(-50%);
 }
