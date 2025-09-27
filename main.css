@@ -7,8 +7,9 @@
   background: white;
   border-radius: 15px;
   display: flex; /* les enfants seront sur la même ligne */
-  justify-content: flex-start; /* aligne à gauche */
+  justify-content: column; /* aligne à gauche */
   gap: 20px; /* espace entre les div */
+  margin-right: 40px;
 }
 .listPopupMoyen1, .listPopupMoyen2{
   position:relative;
