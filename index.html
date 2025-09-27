@@ -462,6 +462,8 @@
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
   // On récupère l'élément <select> pour la matière (une seule déclaration)
 const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
+const selectElement1 = document.getElementById('SELlistPopupMoyen');
+
 
 // Fonction qui envoie la matière sélectionnée au serveur et affiche la moyenne par matière
 async function SendMatiere() {
@@ -504,6 +506,7 @@ async function SendMatiere() {
 
 // On attache la fonction au changement de sélection (une seule fois)
 selectElement.addEventListener('change', SendMatiere);
+selectElement1.addEventListener('change', listPopupMoyen);
 
 </script>
 </body>
