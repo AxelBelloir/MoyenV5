@@ -12,6 +12,13 @@
   gap: 5px; /* espace entre les div */
   margin-left: 5px;
 }
+.listPopupMoyenba1{
+  font-weight: bold;
+  font-size: 15px; 
+  position:absolute;
+  left:90%;
+  top:40%;
+}
 .listPopupMoyen1, .listPopupMoyen2, .listPopupMoyen3, .listPopupMoyen4, .listPopupMoyen5{
   position:relative;
   margin-left:5px;
