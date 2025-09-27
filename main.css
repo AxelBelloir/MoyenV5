@@ -8,14 +8,12 @@
   border-radius: 15px;
   display: flex; /* les enfants seront sur la même ligne */
   flex-direction: column; /* aligne à gauche */
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 5px; /* espace entre les div */
-  margin-right: 5px;
+  margin-left: 5px;
 }
 .listPopupMoyen1, .listPopupMoyen2{
   position:relative;
-  margin-top:5px;
-  margin-right:10px;
   width: 550px; height: 30px;
   background: white;
   border-radius: 15px;
