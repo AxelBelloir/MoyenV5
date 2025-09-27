@@ -38,6 +38,7 @@
   font-weight: bold;
   position: relative;
   margin-right:20px;
+  margin-left: auto;
 }
 .div_left__popup_Moyen{
   position: absolute;right:420px;bottom: 2%;
