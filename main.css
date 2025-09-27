@@ -20,14 +20,14 @@
   background: white;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  align-items: center;
 }
 .listPopupMoyenp1, .listPopupMoyenp2{
   font-size: 15px; 
   color: black;
   font-weight: bold;
   position:absolute;
-  bottom: 7px;
-  right: 20px
+  left: 20px
 }
 .listPopupMoyenb1, .listPopupMoyenb2{
   background: transparent;
@@ -36,7 +36,6 @@
   color: black;
   font-weight: bold;
   position: absolute;
-  bottom: 7px;
   right: 20px
 }
 .div_left__popup_Moyen{
