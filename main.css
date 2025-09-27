@@ -34,9 +34,9 @@
   align-items: center;
 }
 .listPopupMoyenp1, .listPopupMoyenp2, .listPopupMoyenp3, .listPopupMoyenp4, .listPopupMoyenp5{
-  font-size: 15px; 
+  size: 15px; 
   color: black;
-  font-weight: bold;
+  weight: bold;
   position:relative;
   margin-left:20px;
 }
