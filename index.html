@@ -220,7 +220,7 @@
   }
   async function listPopupMoyen() {
     const selectMatiere = document.getElemntById("SELlistPopupMoyen");
-    const action = 2; 
+    const action = 3; 
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
         method: 'POST',
@@ -233,6 +233,11 @@
       });
 
       const data = await  respons.json();
+      document.getElementById('listPopupMoyenp1').textContent = data.p1;
+      document.getElementById('listPopupMoyenp2').textContent = data.p2;
+      document.getElementById('listPopupMoyenp3').textContent = data.p3;
+      document.getElementById('listPopupMoyenp4').textContent = data.p4;
+      document.getElementById('listPopupMoyenp5').textContent = data.p5;
       }
   }
   async function loadMoyenneGenerale() {
