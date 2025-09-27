@@ -7,7 +7,7 @@
   background: white;
   border-radius: 15px;
   display: flex; /* les enfants seront sur la même ligne */
-  justify-content: column; /* aligne à gauche */
+  flex-direction: column; /* aligne à gauche */
   align-items: flex-end;
   gap: 20px; /* espace entre les div */
   margin-right: 40px;
