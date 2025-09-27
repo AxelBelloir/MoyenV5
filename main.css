@@ -19,8 +19,8 @@
   color: black;
   font-style:italic;
   position:absolute;
-  bottom:2%;
-  right:2%;
+  bottom:10px;
+  right:10px;
   transform: translateX(-50%);
 }
 .listPopupMoyenba1{
