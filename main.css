@@ -26,8 +26,8 @@
   font-size: 15px; 
   color: black;
   font-weight: bold;
-  position:absolute;
-  left: 20px
+  position:relative;
+  margin-left:20px;
 }
 .listPopupMoyenb1, .listPopupMoyenb2{
   background: transparent;
@@ -35,8 +35,8 @@
   font-size: 15px; 
   color: black;
   font-weight: bold;
-  position: absolute;
-  right: 20px
+  position: relative;
+  margin-right: 20px;
 }
 .div_left__popup_Moyen{
   position: absolute;right:420px;bottom: 2%;
