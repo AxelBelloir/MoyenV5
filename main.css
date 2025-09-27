@@ -26,8 +26,8 @@
   color: black;
   font-weight: bold;
   position:absolute;
-  left: 20px;
-  bottom:0.01px;
+  bottom: 7px;
+  right: 20px
 }
 .listPopupMoyenb1, .listPopupMoyenb2{
   background: transparent;
