@@ -6,6 +6,9 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
+  display: flex; /* les enfants seront sur la même ligne */
+  justify-content: flex-start; /* aligne à gauche */
+  gap: 20px; /* espace entre les div */
 }
 .listPopupMoyen1, .listPopupMoyen2{
   position:relative;
