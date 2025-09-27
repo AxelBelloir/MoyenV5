@@ -9,8 +9,8 @@
   display: flex; /* les enfants seront sur la même ligne */
   flex-direction: column; /* aligne à gauche */
   align-items: flex-end;
-  gap: 20px; /* espace entre les div */
-  margin-right: 40px;
+  gap: 5px; /* espace entre les div */
+  margin-right: 5px;
 }
 .listPopupMoyen1, .listPopupMoyen2{
   position:relative;
