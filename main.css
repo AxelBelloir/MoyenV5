@@ -16,8 +16,8 @@
   background: transparent;
   border: none;
   color:black;
-  font-weight: bold;
-  font-size: 15px; 
+  weight: bold;
+  size: 15px; 
   position:absolute;
   left:90%;
   top:40%;
@@ -34,9 +34,9 @@
   align-items: center;
 }
 .listPopupMoyenp1, .listPopupMoyenp2, .listPopupMoyenp3, .listPopupMoyenp4, .listPopupMoyenp5{
-  size: 15px; 
+  font-size: 15px; 
   color: black;
-  weight: bold;
+  font-weight: bold;
   position:relative;
   margin-left:20px;
 }
