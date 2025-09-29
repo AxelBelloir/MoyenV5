@@ -477,7 +477,7 @@
   // On récupère l'élément <select> pour la matière (une seule déclaration)
 const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
 const selectElement1 = document.getElementById('SELlistPopupMoyen');
-const SELmatiere = document.getElementById('SELmatiere');
+const SELmatiere = document.getElementById('matiere');
 
 // Fonction qui envoie la matière sélectionnée au serveur et affiche la moyenne par matière
 async function SendMatiere() {
@@ -519,7 +519,7 @@ async function SendMatiere() {
 }
 function EspAngMoyen() {
   const matiere = document.getElementById('SELmatiere1').value;
-  if (matieree == 'Anglais'){
+  if (matiere == 'Anglais'){
     document.getElementById('SELmatiere1').style.display = 'block'
   }
   if (matiere == 'Espagnole') {
