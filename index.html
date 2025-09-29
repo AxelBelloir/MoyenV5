@@ -119,6 +119,13 @@
         <option value="Latin">Latin</option>
         <option value="Chorale">Chorale</option>
       </select>
+      <select class="SELmatiere1" id="SELmatiere1" style="display:none;">
+        <option value="EE">EE</option>
+        <option value="CE">CE</option>
+        <option value="CO">CO</option>
+        <option value="EOC">EOC</option>
+        <option value="EOI">EOI</option>
+      </select> 
       <button class="button_registe_moyenne" onclick="sendnote()">Enregistrer la note</button>
     </div>
   </div>
@@ -470,7 +477,7 @@
   // On récupère l'élément <select> pour la matière (une seule déclaration)
 const selectElement = document.getElementById('matiere_div_left__popup_Moyen');
 const selectElement1 = document.getElementById('SELlistPopupMoyen');
-
+const SELmatiere = document.getElementById('SELmatiere');
 
 // Fonction qui envoie la matière sélectionnée au serveur et affiche la moyenne par matière
 async function SendMatiere() {
@@ -510,11 +517,22 @@ async function SendMatiere() {
     open_popup_result();
   }
 }
+function EspAngMoyen() {
+  if (SELmatiere == 'Anglais'){
+    document.getElementById('SELmatiere1').style.display = 'block'
+  }
+  if (SELmatiere == 'Espagnole') {
+    document.getElementById('SELmatiere1').style.display = 'block'
+  }
+  else {
+    document.getElementById('SELmatiere1').style.display = 'none'
+  }
+}
 
 // On attache la fonction au changement de sélection (une seule fois)
 selectElement.addEventListener('change', SendMatiere);
 selectElement1.addEventListener('change', listPopupMoyen);
-
+SELmatiere.addEventListener('change', EspAngMoyen);
 </script>
 </body>
 </html>
