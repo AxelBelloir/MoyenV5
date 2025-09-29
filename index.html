@@ -518,10 +518,11 @@ async function SendMatiere() {
   }
 }
 function EspAngMoyen() {
-  if (SELmatiere == 'Anglais'){
+  const matiere = document.getElementById('SELmatiere1').value;
+  if (matieree == 'Anglais'){
     document.getElementById('SELmatiere1').style.display = 'block'
   }
-  if (SELmatiere == 'Espagnole') {
+  if (matiere == 'Espagnole') {
     document.getElementById('SELmatiere1').style.display = 'block'
   }
   else {
