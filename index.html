@@ -156,6 +156,7 @@
   function open_popup_Moyen() {
     closeAllPopups();
     loadMoyenneGenerale();
+    listPopupMoyen();
     document.getElementById('Home').style.display = 'none';
     document.getElementById('popup_Moyen').style.display = 'block';
   }
@@ -219,7 +220,7 @@
     close_popup_question();
   }
   async function listPopupMoyen() {
-    const selectMatiere = document.getElemntById("SELlistPopupMoyen").value;
+    const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
     const action = 3; 
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
