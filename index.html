@@ -522,12 +522,13 @@ function EspAngMoyen() {
   if (matiere == 'Anglais'){
     document.getElementById('SELmatiere1').style.display = 'block'
   }
-  elif (matiere == 'Espagnole') {
+  else {
+  if (matiere == 'Espagnole') {
     document.getElementById('SELmatiere1').style.display = 'block'
   }
   else {
     document.getElementById('SELmatiere1').style.display = 'none'
-  }
+  }}
 }
 
 // On attache la fonction au changement de sélection (une seule fois)
