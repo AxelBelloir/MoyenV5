@@ -67,11 +67,11 @@
         <option value="Latin">Latin</option>
         <option value="Chorale">Chorale</option>
       </select>
-      <div class="listPopupMoyen1" id="listPopupMoyen1"><p class="listPopupMoyenp1" id="listPopupMoyenp1">Chargement</p><button type="button" class="listPopupMoyenb1" onclick="supprimerNotes">Delete</button></div>
-      <div class="listPopupMoyen2" id="listPopupMoyen2"><p class="listPopupMoyenp2" id="listPopupMoyenp2">Chargement</p><button type="button" class="listPopupMoyenb2" onclick="supprimerNotes">Delete</button></div>
-      <div class="listPopupMoyen3" id="listPopupMoyen3"><p class="listPopupMoyenp3" id="listPopupMoyenp3">Chargement</p><button type="button" class="listPopupMoyenb3" onclick="supprimerNotes">Delete</button></div>
-      <div class="listPopupMoyen4" id="listPopupMoyen4"><p class="listPopupMoyenp4" id="listPopupMoyenp4">Chargement</p><button type="button" class="listPopupMoyenb4" onclick="supprimerNotes">Delete</button></div>
-      <div class="listPopupMoyen5" id="listPopupMoyen5"><p class="listPopupMoyenp5" id="listPopupMoyenp5">Chargement</p><button type="button" class="listPopupMoyenb5" onclick="supprimerNotes">Delete</button></div>
+      <div class="listPopupMoyen1" id="listPopupMoyen1"><p class="listPopupMoyenp1" id="listPopupMoyenp1">Chargement</p><button type="button" class="listPopupMoyenb1" onclick="supprimerNotes()">Delete</button></div>
+      <div class="listPopupMoyen2" id="listPopupMoyen2"><p class="listPopupMoyenp2" id="listPopupMoyenp2">Chargement</p><button type="button" class="listPopupMoyenb2" onclick="supprimerNotes()">Delete</button></div>
+      <div class="listPopupMoyen3" id="listPopupMoyen3"><p class="listPopupMoyenp3" id="listPopupMoyenp3">Chargement</p><button type="button" class="listPopupMoyenb3" onclick="supprimerNotes()">Delete</button></div>
+      <div class="listPopupMoyen4" id="listPopupMoyen4"><p class="listPopupMoyenp4" id="listPopupMoyenp4">Chargement</p><button type="button" class="listPopupMoyenb4" onclick="supprimerNotes()">Delete</button></div>
+      <div class="listPopupMoyen5" id="listPopupMoyen5"><p class="listPopupMoyenp5" id="listPopupMoyenp5">Chargement</p><button type="button" class="listPopupMoyenb5" onclick="supprimerNotes()">Delete</button></div>
     </div>
     <div class="div_left__popup_Moyen" id="div_left__popup_Moyen">
       <h2 class="h2_div_left__popup_Moyen">Moyen</h2>
@@ -219,7 +219,7 @@
     close_popup_question();
   }
   async function listPopupMoyen() {
-    const selectMatiere = document.getElemntById("SELlistPopupMoyen");
+    const selectMatiere = document.getElemntById("SELlistPopupMoyen").value;
     const action = 3; 
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
@@ -232,7 +232,7 @@
         })
       });
 
-      const data = await  respons.json();
+      const data = await  response.json();
       document.getElementById('listPopupMoyenp1').textContent = data.p1;
       document.getElementById('listPopupMoyenp2').textContent = data.p2;
       document.getElementById('listPopupMoyenp3').textContent = data.p3;
