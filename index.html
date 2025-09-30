@@ -289,7 +289,6 @@
     const noteStr = document.getElementById('INnote').value.trim();
     const surStr = document.getElementById('INsur').value.trim();
     const coefStr = document.getElementById('INcoef').value.trim();
-    const autre = "";
 
     if (!window.nom || window.nom === "Invité") {
       document.getElementById('result_message').innerText = 'Connecte-toi avant d’ajouter une note.';
@@ -300,6 +299,7 @@
     const note = parseFloat(noteStr.replace(',', '.'));
     const sur = parseFloat(surStr.replace(',', '.'));
     const coef = parseFloat(coefStr.replace(',', '.'));
+    const autre = document.getElementById('SELmatiere1').value;
 
     if (!matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
       document.getElementById('result_message').innerText = 'Tous les champs doivent être remplis avec des nombres valides.';
