@@ -299,15 +299,11 @@
     const note = parseFloat(noteStr.replace(',', '.'));
     const sur = parseFloat(surStr.replace(',', '.'));
     const coef = parseFloat(coefStr.replace(',', '.'));
-    if (matiere == "Anglais"){
-      const autre = document.getElementById('SELmatiere1').value;
-    } else {
-        if (matiere == "Espagnole"){
-          const autre = document.getElementById('SELmatiere1').value;
-      } else {
-          const autre = "";
-        }
-    }
+    let autre = "";
+if (matiere === "Anglais" || matiere === "Espagnole") {
+  autre = document.getElementById('SELmatiere1').value;
+}
+
       
 
     if (!matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
