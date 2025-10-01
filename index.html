@@ -302,9 +302,12 @@
     if (matiere == "Anglais"){
       const autre = document.getElementById('SELmatiere1').value;
     } else {
-      if (matiere == "Espagnole"){
-        const autre = document.getElementById('SELmatiere1').value;
-      }}
+        if (matiere == "Espagnole"){
+          const autre = document.getElementById('SELmatiere1').value;
+      } else {
+          const autre = "";
+        }
+    }
       
 
     if (!matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
