@@ -299,7 +299,13 @@
     const note = parseFloat(noteStr.replace(',', '.'));
     const sur = parseFloat(surStr.replace(',', '.'));
     const coef = parseFloat(coefStr.replace(',', '.'));
-    const autre = document.getElementById('SELmatiere1').value;
+    if (matiere == "Anglais"){
+      const autre = document.getElementById('SELmatiere1').value;
+    } else {
+      if (matiere == "Espagnole"){
+        const autre = document.getElementById('SELmatiere1').value;
+      }}
+      
 
     if (!matiere || isNaN(note) || isNaN(sur) || isNaN(coef)) {
       document.getElementById('result_message').innerText = 'Tous les champs doivent être remplis avec des nombres valides.';
