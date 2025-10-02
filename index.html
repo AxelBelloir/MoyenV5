@@ -13,11 +13,14 @@
     <button class="Home_button" onclick="open_div_Home()">Home</button>
     <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
     <button class="buton_question" onclick="open_popup_question()">Question</button>
-    <p class="buton_se_connecter" id="text_place_button_se_connecter" style="display:none;"></p>
+    <button class="buton_se_connecter" id="text_place_button_se_connecter" onclick="ParametresCompte()" style="display:none;"></button>
+    <button class="buton_Admin" id="buton_admin" onclick="open_popup_admin()" style="display:none;">Admin</button>
   </div>
 
   <div id="overlay"></div>
-
+  <div class="Admin" id="Admin">
+    <p></p>
+  </div>
   <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
     <p class="decors1">__</p>
     <h2 class="h2_connexion">Connexion</h2>
@@ -150,7 +153,14 @@
     }
   }
   chargerNotesInitiales();
-
+  async function Admin() {
+    return
+  }
+  function B1Admin() {
+    if (window.nom == "Admin") {
+      document.getElementById('buton_admin').style.display = 'block';
+    }
+  }
   function open_popup_question() {
     closeAllPopups();
     close_div_Home();
@@ -159,6 +169,15 @@
   }
   function close_popup_question() {
     document.getElementById('Question').style.display = 'none';
+  }
+  function open_popup_admin() {
+    closeAllPopups();
+    close_div_Home();
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('Admin').style.display = 'block';
+  }
+  function close_popup_admin() {
+    document.getElementById('Admin').style.display = 'none';
   }
   function open_popup_Moyen() {
     closeAllPopups();
@@ -222,6 +241,7 @@
   }
   function closeAllPopups() {
     close_popup_se_connecter();
+    close_popup_admin();
     close_popup_create_compte();
     close_popup_Moyen();
     close_popup_question();
@@ -380,6 +400,7 @@ if (matiere === "Anglais" || matiere === "Espagnole") {
         document.getElementById('buton_se_connecter').style.display = 'none';
         document.getElementById('text_place_button_se_connecter').textContent = window.nom;
         document.getElementById('text_place_button_se_connecter').style.display = 'block';
+        B1Admin();
       }
 
       open_popup_result();
@@ -411,7 +432,7 @@ if (matiere === "Anglais" || matiere === "Espagnole") {
 
     const mp = firstMp;
     const action = 1;
-
+    if (name !== "Admin") {
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/greet', {
         method: 'POST',
@@ -424,6 +445,9 @@ if (matiere === "Anglais" || matiere === "Espagnole") {
       open_popup_result();
     } catch (error) {
       document.getElementById('result_message').innerText = 'Erreur lors de la création : ' + error.message;
+      open_popup_result();
+    }} else {
+      document.getElementById('result_message').innerText = 'Vous ne pouvez pas vous appeller -> Admin';
       open_popup_result();
     }
   }
