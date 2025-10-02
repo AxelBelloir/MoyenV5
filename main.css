@@ -222,7 +222,7 @@ body {
   padding-top: 25px;
 }
 /* Boutons */
-.Home_button,  .buton_Moyen, .buton_question {
+.Home_button,  .buton_Moyen, .buton_question, .buton_Admin {
   position: absolute;
   background: transparent;
   border: none;
@@ -246,6 +246,7 @@ body {
 .Home_button { top: 100px; }
 .buton_Moyen { top: 150px; }
 .buton_question { top: 200px; }
+.buton_Admin {top: 250px; }
 /* Overlay */
 #overlay {
   display: none;
