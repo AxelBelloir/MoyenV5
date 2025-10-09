@@ -19,7 +19,7 @@
 
   <div id="overlay"></div>
   <div class="Admin" id="Admin">
-    <p></p>
+    <p id="donneeCompte" class="pdonneCompte"></p>
   </div>
   <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
     <p class="decors1">__</p>
@@ -246,6 +246,7 @@
     close_popup_Moyen();
     close_popup_question();
   }
+
  async function listPopupMoyen() {
   const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
   const action = 3; 
@@ -545,6 +546,48 @@ async function SendMatiere() {
     // En cas d'erreur, affichage du message
     document.getElementById('result_message').innerText = 'Erreur lors de la récupération de la moyenne : ' + error.message;
     open_popup_result();
+  }
+}
+async function AccesDonneeAdmin() {
+  if (window.nom == "Admin"){
+    try {
+    // Envoi des données au serveur
+    const action = 0;
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        id: window.nom,
+        action,
+      })
+    });
+
+    const data = await response.json();
+  } catch (error) {
+    // En cas d'erreur, affichage du message
+    document.getElementById('result_message').innerText = "Erreur system";
+    open_popup_result();
+  }
+  }else{
+    try {
+    // Envoi des données au serveur
+    const date = Date.now();
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/requete', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        id: window.nom,
+        date
+      })
+    });
+
+    document.getElementById("result_message").innerText = "Un message a été envoyer aux admin.";
+    open_popup_result();
+  } catch (error) {
+    // En cas d'erreur, affichage du message
+    document.getElementById('result_message').innerText = "Erreur system";
+    open_popup_result();
+  }
   }
 }
 function EspAngMoyen() {
