@@ -560,9 +560,12 @@ async function AccesDonneeAdmin() {
         id: window.nom,
         action,
       })
+      
     });
 
     const data = await response.json();
+
+    document.getElementById("donneeCompte").innerText = data.value;
   } catch (error) {
     // En cas d'erreur, affichage du message
     document.getElementById('result_message').innerText = "Erreur system";
