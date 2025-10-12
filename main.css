@@ -4,9 +4,8 @@
   font-size: 15px; 
   color: black;
   font-weight: bold;
-  position: relative;
-  margin-right:20px;
-  margin-left: auto;
+  position: absolute;
+  right:20px;
 }
 .SELmatiere1{
   background: transparent;
