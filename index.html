@@ -180,6 +180,106 @@
     open_popup_result();
   }
 }
+  async function supprimerNotesp2() {
+    const action = 4; 
+    const noteID = p2ID;
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+        action,
+        id: window.nom,
+        noteID,
+      })
+    });
+      const data = await  response.json();
+      open_popup_result();
+      listPopupMoyen();
+      loadMoyenneGenerale();
+      SendMatiere();
+     } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
+  async function supprimerNotesp3() {
+    const action = 4; 
+    const noteID = p3ID;
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+        action,
+        id: window.nom,
+        noteID,
+      })
+    });
+      const data = await  response.json();
+      open_popup_result();
+      listPopupMoyen();
+      loadMoyenneGenerale();
+      SendMatiere();
+     } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
+  async function supprimerNotesp4() {
+    const action = 4; 
+    const noteID = p2ID;
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+        action,
+        id: window.nom,
+        noteID,
+      })
+    });
+      const data = await  response.json();
+      open_popup_result();
+      listPopupMoyen();
+      loadMoyenneGenerale();
+      SendMatiere();
+     } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
+  async function supprimerNotesp5() {
+    const action = 4; 
+    const noteID = p5ID;
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+        action,
+        id: window.nom,
+        noteID,
+      })
+    });
+      const data = await  response.json();
+      open_popup_result();
+      listPopupMoyen();
+      loadMoyenneGenerale();
+      SendMatiere();
+     } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
   async function AdminSupALLCompte() {
     const action = 1;
     const mp = document.getElemntById('input_mp').value.trim();
@@ -195,7 +295,8 @@
     });
 
     const data = await  response.json();
-    document.getElementById('popup_result').inner.text = data.message
+    document.getElementById('popup_result').inner.text = data.message;
+    open_popup_result();
   } catch (error) {
     console.error("Erreur lors du chargement des moyennes :", error);
     // Optionnel : afficher un message à l'utilisateur
