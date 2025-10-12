@@ -139,6 +139,7 @@
   </div>
 
 <script>
+  let p1ID, p2ID, p3ID, p4ID, p5ID;
   async function chargerNotesInitiales() {
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
@@ -293,11 +294,11 @@
     document.getElementById('listPopupMoyenp3').textContent = data.p3;
     document.getElementById('listPopupMoyenp4').textContent = data.p4;
     document.getElementById('listPopupMoyenp5').textContent = data.p5;
-    const p1ID = data.p1ID;
-    const p2ID = data.p2ID;
-    const p3ID = data.p3ID;
-    const p4ID = data.p4ID;
-    const p5ID = data.p5ID;
+    p1ID = data.p1ID;
+    p2ID = data.p2ID;
+    p3ID = data.p3ID;
+    p4ID = data.p4ID;
+    p5ID= data.p5ID;
   } catch (error) {
     console.error("Erreur lors du chargement des moyennes :", error);
     // Optionnel : afficher un message à l'utilisateur
