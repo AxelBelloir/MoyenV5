@@ -282,7 +282,7 @@
 }
   async function AdminSupALLCompte() {
     const action = 1;
-    const mp = document.getElemenntById('input_mp').value.trim();
+    const mp = document.getElementById('input_mp').value.trim();
     try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
       method: 'POST',
@@ -295,7 +295,7 @@
     });
 
     const data = await  response.json();
-    document.getElementById('popup_result').innerText = data.message;
+    document.getElementById('result_message').innerText = data.message;
     open_popup_result();
   } catch (error) {
     console.error("Erreur lors du chargement des moyennes :", error);
