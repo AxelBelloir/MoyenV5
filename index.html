@@ -282,7 +282,7 @@
   }
 }
   async function AdminRecupALLCompte() {
-    const action = 1;
+    const action = 0;
     try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
       method: 'POST',
@@ -295,7 +295,7 @@
     });
 
     const data = await  response.json();
-    document.getElementById('result_message').innerText = data.message;
+    document.getElementById('donneeCompte').innerText = data.message;
     
   } catch (error) {
     console.error("Erreur lors du chargement des comptes :", error);
@@ -344,7 +344,7 @@
   function open_popup_admin() {
     closeAllPopups();
     close_div_Home();
-    AdminRecupALLCompte()
+    AdminRecupALLCompte();
     document.getElementById('Home').style.display = 'none';
     document.getElementById('Admin').style.display = 'block';
   }
