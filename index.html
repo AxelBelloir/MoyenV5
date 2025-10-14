@@ -146,15 +146,10 @@
   fetch('/requeteadmin')
   .then(response => response.json())
   .then(data => {
-    const container = document.getElementById('log-container');
-    container.innerHTML = ''; // Vider avant d'ajouter (optionnel)
-    
-    data.forEach(log => {
-      const p = document.createElement('p');
-      p.textContent = log;
-      container.appendChild(p);
-    });
+    const logsElement = document.getElementById('logs');
+    logsElement.innerText = data.join('\n'); // ou .join('<br>') si innerHTML
   });
+
   let p1ID, p2ID, p3ID, p4ID, p5ID;
   let mp;
   async function chargerNotesInitiales() {
