@@ -20,7 +20,7 @@
   <div id="overlay"></div>
   <div class="Admin" id="Admin">
     <p id="donneeCompte" class="pdonneCompte"></p>
-    <p id="logs" class="logs"></p>
+    <pre id="logs" class="logs"></pre>
     <button id="supALLcompte" class="supALLcompte" onclick="AdminSupALLCompte()">SUPPRIMER TOUT LES COMPTES</button>
     <button id="supALLnotes" class="supALLnotes" onclick="AdminSupALLnotes()">SUPPRIMER TOUTE LES NOTES</button>
     <button id="SeconnecterAdmin" class="SeconnecterAdmin" onclick="open_popup_se_connecter()">Se connecter Admin</button>
@@ -147,9 +147,8 @@
   .then(response => response.json())
   .then(data => {
     const logsElement = document.getElementById('logs');
-    logsElement.innerText = data.join('\n'); // ou .join('<br>') si innerHTML
+    logsElement.innerText = data.logs.map(log => log.join(' - ')).join('\n');
   });
-
   let p1ID, p2ID, p3ID, p4ID, p5ID;
   let mp;
   async function chargerNotesInitiales() {
@@ -311,7 +310,7 @@
     });
 
     const data = await  response.json();
-    document.getElementById('logs').innerText = data.message;
+    document.getElementById('logs').innerText = data.logs;
     
   } catch (error) {
     console.error("Erreur lors du chargement des comptes :", error);
