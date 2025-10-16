@@ -23,6 +23,7 @@
     <pre id="logs" class="logs"></pre>
     <button id="supALLcompte" class="supALLcompte" onclick="AdminSupALLCompte()">SUPPRIMER TOUT LES COMPTES</button>
     <button id="supALLnotes" class="supALLnotes" onclick="AdminSupALLnotes()">SUPPRIMER TOUTE LES NOTES</button>
+    <button id="supALLlogs" class="supALLlogs" onclick="AdminSupALLlogs()">SUPPRIMER TOUT LES LOGS</button>
     <button id="SeconnecterAdmin" class="SeconnecterAdmin" onclick="open_popup_se_connecter()">Se connecter Admin</button>
   </div>
   <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
@@ -371,6 +372,29 @@
     console.error("Erreur lors du chargement des moyennes :", error);
     // Optionnel : afficher un message à l'utilisateur
     document.getElementById('result_message').innerText = 'Erreur lors de la suppresion des comptes : ' + error.message;
+    open_popup_result();
+  }
+  }
+  async function AdminSupALLCompte() {
+    const action = 4;
+    try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      action,
+      id: window.nom,
+      mp,
+      })
+    });
+
+    const data = await  response.json();
+    document.getElementById('result_message').innerText = data.message;
+    open_popup_result();
+  } catch (error) {
+    console.error("Erreur lors du chargement des logs :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors de la suppresion des logs : ' + error.message;
     open_popup_result();
   }
   }
