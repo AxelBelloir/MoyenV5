@@ -13,7 +13,7 @@
   color:black;
   
 }
-.supALLcompte, .supALLnotes, .SeconnecterAdmin{
+.supALLcompte, .supALLnotes, .SeconnecterAdmin, .supALLlogs{
   background: transparent;
   border: none;
   font-size: 15px; 
@@ -25,6 +25,7 @@
 .supALLnotes{position:absolute; top:65px;}
 .supALLcompte{position:absolute; top:15px;}
 .SeconnecterAdmin{position:absolute; top:115px;}
+.supALLlogs{position:absolute; top:165px;}
 .SELmatiere1{
   background: transparent;
   border: none;
