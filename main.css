@@ -3,6 +3,7 @@
   position:absolute;
   top:30px;
   left:200px;
+  font-size:8px;
 }
 .pdonneCompte {
   position:absolute;
@@ -402,7 +403,7 @@ body {
 }
 .Welcome {
   position: absolute; top: 8%; left: 33%;
-  font-size: 1px;
+  font-size: 30px;
 
 }
 #Home_div_left {
