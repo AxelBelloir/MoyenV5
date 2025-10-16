@@ -143,12 +143,7 @@
   </div>
 
 <script>
-  fetch('/requeteadmin')
-  .then(response => response.json())
-  .then(data => {
-    const logsElement = document.getElementById('logs');
-    logsElement.innerText = data.logs.map(log => log.join(' - ')).join('\n');
-  });
+  
   let p1ID, p2ID, p3ID, p4ID, p5ID;
   let mp;
   async function chargerNotesInitiales() {
@@ -296,29 +291,43 @@
   }
   }
     
-  async function AdminRecupALLLogs() {
-    const action = 3;
-    try {
+  async function chargerLogsAdmin() {
+  const action = 3;
+
+  try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-      action,
-      id: window.nom,
-      mp,
+      body: JSON.stringify({
+        action: action,
+        id: window.nom,    // ⚠️ Assure-toi que window.nom est bien défini !
+        mp: window.mp      // ⚠️ Assure-toi que window.mp est bien défini !
       })
     });
 
-    const data = await  response.json();
-    document.getElementById('logs').innerText = data.logs;
-    
+    const data = await response.json();
+
+    if (data.logs) {
+      const logsElement = document.getElementById('logs');
+      logsElement.innerText = data.logs
+        .map(log => log.join(' - '))
+        .join('\n');
+    } else {
+      throw new Error(data.message || 'Aucune donnée de logs reçue.');
+    }
+
   } catch (error) {
-    console.error("Erreur lors du chargement des comptes :", error);
-    // Optionnel : afficher un message à l'utilisateur
-    document.getElementById('result_message').innerText = 'Erreur lors du chargement des logs : ' + error.message;
-    open_popup_result();
+    console.error("Erreur lors du chargement des logs :", error);
+    document.getElementById('result_message').innerText =
+      'Erreur lors du chargement des logs : ' + error.message;
+
+    // Si tu as une fonction pour ouvrir une popup de résultat
+    if (typeof open_popup_result === "function") {
+      open_popup_result();
+    }
   }
-  }
+}
+
   async function AdminRecupALLCompte() {
     const action = 0;
     try {
