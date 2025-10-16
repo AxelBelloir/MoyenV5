@@ -389,6 +389,7 @@
     });
 
     const data = await  response.json();
+    AdminRecupALLLogs();
     document.getElementById('result_message').innerText = data.message;
     open_popup_result();
   } catch (error) {
