@@ -15,16 +15,19 @@
     <button class="buton_question" onclick="open_popup_question()">Question</button>
     <button class="buton_se_connecter" id="text_place_button_se_connecter" onclick="ParametresCompte()" style="display:none;"></button>
     <button class="buton_Admin" id="buton_admin" onclick="open_popup_admin()" style="display:none;">Admin</button>
+    <button class="buton_Logs" id="buton_Logs" onclick="open_popup_Logs()" style="display:none;">Logs</button>
   </div>
 
   <div id="overlay"></div>
   <div class="Admin" id="Admin">
     <p id="donneeCompte" class="pdonneCompte"></p>
-    <pre id="logs" class="logs"></pre>
     <button id="supALLcompte" class="supALLcompte" onclick="AdminSupALLCompte()">SUPPRIMER TOUT LES COMPTES</button>
     <button id="supALLnotes" class="supALLnotes" onclick="AdminSupALLnotes()">SUPPRIMER TOUTE LES NOTES</button>
     <button id="supALLlogs" class="supALLlogs" onclick="AdminSupALLlogs()">SUPPRIMER TOUT LES LOGS</button>
     <button id="SeconnecterAdmin" class="SeconnecterAdmin" onclick="open_popup_se_connecter()">Se connecter Admin</button>
+  </div>
+  <div class="Logs" id="Logs">
+    <pre id="logs" class="logs"></pre>
   </div>
   <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
     <p class="decors1">__</p>
@@ -425,6 +428,7 @@
   function B1Admin() {
     if (window.nom == "Admin") {
       document.getElementById('buton_admin').style.display = 'block';
+      document.getElementById('buton_Logs').style.display = 'block';
     }
   }
   function open_popup_question() {
@@ -435,6 +439,16 @@
   }
   function close_popup_question() {
     document.getElementById('Question').style.display = 'none';
+  }
+  function open_popup_Logs() {
+    closeAllPopups();
+    close_div_Home();
+    AdminRecupALLLogs();
+    document.getElementById('Home').style.display = 'none';
+    document.getElementById('Logs').style.display = 'block';
+  }
+  function close_popup_admin() {
+    document.getElementById('Logs').style.display = 'none';
   }
   function open_popup_admin() {
     closeAllPopups();
