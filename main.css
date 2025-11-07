@@ -250,7 +250,7 @@ body {
   padding-top: 25px;
 }
 /* Boutons */
-.Home_button,  .buton_Moyen, .buton_question, .buton_Admin {
+.Home_button,  .buton_Moyen, .buton_question, .buton_Admin, .buton_Logs{
   position: absolute;
   background: transparent;
   border: none;
@@ -275,6 +275,7 @@ body {
 .buton_Moyen { top: 150px; }
 .buton_question { top: 200px; }
 .buton_Admin {top: 250px; }
+.buton_Logs {top: 300px; }
 /* Overlay */
 #overlay {
   display: none;
