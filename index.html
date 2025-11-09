@@ -61,8 +61,8 @@
 
   <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
     <div class="listPopupMoyen" id="listPopupMoyen">
-      <button type="button" onclick="listPopupMoyenHaut()" class="listPopupMoyenba1" id="listPopupMoyenba1">⥣</button>
-      <button type="button" onclick="listPopupMoyenBas()" class="listPopupMoyenba2" id="listPopupMoyenba2">⥥</button>
+      <button type="button" onclick="listPopupMoyenH()" class="listPopupMoyenba1" id="listPopupMoyenba1">⥣</button>
+      <button type="button" onclick="listPopupMoyenB()" class="listPopupMoyenba2" id="listPopupMoyenba2">⥥</button>
       <select class="SELlistPopupMoyen" id="SELlistPopupMoyen" name="matiere">
         <option value="Mathématiques">Mathématiques</option>
         <option value="Physique">Physique</option>
@@ -150,6 +150,7 @@
   
   let p1ID, p2ID, p3ID, p4ID, p5ID;
   let mp;
+  let nmb;
   async function chargerNotesInitiales() {
     try {
       const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
@@ -529,10 +530,10 @@
     close_popup_Moyen();
     close_popup_question();
   }
-
- async function listPopupMoyen() {
+   async function listPopupMoyenH() {
   const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
-  const action = 3; 
+  const action = 3;
+  nmb = nmb + 1;
   try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
       method: 'POST',
@@ -541,6 +542,75 @@
       action,
       id: window.nom,
       selectMatiere,
+      nmb,
+      })
+    });
+
+    const data = await  response.json();
+    document.getElementById('listPopupMoyenp1').textContent = data.p1;
+    document.getElementById('listPopupMoyenp2').textContent = data.p2;
+    document.getElementById('listPopupMoyenp3').textContent = data.p3;
+    document.getElementById('listPopupMoyenp4').textContent = data.p4;
+    document.getElementById('listPopupMoyenp5').textContent = data.p5;
+    p1ID = data.p1ID;
+    p2ID = data.p2ID;
+    p3ID = data.p3ID;
+    p4ID = data.p4ID;
+    p5ID= data.p5ID;
+  } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
+ async function listPopupMoyenB() {
+  const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
+  const action = 3;
+  nmb = nmb - 1;
+  try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      action,
+      id: window.nom,
+      selectMatiere,
+      nmb,
+      })
+    });
+
+    const data = await  response.json();
+    document.getElementById('listPopupMoyenp1').textContent = data.p1;
+    document.getElementById('listPopupMoyenp2').textContent = data.p2;
+    document.getElementById('listPopupMoyenp3').textContent = data.p3;
+    document.getElementById('listPopupMoyenp4').textContent = data.p4;
+    document.getElementById('listPopupMoyenp5').textContent = data.p5;
+    p1ID = data.p1ID;
+    p2ID = data.p2ID;
+    p3ID = data.p3ID;
+    p4ID = data.p4ID;
+    p5ID= data.p5ID;
+  } catch (error) {
+    console.error("Erreur lors du chargement des moyennes :", error);
+    // Optionnel : afficher un message à l'utilisateur
+    document.getElementById('result_message').innerText = 'Erreur lors du chargement des moyennes : ' + error.message;
+    open_popup_result();
+  }
+}
+ async function listPopupMoyen() {
+  const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
+  const action = 3;
+  nmb = 1;
+  try {
+    const response = await fetch('https://flask-api-1p4y.onrender.com/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      action,
+      id: window.nom,
+      selectMatiere,
+      nmb,
       })
     });
 
