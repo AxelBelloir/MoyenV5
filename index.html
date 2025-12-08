@@ -307,7 +307,7 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: action,
-        id: window.nom,    // ⚠️ Assure-toi que window.nom est bien défini !
+        id: window.nom,  
         mp 
       })
     });
@@ -336,6 +336,7 @@
 }
   async function AdminSupOneCOMPTE(){
     const action = 5
+    const idSup =  document.getElementById('inputAdminSuppCompte').value;
       try {
     const response = await fetch('https://flask-api-1p4y.onrender.com/api/requeteadmin', {
       method: 'POST',
@@ -344,6 +345,7 @@
       action,
       id: window.nom,
       mp,
+      idSup;
       })
     });
 
