@@ -6,6 +6,14 @@
   font-size:25px;
   color:black;
 }
+.buttonAdminSupCompte{
+  position:absolute;
+  top:30px;
+  left:30%;
+  transform:translateX(-50%);
+  font-size:25px;
+  color:black;
+}
 .inputAdminSuppCompte{
   position:absolute;
   top:15px;
