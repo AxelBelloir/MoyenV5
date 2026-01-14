@@ -782,7 +782,7 @@ if (matiere === "Anglais" || matiere === "Espagnole") {
 
       document.getElementById('result_message').innerText = data.message;
       const dataValue = data.value;
-      if (data.message === "Connexion réussie." || data.message === "Bienvenue admin") {
+      if (data.message === "Connexion réussie" || data.message === "Bienvenue admin") {
         Object.defineProperty(window, 'nom', {
           value: data.value,
           writable: false,
