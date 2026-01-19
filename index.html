@@ -8,7 +8,12 @@
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  
+<div id="chargement">
+  <p id="chargementP1" class="chargementP">Chargement.</p>
+  <p id="chargementP2" class="chargementP" style="display:none;">Chargement..</p>
+  <p id="chargementP3" class="chargementP" style="display:none;">Chargement...</p>
+</div>
+<div id="site" style="display:none;">
   <div class="Barre_task">
     <button class="buton_se_connecter" id="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
     <button class="Home_button" onclick="open_div_Home()">Home</button>
@@ -152,7 +157,7 @@
     <p id="result_message" class="result_message"></p>
     <button id="bFermeP1" class="bFermeP1" onclick="close_popup_result()">x</button>
   </div>
-
+</div>
 <script>
   
   let p1ID, p2ID, p3ID, p4ID, p5ID;
