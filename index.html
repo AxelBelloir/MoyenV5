@@ -401,7 +401,14 @@
     });
 
     const data = await  response.json();
-    document.getElementById('donneeCompte').innerText = data.message;
+    if (data.message) {
+      const logsElement = document.getElementById('donneeCompte');
+      logsElement.innerText = data.message
+        .map(log => log.join(' - '))
+        .join('\n');
+    } else {
+      throw new Error(data.message || 'Aucune donnée de logs reçue.');
+    }
     
   } catch (error) {
     console.error("Erreur lors du chargement des comptes :", error);
