@@ -176,6 +176,10 @@
 
         // Quand le serveur a répondu
         clearInterval(intervalId);
+        loadingElement.textContent = "Connexion reussie";
+        document.getElementById('chargement').style.display = 'none';
+        document.getElementById('site').style.display = 'block';
+        
 
         console.log(data);
     } catch (error) {
