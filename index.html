@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="chargement">
-  <p id="loading" class="chargementP">Chargement.</p>
+  <div id="spinner" class="spinner"></div>
 </div>
 <div id="site" style="display:none;">
   <div class="Barre_task">
@@ -158,37 +158,25 @@
 </div>
 <script>
   async function envoyerRequete() {
-    const paragraphes = ["chargement.", "chargement..", "chargement..."];
-    let index = 0;
 
-    const loadingElement = document.getElementById("loading");
-
-    // Boucle qui tourne toutes les secondes
-    const intervalId = setInterval(() => {
-        loadingElement.textContent = paragraphes[index];
-        index = (index + 1) % paragraphes.length;
-    }, 1000);
 
     try {
-        // Requête serveur (exemple)
+        // La roue tourne automatiquement grâce au CSS
         const response = await fetch("https://flask-api-1p4y.onrender.com/");
         const data = await response.json();
 
-        // Quand le serveur a répondu
-        clearInterval(intervalId);
-        loadingElement.textContent = "Connexion reussie";
+        // CE QUI SE PASSE APRÈS LA RÉPONSE (inchangé)
         document.getElementById('chargement').style.display = 'none';
         document.getElementById('site').style.display = 'block';
-        
 
         console.log(data);
+
     } catch (error) {
-        clearInterval(intervalId);
         loadingElement.textContent = "Erreur ❌";
         console.error(error);
     }
-}
-  envoyerRequete()
+  }
+  envoyerRequete();
   let p1ID, p2ID, p3ID, p4ID, p5ID;
   let mp;
   let nmb;
