@@ -344,8 +344,6 @@
     if (data.logs) {
       const logsElement = document.getElementById('logs');
       logsElement.innerText = data.logs
-        .map(log => log.join(' - '))
-        .join('\n');
     } else {
       throw new Error(data.message || 'Aucune donnée de logs reçue.');
     }
