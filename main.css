@@ -5,6 +5,22 @@
   background: white;
   border-radius: 15px;
 }
+.pNameChessWithFriend{
+  position:absolute;
+  top:50px;
+  left:50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: black;
+  white-space: nowrap;
+}
+.NameChessWithFriend{
+  position:absolute;
+  top:65px;
+  left:50%;
+  transform: translateX(-50%);
+  width:40px;
+}
 
 .spinner {
   width: 40px;
