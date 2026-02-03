@@ -16,7 +16,7 @@
     <button class="buton_se_connecter" id="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
     <button class="Home_button" onclick="open_div_Home()">Home</button>
     <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
-    <button class="buton_question" onclick="open_popup_question()">Question</button>
+    <button class="buton_Chess" onclick="open_popup_Chess()">Chess</button>
     <button class="buton_se_connecter" id="text_place_button_se_connecter" onclick="ParametresCompte()" style="display:none;"></button>
     <button class="buton_Admin" id="buton_admin" onclick="open_popup_admin()" style="display:none;">Admin</button>
     <button class="buton_Logs" id="buton_Logs" onclick="open_popup_Logs()" style="display:none;">Logs</button>
@@ -64,7 +64,7 @@
     <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
     <div id="Home_div_left"><p class="ERREUR" style="display:none;">Une erreur interne a lieu veuillez reesayer plus tard </p></div>
   </div>
-  <div class="Chess" id="Chess"></div>
+  <div class="Chess" id="Chess" style="display:none;"></div>
 
   <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
     <div class="listPopupMoyen" id="listPopupMoyen">
@@ -523,13 +523,13 @@
       document.getElementById('buton_Logs').style.display = 'block';
     }
   }
-  function open_popup_question() {
+  function open_popup_Chess() {
     closeAllPopups();
     close_div_Home();
     document.getElementById('Home').style.display = 'none';
     document.getElementById('Question').style.display = 'block';
   }
-  function close_popup_question() {
+  function close_popup_Chess() {
     document.getElementById('Question').style.display = 'none';
   }
   function open_popup_Logs() {
@@ -619,7 +619,7 @@
     close_popup_Logs();
     close_popup_create_compte();
     close_popup_Moyen();
-    close_popup_question();
+    close_popup_Chess();
   }
    async function listPopupMoyenH() {
   const selectMatiere = document.getElementById("SELlistPopupMoyen").value;
