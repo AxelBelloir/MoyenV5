@@ -164,6 +164,25 @@
   </div>
 </div>
 <script>
+  async function ChessWithFriend() {
+    const friend = document.getElementById("NameChessWithFriend").value;
+    try {
+      const response = await fetch('https://flask-api-1p4y.onrender.com/api/Chess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          action: 1,
+          id: window.nom,
+          friend,
+        })
+      });
+      const data = await response.json();
+      
+    } catch (error) {
+      console.error("Erreur lors de la connexion avec l'ami :", error);
+    }
+  }
+  
   async function envoyerRequete() {
 
 
