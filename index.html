@@ -298,6 +298,7 @@
     open_popup_result();
   }
 }
+  
   async function supprimerNotesp5() {
     const action = 4; 
     const noteID = p1ID;
@@ -361,6 +362,35 @@
     }
   }
 }
+  const popup = document.getElementById('popup_result');
+  let isDragging = false;
+  let offsetY = 0;
+
+  
+  function slideInUp(popup) {
+    popup.style.animation = 'none';
+    const animationName = 'slideInUpJS';
+    const alreadyExists = Array.from(document.styleSheets)
+      .some(sheet => Array.from(sheet.cssRules || []).some(rule => rule.name === animationName));
+    if (!alreadyExists) {
+      const styleTag = document.createElement('style');
+      styleTag.innerHTML = `
+        @keyframes ${animationName} {
+          from {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      `;
+      document.head.appendChild(styleTag);
+    }
+    popup.style.display = 'block';
+    popup.style.animation = `${animationName} 0.5s ease-out forwards`;
+  }
   async function AdminSupOneCOMPTE(){
     const action = 5
     const idSup =  document.getElementById('inputAdminSuppCompte').value;
