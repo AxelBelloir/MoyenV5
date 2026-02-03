@@ -19,7 +19,17 @@
   top:140px;
   left:50%;
   transform: translateX(-50%);
-  width:100px;
+  width:80px;
+}
+.BChessWithFriend{
+  background: transparent;
+  border: none;
+  font-size: 20px; 
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  right: 20px
 }
 
 .spinner {
