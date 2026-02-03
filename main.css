@@ -1,3 +1,5 @@
+
+
 .spinner {
   width: 40px;
   height: 40px;
@@ -186,7 +188,7 @@
   left:50%;
   transform: translateX(-50%);
 }
-.h2_div_left__popup_Moyen{
+.h2_div_left__popup_Moyen , .h2ChessWithFriend{
   position: absolute;
   top: 15px;
   left: 50%;
