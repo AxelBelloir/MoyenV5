@@ -874,56 +874,6 @@ if (matiere === "Anglais" || matiere === "Espagnole") {
     }
   }
 
-  const popup = document.getElementById('popup_result');
-  let isDragging = false;
-  let offsetY = 0;
-
-  popup.addEventListener('mousedown', function (e) {
-    isDragging = true;
-    offsetY = e.clientY - popup.getBoundingClientRect().top;
-    popup.style.cursor = 'grabbing';
-  });
-
-  document.addEventListener('mousemove', function (e) {
-    if (!isDragging) return;
-    let newY = e.clientY - offsetY;
-    popup.style.top = newY + 'px';
-    if (newY <= 0) {
-      popup.style.opacity = '0';
-      setTimeout(() => popup.style.display = 'none', 300);
-      isDragging = false;
-    }
-  });
-
-  document.addEventListener('mouseup', function () {
-    isDragging = false;
-    popup.style.cursor = 'grab';
-  });
-
-  function slideInUp(popup) {
-    popup.style.animation = 'none';
-    const animationName = 'slideInUpJS';
-    const alreadyExists = Array.from(document.styleSheets)
-      .some(sheet => Array.from(sheet.cssRules || []).some(rule => rule.name === animationName));
-    if (!alreadyExists) {
-      const styleTag = document.createElement('style');
-      styleTag.innerHTML = `
-        @keyframes ${animationName} {
-          from {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-      `;
-      document.head.appendChild(styleTag);
-    }
-    popup.style.display = 'block';
-    popup.style.animation = `${animationName} 0.5s ease-out forwards`;
-  }
 
   document.getElementById('overlay').addEventListener('click', closeAllPopups);
   // On récupère l'élément <select> pour la matière (une seule déclaration)
