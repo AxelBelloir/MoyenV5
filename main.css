@@ -285,8 +285,8 @@ body {
 /* Barre latérale */
 .Barre_task {
   position: fixed;
-  top: 10px;
-  left: 5px;
+  top: 15px;
+  left: 7.5px;
   width: 130px;
   height: 90vh;
   background: linear-gradient(
