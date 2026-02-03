@@ -285,16 +285,17 @@ body {
 /* Barre latérale */
 .Barre_task {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 150px;
-  height: 100vh;
-  background: linear-gradient(to bottom, #0D0D0D 0%, #242424 60%);
+  top: 10;
+  left: 5;
+  width: 130px;
+  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 200;
   padding-top: 25px;
+  border-radius: 30px;
 }
 /* Boutons */
 .Home_button,  .buton_Moyen, .buton_question, .buton_Admin, .buton_Logs{
