@@ -74,6 +74,12 @@
   </div>
 
   <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
+    <div class="Bulletin" id "Bulletin">
+       <h2 class="h2Bulletin"> Un bulletin</h2>
+       <p id="pBulletin" class="pBulletin"> Le bulettin : </p>
+       <input type="file" class="InBulletin" id="pdfInput" accept="application/pdf">
+       <button class="BBulletin" onclick="envoyerPDF()">Envoyer PDF</button>
+    </div>
     <div class="listPopupMoyen" id="listPopupMoyen">
       <button type="button" onclick="listPopupMoyenH()" class="listPopupMoyenba1" id="listPopupMoyenba1">⥣</button>
       <button type="button" onclick="listPopupMoyenB()" class="listPopupMoyenba2" id="listPopupMoyenba2">⥥</button>
@@ -164,6 +170,38 @@
   </div>
 </div>
 <script>
+  async function envoyerPDF() {
+    const input = document.getElementById("pdfInput");
+    const file = input.files[0];
+
+    if (!file) {
+        alert("Choisis un PDF");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+        const response = await fetch(
+            "https://flask-api-1p4y.onrender.com/api/uploadpdf",
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        const data = await response.json();
+
+        document.getElementById("result_message").textContent =
+            JSON.stringify(data, null, 2);
+
+    } catch (err) {
+        console.error(err);
+        alert("Erreur envoi PDF");
+    }
+}
+
   async function ChessWithFriend() {
     const friend = document.getElementById("NameChessWithFriend").value;
     try {
