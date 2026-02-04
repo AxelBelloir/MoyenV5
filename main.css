@@ -1,11 +1,11 @@
-.ChessWithFriend{
+.ChessWithFriend, .Bulletin{
   position: absolute;left:1%;top: 2%;
   width: 250px; height: 250px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background: white;
   border-radius: 15px;
 }
-.pNameChessWithFriend{
+.pNameChessWithFriend, .pBulletin{
   position:absolute;
   top:80px;
   left:50%;
@@ -14,14 +14,14 @@
   color: black;
   white-space: nowrap;
 }
-.NameChessWithFriend{
+.NameChessWithFriend, .InBulletin{
   position:absolute;
   top:140px;
   left:50%;
   transform: translateX(-50%);
   width:80px;
 }
-.BChessWithFriend{
+.BChessWithFriend, .BBulletin{
   background: transparent;
   border: none;
   font-size: 20px; 
