@@ -1,560 +1,186 @@
-.ChessWithFriend, .Bulletin{
-  position: absolute;left:1%;top: 2%;
-  width: 250px; height: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: white;
-  border-radius: 15px;
-}
-.pNameChessWithFriend, .pBulletin{
-  position:absolute;
-  top:80px;
-  left:50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  color: black;
-  white-space: nowrap;
-}
-.NameChessWithFriend, .InBulletin{
-  position:absolute;
-  top:140px;
-  left:50%;
-  transform: translateX(-50%);
-  width:80px;
-}
-.BChessWithFriend, .BBulletin{
-  background: transparent;
-  border: none;
-  font-size: 20px; 
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  bottom: 20px;
-  right: 20px
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 5px solid #ddd;
-  border-top: 5px solid #3498db;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.titleAdminSuppCompte{
-  position:absolute;
-  top:10px;
-  left:30%;
-  transform:translateX(-50%);
-  font-size:25px;
-  color:black;
-}
-.buttonAdminSupCompte{
-  position:absolute;
-  top:30px;
-  left:30%;
-  transform:translateX(-50%);
-  font-size:25px;
-  color:black;
-}
-.inputAdminSuppCompte{
-  position:absolute;
-  top:15px;
-  left:50%;
-  transform:translateX(-50%);
-  width:40px;
-}
-.ERREUR {
-  color:red;
-  font-size:12px;
-  position:absolute;
-  top:10px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.logs {
-  color:green;
-  position:absolute;
-  top:30px;
-  left:200px;
-  font-size:8px;
-}
-.pdonneCompte {
-  position:absolute;
-  left:200px;
-  bottom:50px;
-  font-size: 13px;
-  color:black;
-  
-}
-.supALLcompte, .supALLnotes, .SeconnecterAdmin, .supALLlogs{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  right:20px;
-}
-.supALLnotes{position:absolute; top:65px;}
-.supALLcompte{position:absolute; top:15px;}
-.SeconnecterAdmin{position:absolute; top:115px;}
-.supALLlogs{position:absolute; top:165px;}
-.SELmatiere1{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-style: italic;
-  position:absolute;
-  top:200px;
-  right:10%;
-}
-.listPopupMoyen{
-  position: absolute;
-  top:10px;
-  right:10px;
-  width: 650px; height: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: white;
-  border-radius: 15px;
-  display: flex; /* les enfants seront sur la même ligne */
-  flex-direction: column; /* aligne à gauche */
-  align-items: flex-start;
-  gap: 5px; /* espace entre les div */
-  margin-left: 5px;
-}
-.SELlistPopupMoyen{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-style:italic;
-  position:absolute;
-  bottom:10px;
-  right:10px;
-  transform: translateX(-50%);
-}
-.listPopupMoyenba1{
-  background: transparent;
-  border: none;
-  color:black;
-  weight: bold;
-  font-size: 30px; 
-  position:absolute;
-  left:90%;
-  top:30%;
-}
-.listPopupMoyenba2{
-  background: transparent;
-  border: none;
-  color:black;
-  weight: bold;
-  font-size: 30px; 
-  position:absolute;
-  left:90%;
-  bottom:30%;
-}
-.listPopupMoyen1, .listPopupMoyen2, .listPopupMoyen3, .listPopupMoyen4, .listPopupMoyen5{
-  position:relative;
-  margin-left:5px;
-  margin-top:5px;
-  width: 550px; height: 30px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  display:flex;
-  align-items: center;
-}
-.listPopupMoyenp1, .listPopupMoyenp2, .listPopupMoyenp3, .listPopupMoyenp4, .listPopupMoyenp5{
-  font-size: 15px; 
-  color: black;
-  font-weight: bold;
-  position:relative;
-  margin-left:20px;
-}
-.listPopupMoyenb1, .listPopupMoyenb2, .listPopupMoyenb3,.listPopupMoyenb4,.listPopupMoyenb5{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-weight: bold;
-  position: relative;
-  margin-right:20px;
-  margin-left: auto;
-}
-.div_left__popup_Moyen {
-  position: absolute;right:420px;bottom: 2%;
-  width: 250px; height: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: white;
-  border-radius: 15px;
-}
-.afficher_moyenG{
-  position:absolute;
-  top:110px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.afficher_moyenM{
-  position:absolute;
-  top:230px;
-  left:50%;
-  transform:translateX(-50%);
-}
-.SELmatiere_div_left__popup_Moyen{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-style:italic;
-  position:absolute;
-  top:200px;
-  left:50%;
-  transform: translateX(-50%);
-}
-.h2_div_left__popup_Moyen , .h2ChessWithFriend{
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-.L1_div_left__popup_Moyen{
-  position:absolute;
-  top:90px;
-  left:50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  color: black;
-  white-space: nowrap;
-}
-.L2_div_left__popup_Moyen{
-  position:absolute;
-  top:170px;
-  left:50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  color: black;
-  white-space: nowrap;
-}
-.button_registe_moyenne{
-  background: transparent;
-  border: none;
-  font-size: 20px; 
-  color: black;
-  font-weight: bold;
-  position: absolute;
-  bottom: 20px;
-  right: 20px
-}
-.Lnote{
-  position:absolute;
-  top:90px;
-  left:40px;
-  font-weight: bold;
-  color: black;
-}
-.Lsur{
-  position:absolute;
-  top:90px;
-  left:140px;
-  font-weight: bold;
-  color: black;
-}
-.Lcoef{
-  position:absolute;
-  top:90px;
-  left:220px;
-  font-weight: bold;
-  color: black;
-}
-.Lmatiere{
-  position:absolute;
-  top:170px;
-  left:10%;
-  font-weight: bold;
-  color: black;
-}
-.SELmatiere{
-  background: transparent;
-  border: none;
-  font-size: 15px; 
-  color: black;
-  font-style: italic;
-  position:absolute;
-  top:200px;
-  left:10%;
-}
-.INnote{
-  position:absolute;
-  top:120px;
-  left:40px;
-  width:40px;
-}
-.INsur{
-  position:absolute;
-  top:120px;
-  left:130px;
-  width:40px;
-}
-.INcoef{
-  position:absolute;
-  top:120px;
-  left:220px;
-  width:40px;
-}
+/* ================= GLOBAL ================= */
 body {
-  color:black;
-  font-family: Arial, sans-serif;
-  margin: 0;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
 }
-/* Barre latérale */
+
+/* ================= NAVIGATION (BARRE LATERALE) ================= */
 .Barre_task {
-  position: fixed;
-  top: 15px;
-  left: 7.5px;
-  width: 130px;
-  height: 90vh;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2)
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 200;
-  padding-top: 25px;
-  border-radius: 30px;
+    position: fixed;
+    top: 15px;
+    left: 7.5px;
+    width: 130px;
+    height: 95vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 200; /* Toujours visible à gauche */
+    padding-top: 25px;
+    border-radius: 30px;
 }
-/* Boutons */
-.Home_button,  .buton_Moyen, .buton_Chess, .buton_Admin, .buton_Logs{
-  position: absolute;
-  background: transparent;
-  border: none;
-  font-weight: bold;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  margin-bottom:5px;
+
+.Home_button, .buton_Moyen, .buton_Chess, .buton_Admin, .buton_Logs, .buton_se_connecter {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
 }
-.buton_se_connecter { 
-  top: 30px;
-  position: absolute;
-  background: transparent;
-  border: none;
-  font-weight: bold;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  margin-bottom:5px;
+
+.Home_button:hover, .buton_Moyen:hover { color: #3498db; }
+
+/* Positionnement des boutons dans la barre */
+.buton_se_connecter { margin-top: 10px; }
+
+/* ================= SECTIONS PRINCIPALES ================= */
+/* On regroupe toutes les pages qui s'affichent à droite de la barre task */
+#Home, #Chess, #popup_Moyen, #Admin, #Logs {
+    position: fixed;
+    top: 0;
+    left: 150px; /* Laisse la place à la barre latérale */
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: #FCFCFC;
+    display: none; /* Géré par JS */
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    overflow-y: auto;
 }
-.Home_button { top: 100px; }
-.buton_Moyen { top: 150px; }
-.buton_Chess { top: 200px; }
-.buton_Admin {top: 250px; }
-.buton_Logs {top: 300px; }
-/* Overlay */
+
+/* ================= OVERLAY & POPUPS DE COMPTE ================= */
 #overlay {
-  display: none;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-}
-/* Popup connexion */
-#popup_se_connecter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  z-index:1000;
-  top: 50%; left: 70%;
-  transform: translate(-50%,-50%);
-  background: white;
-  padding: 50px;
-  border: 2px solid #333;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  color: black;
-  min-height: 250px;
-  max-height: 400px;
-  min-width: 200px;
-  max-width: 500px;
-  text-align: center;
-}
-/* Popup création compte */
-#popup_create_compte {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 20000;
-  gap: 20px; /* espace entre inputs */
-  position: fixed;
-  top: 50%; left: 70%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 50px;
-  border: 2px solid #333;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  color: black;
-  min-height: 350px;
-  max-height: 450px;
-  min-width: 290px;
-  max-width: 500px;
-  text-align: center;
+    display: none;
+    z-index: 500; /* Entre les pages et les popups */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
 }
 
-.input_mp_create_account  {
-  position:absolute;
-  top:250px;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width:50%;
-}
-.input_id_account{
-  position:absolute;
-  top:160px;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width:50%;
-}
-.input_confirm_mp_create_account{
-  position:absolute;
-  top:340px;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width:50%;
-}
-/* Boutons popup */
-.popup_se_connecter_button, .create_account {
-  background: transparent;
-  border: none;
-  font-weight: bold;
-  position: absolute;
-  bottom: 20px;
-}
-.create_account { left: 20px; font-size: 20px;color:black;}
-.popup_se_connecter_button { right: 20px; font-size: 20px; color: black; }
-/* Inputs */
-.input_id, .input_mp {
-  position: absolute;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
-.input_id { top: 160px; }
-.input_mp { top: 250px; }
-/* Titres et textes */
-.h2_div_ajouter_notes {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-.h2_connexion { position: absolute; top: 15px; left: 50%; transform: translate(-50%,-50%); }
-.Inserez_votre_identifiants {
-  position: absolute; top: 100px; left: 50%;
-  transform: translate(-50%,-50%); font-weight: bold;
-}
-.Inserez_votre_mp {
-  position: absolute; top: 190px; left: 30%;
-  transform: translate(-20%,-50%); font-weight: bold;
-}
-/* Section Home */
-#Home, #Chess{
-  position: fixed; top: 0; left: 150px; right: 0;
-  padding: 100px;
-  background-color: #FCFCFC;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 500px;
-  height: 100vh;
-  z-index: 200;
-}
-.decors1 {
-  position: absolute; top: 45px; left: 46%;
-}
-.Welcome {
-  position: absolute; top: 8%; left: 33%;
-  font-size: 50px;
-
-}
-#Home_div_left {
-  position: absolute;left:10%;top: 30%;
-  width: 300px; height: 40%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: white;
-  border-radius: 15px;
-}
-#ajouter_notes {
-  position: absolute;right:10px;bottom: 2%;
-  width:400px; height: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: white;
-  border-radius: 15px;
-}
-.popup_create_compte_button{ background:none;position:absolute;right: 40px;bottom:20px;font-size: 20px; color: black;font-weight:bold; }
-.ruturn_create_account{ background:none;position:absolute;left: 40px;bottom:20px;font-size: 20px; color: black;font-weight:bold;}
-.h2_create_account{ position: absolute; top: 30px; left: 50%; transform: translate(-50%,-50%); }
-.inserez_id_create_account{
-  position: absolute; top: 115px; left: 50%;
-  transform: translate(-50%,-50%); font-weight: bold;
-}
-.inserez_mp_create_account{
-  position: absolute; top: 205px; left: 50%;
-  transform: translate(-50%,-50%); font-weight: bold;
-}
-.confirm_mp_create_account{
-  position: absolute; top: 295px; left: 50%;
-  transform: translate(-50%,-50%); font-weight: bold;
+#popup_se_connecter, #popup_create_compte {
+    display: none; /* JS force flex */
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    min-width: 300px;
 }
 
-.decors2 {
-  position: absolute; top: 60px; left: 46%;
+/* ================= NOTIFICATION (POPUP RESULT) ================= */
+#popup_result {
+    display: none; 
+    position: fixed; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background: #333; /* Fond sombre pour contraste */
+    color: white; 
+    padding: 12px 25px; 
+    border-radius: 50px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
+    z-index: 100000; /* Par-dessus TOUT */
+    align-items: center;
+    gap: 10px;
 }
-.btn-calculer {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 #result_message {
-    font-size: 15px !important;
-    color: black !important;
-    z-index: 100000 !important;
+    font-size: 14px;
+    font-weight: bold;
+    color: white !important;
 }
-.bFermeP1 {
-    position:absolute;
-    top:10%;
-    right:5%;
-    background:none;
-    border:none;
-    color:black;
-    font-size:20px;
-  }
 
+/* ================= COMPOSANTS MOYENNE ================= */
+.listPopupMoyen {
+    position: relative;
+    width: 90%;
+    max-width: 650px;
+    height: auto;
+    min-height: 300px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+}
 
-/* Réactif */
+.listPopupMoyen1, .listPopupMoyen2, .listPopupMoyen3, .listPopupMoyen4, .listPopupMoyen5 {
+    width: 100%;
+    height: 40px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.div_left__popup_Moyen {
+    width: 90%;
+    max-width: 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* ================= BOUTONS & INPUTS ADMIN ================= */
+.logs {
+    color: #27ae60;
+    background: #f4f4f4;
+    padding: 10px;
+    width: 80%;
+    height: 200px;
+    overflow-y: scroll;
+    font-family: monospace;
+    font-size: 11px;
+    border: 1px solid #ddd;
+}
+
+/* ================= AJOUTER NOTES ================= */
+#ajouter_notes {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ================= UTILS ================= */
+.spinner {
+    width: 40px; height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Réactivité mobile */
 @media (max-width: 768px) {
-  #popup_se_connecter {
-    width: 90%;
-    padding: 30px;
-    height: 90%;
-  }
-  #Home, #Moyen, #Question {
-    width: 90%;
-    padding: 50px;
-  }
+    .Barre_task { width: 60px; }
+    #Home, #Chess, #popup_Moyen, #Admin, #Logs { left: 70px; padding: 20px; }
+    .Welcome { font-size: 24px; }
 }
