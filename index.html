@@ -173,18 +173,22 @@
   </div>
 </div>
 <script>
-// --- 1. CONFIGURATION & VARIABLES GLOBALES ---
+// ================= CONFIGURATION =================
 const API_URL = "https://flask-api-1p4y.onrender.com/api";
-window.nom = null; // Stocke l'identifiant connecté
-window.mp = null;  // Stocke le mot de passe pour les actions sensibles
-let pIDs = [null, null, null, null, null]; // IDs des 5 notes affichées
+window.nom = null; 
+window.mp = null;  
+let pIDs = [null, null, null, null, null]; 
 let current_page = 1;
 
-// --- 2. MOTEUR DE REQUÊTE CENTRALISÉ ---
-// Cette fonction gère tous les fetchs pour éviter de répéter le code
+// ================= MOTEUR DE REQUÊTE =================
 async function callAPI(endpoint, action, extraData = {}) {
-    const body = { id: window.nom, action, ...extraData };
-    if (endpoint === 'requeteadmin') body.mp = window.mp; // Ajout du MP pour l'admin
+    const body = { 
+        id: window.nom,      
+        name: window.nom,    
+        action: action, 
+        mp: window.mp,       
+        ...extraData 
+    };
 
     try {
         const response = await fetch(`${API_URL}/${endpoint}`, {
@@ -195,49 +199,62 @@ async function callAPI(endpoint, action, extraData = {}) {
         return await response.json();
     } catch (e) {
         console.error(`Erreur sur ${endpoint}:`, e);
-        return { error: true, message: "Erreur de connexion au serveur" };
+        notifier("Erreur de connexion au serveur");
+        return { message: "Erreur", logs: [] };
     }
 }
 
-// --- 3. INITIALISATION ---
-(async () => {
-    try {
-        await fetch("https://flask-api-1p4y.onrender.com/"); // Réveil du serveur
-        document.getElementById('chargement').style.display = 'none';
-        document.getElementById('site').style.display = 'block';
-    } catch (e) { console.error("Le serveur ne répond pas."); }
-})();
-
-// --- 4. CONNEXION & COMPTE ---
-async function sendName_connexion() {
-    const id = document.getElementById('input_id').value;
-    const mp = document.getElementById('input_mp').value;
-
-    if (!id || !mp) return alert("Champs vides !");
-
-    const res = await callAPI('connexion', null, { id, mp }); // Endpoint spécifique connexion
-    // Note: Si ton API utilise /api/notes pour tout, remplace par callAPI('notes', ...)
+// ================= NOTIFICATIONS (POPUP RESULT) =================
+function notifier(msg) {
+    const pop = document.getElementById('popup_result');
+    const txt = document.getElementById('result_message');
     
-    if (res.success || res.message === "Connexion réussie") {
-        window.nom = id;
-        window.mp = mp;
+    if (pop && txt) {
+        txt.innerText = msg;
+        pop.style.display = 'flex'; // On utilise flex pour l'alignement
         
-        // UI Update
-        document.getElementById('Welcome_nom').innerText = id;
-        document.getElementById('buton_se_connecter').style.display = 'none';
-        document.getElementById('text_place_button_se_connecter').style.display = 'block';
-        document.getElementById('text_place_button_se_connecter').innerText = id;
+        // Disparaît automatiquement après 3 secondes
+        setTimeout(() => {
+            pop.style.display = 'none';
+        }, 3000);
+    }
+}
 
-        if (id === "Admin") {
+function close_popup_result() {
+    document.getElementById('popup_result').style.display = 'none';
+}
+
+// ================= CONNEXION & CRÉATION =================
+
+async function sendName_connexion() {
+    const id_input = document.getElementById('input_id').value;
+    const mp_input = document.getElementById('input_mp').value;
+
+    if (!id_input || !mp_input) return notifier("Remplis tous les champs !");
+
+    const res = await callAPI('greet', 0, { name: id_input, mp: mp_input });
+
+    if (res.message === "Connexion réussie" || res.message === "Bienvenue admin") {
+        window.nom = id_input;
+        window.mp = mp_input;
+        
+        // Mise à jour interface
+        document.getElementById('Welcome_nom').innerText = id_input;
+        document.getElementById('buton_se_connecter').style.display = 'none';
+        const btnPlace = document.getElementById('text_place_button_se_connecter');
+        btnPlace.style.display = 'block';
+        btnPlace.innerText = id_input;
+
+        if (id_input === "Admin") {
             document.getElementById('buton_admin').style.display = 'block';
             document.getElementById('buton_Logs').style.display = 'block';
         }
 
-        notifier("Content de vous revoir, " + id);
+        notifier(res.message);
         showSection('Home');
         refreshData();
     } else {
-        alert("Identifiant ou mot de passe incorrect");
+        notifier(res.message); 
     }
 }
 
@@ -246,49 +263,60 @@ async function sendName_create() {
     const mp = document.getElementById('input_mp_create_account').value;
     const confirm = document.getElementById('input_confirm_mp_create_account').value;
 
-    if (mp !== confirm) return alert("Les mots de passe diffèrent !");
+    if (mp !== confirm) return notifier("Les mots de passe diffèrent !");
+
+    const res = await callAPI('greet', 1, { name: id, mp: mp });
     
-    const res = await callAPI('create_account', null, { id, mp });
-    notifier(res.message || "Compte créé !");
-    showSection('popup_se_connecter');
-}
-
-// --- 5. GESTION DES NOTES & MOYENNES ---
-async function refreshData() {
-    if (!window.nom) return;
-
-    // Récupération Moyenne Générale (Action 2) et Matière (Action 1)
-    const mg = await callAPI('notes', 2);
-    const matSelectionnee = document.getElementById('matiere_div_left__popup_Moyen').value;
-    const mm = await callAPI('notes', 1, { matiere: matSelectionnee });
-
-    document.getElementById('afficher_moyen').textContent = `${mg.message || 0}/20`;
-    document.getElementById('afficher_moyen_matiere').textContent = `${mm.message || 0}/20`;
-
-    // Liste des notes (Action 3)
-    const selMatList = document.getElementById("SELlistPopupMoyen").value;
-    const list = await callAPI('notes', 3, { selectMatiere: selMatList, nmb: current_page });
-    
-    pIDs = [list.p5ID, list.p4ID, list.p3ID, list.p2ID, list.p1ID];
-    for (let i = 1; i <= 5; i++) {
-        document.getElementById(`listPopupMoyenp${i}`).textContent = list[`p${6-i}`] || "-";
+    notifier(res.message);
+    if (res.message === "Compte créé") {
+        showSection('popup_se_connecter');
     }
 }
 
+// ================= GESTION DES NOTES =================
+
+async function refreshData() {
+    if (!window.nom) return;
+
+    // Moyennes
+    const mg = await callAPI('notes', 2);
+    document.getElementById('afficher_moyen').textContent = (mg.message || 0) + "/20";
+
+    const mat = document.getElementById('matiere_div_left__popup_Moyen').value;
+    const mm = await callAPI('notes', 1, { matiere: mat });
+    document.getElementById('afficher_moyen_matiere').textContent = (mm.message || 0) + "/20";
+
+    // Liste des notes
+    const selMat = document.getElementById("SELlistPopupMoyen").value;
+    const list = await callAPI('notes', 3, { selectMatiere: selMat, nmb: current_page });
+    
+    [1, 2, 3, 4, 5].forEach((num, index) => {
+        document.getElementById(`listPopupMoyenp${num}`).textContent = list[`p${num}`] || "-";
+        pIDs[index] = list[`p${num}ID`];
+    });
+}
+
 async function sendnote() {
-    const note = parseFloat(document.getElementById('INnote').value.replace(',', '.'));
-    const sur = parseFloat(document.getElementById('INsur').value.replace(',', '.'));
-    const coef = parseFloat(document.getElementById('INcoef').value.replace(',', '.'));
+    const note = document.getElementById('INnote').value;
+    const sur = document.getElementById('INsur').value;
+    const coef = document.getElementById('INcoef').value;
     const matiere = document.getElementById('matiere').value;
     
+    if (!note || !sur) return notifier("Note ou Sur quoi vide !");
+
     let autre = "";
     if (["Anglais", "Espagnole", "Allemand", "Italien"].includes(matiere)) {
         autre = document.getElementById('SELmatiere1').value;
     }
 
-    if (isNaN(note)) return alert("Note invalide");
-
-    await callAPI('notes', 0, { matiere, note, sur, coef, autre });
+    await callAPI('notes', 0, { 
+        matiere, 
+        note: parseFloat(note.replace(',', '.')), 
+        sur: parseFloat(sur.replace(',', '.')), 
+        coef: parseFloat(coef.replace(',', '.')), 
+        autre 
+    });
+    
     notifier("Note ajoutée !");
     refreshData();
 }
@@ -301,65 +329,41 @@ const supprimerNote = async (index) => {
     }
 };
 
-// --- 6. ADMIN & LOGS ---
-async function open_popup_admin() {
-    showSection('Admin');
-    const data = await callAPI('requeteadmin', 0);
-    document.getElementById('donneeCompte').innerText = data.message?.map(l => l.join(' - ')).join('\n') || "Aucun compte";
-}
+// ================= NAVIGATION =================
 
-async function open_popup_Logs() {
-    showSection('Logs');
-    const data = await callAPI('requeteadmin', 3);
-    document.getElementById('logs').innerText = data.logs?.map(l => l.join(' - ')).join('\n') || "Aucun log";
-}
-
-// --- 7. NAVIGATION & UI ---
 function showSection(id) {
     const sections = ['popup_se_connecter', 'Admin', 'Logs', 'popup_create_compte', 'popup_Moyen', 'Chess', 'Home'];
     sections.forEach(s => {
         const el = document.getElementById(s);
         if (el) el.style.display = (s === id) ? 'block' : 'none';
     });
-    // Gestion du voile noir (overlay)
-    document.getElementById('overlay').style.display = (id.includes('popup')) ? 'block' : 'none';
+    
+    const overlay = document.getElementById('overlay');
+    if (overlay) overlay.style.display = (id.includes('popup')) ? 'block' : 'none';
+    
     if (id === 'popup_Moyen') refreshData();
 }
 
-function notifier(msg) {
-    const pop = document.getElementById('popup_result');
-    document.getElementById('result_message').innerText = msg;
-    pop.style.display = 'flex';
-    setTimeout(() => pop.style.display = 'none', 3000);
-}
-
-// --- 8. ECOUTEURS (EVENTS) ---
-document.getElementById('matiere').onchange = function() {
-    const isLangue = ["Anglais", "Espagnole", "Allemand", "Italien"].includes(this.value);
-    document.getElementById('SELmatiere1').style.display = isLangue ? 'block' : 'none';
-};
-
-document.getElementById('matiere_div_left__popup_Moyen').onchange = refreshData;
-document.getElementById('SELlistPopupMoyen').onchange = () => { current_page = 1; refreshData(); };
-
-// Mappage des fonctions pour le HTML
+// Raccourcis pour le HTML
 const open_div_Home = () => showSection('Home');
 const open_popup_se_connecter = () => showSection('popup_se_connecter');
 const open_popup_create_compte = () => showSection('popup_create_compte');
 const open_popup_Moyen = () => showSection('popup_Moyen');
-const open_popup_Chess = () => showSection('Chess');
-const close_popup_result = () => document.getElementById('popup_result').style.display = 'none';
 
-const listPopupMoyenH = () => { current_page++; refreshData(); };
-const listPopupMoyenB = () => { if(current_page > 1) current_page--; refreshData(); };
-
-// Fonctions de suppression pour les boutons p1 à p5
 const supprimerNotesp1 = () => supprimerNote(0);
 const supprimerNotesp2 = () => supprimerNote(1);
 const supprimerNotesp3 = () => supprimerNote(2);
 const supprimerNotesp4 = () => supprimerNote(3);
 const supprimerNotesp5 = () => supprimerNote(4);
 
+// Initialisation au chargement
+window.onload = async () => {
+    try {
+        await fetch("https://flask-api-1p4y.onrender.com/");
+        document.getElementById('chargement').style.display = 'none';
+        document.getElementById('site').style.display = 'block';
+    } catch(e) { console.log("Serveur en cours de boot..."); }
+};
 </script>
 </body>
 </html>
