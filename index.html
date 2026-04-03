@@ -297,6 +297,34 @@ async function sendnote() {
     refreshData();
 }
 
+// ================= FONCTIONS ADMIN =================
+async function AdminSupOneCOMPTE() {
+    const idToSupp = document.getElementById('inputAdminSuppCompte').value;
+    if(!idToSupp) return notifier("Entre un ID");
+    const res = await callAPI('admin', 0, { idToSupp });
+    notifier(res.message);
+}
+
+async function AdminSupALLCompte() {
+    if(confirm("Supprimer TOUS les comptes ?")) {
+        const res = await callAPI('admin', 1);
+        notifier(res.message);
+    }
+}
+
+async function AdminSupALLnotes() {
+    if(confirm("Supprimer TOUTES les notes ?")) {
+        const res = await callAPI('admin', 2);
+        notifier(res.message);
+    }
+}
+
+async function AdminSupALLlogs() {
+    const res = await callAPI('admin', 3);
+    notifier(res.message);
+    document.getElementById('logs').innerText = "";
+}
+
 // ================= NAVIGATION =================
 function showSection(id) {
     const sections = ['popup_se_connecter', 'Admin', 'Logs', 'popup_create_compte', 'popup_Moyen', 'Chess', 'Home'];
@@ -309,6 +337,12 @@ function showSection(id) {
     const overlay = document.getElementById('overlay');
     if (overlay) {
         overlay.style.display = (id === 'popup_se_connecter' || id === 'popup_create_compte') ? 'block' : 'none';
+    }
+
+    if (id === 'Logs') {
+        callAPI('admin', 4).then(res => {
+            document.getElementById('logs').innerText = res.logs.join('\n');
+        });
     }
     
     if (id === 'popup_Moyen') refreshData();
