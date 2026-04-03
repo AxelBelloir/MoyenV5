@@ -49,9 +49,9 @@
 
     <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
         <h2 class="h2_connexion">Connexion</h2>
-        <p class="Inserez_votre_identifiants">Identifiant</p>
+        <p>Identifiant</p>
         <input type="text" class="input_id" id="input_id" />
-        <p class="Inserez_votre_mp">Mot de passe</p>
+        <p>Mot de passe</p>
         <input type="password" class="input_mp" id="input_mp" />
         <div style="margin-top:20px; width:100%; display:flex; justify-content: space-between;">
             <button class="create_account" onclick="showSection('popup_create_compte')">Créer un compte</button>
@@ -77,14 +77,14 @@
         <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
         <div id="Home_div_left">
             <p class="ERREUR" id="error_home" style="display:none;">Une erreur interne a eu lieu.</p>
-            <p>Sélectionnez un onglet dans la barre latérale pour commencer.</p>
+            <p>Bienvenue sur votre gestionnaire scolaire personnel.</p>
         </div>
     </div>
 
     <div class="Chess" id="Chess" style="display:none;">
         <div class="ChessWithFriend">
            <h2 class="h2ChessWithFriend">Joue avec un ami !</h2>
-           <p class="pNameChessWithFriend">Le nom de ton ami :</p>
+           <p>Le nom de ton ami :</p>
            <input class="NameChessWithFriend" id="NameChessWithFriend">
            <button class="BChessWithFriend">Jouer</button>
         </div>
@@ -92,7 +92,7 @@
 
     <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
         <div class="listPopupMoyen" id="listPopupMoyen">
-            <div style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
+            <div style="display:flex; justify-content: space-between; align-items: center;">
                 <h3>Mes Notes</h3>
                 <select class="SELlistPopupMoyen" id="SELlistPopupMoyen" onchange="refreshData()">
                     <option value="Mathématiques">Mathématiques</option>
@@ -105,13 +105,13 @@
                 </select>
             </div>
             
-            <div class="listPopupMoyen1"><p id="listPopupMoyenp1">-</p><button class="listPopupMoyenb1" onclick="supprimerNotesp1()">Suppr.</button></div>
-            <div class="listPopupMoyen2"><p id="listPopupMoyenp2">-</p><button class="listPopupMoyenb2" onclick="supprimerNotesp2()">Suppr.</button></div>
-            <div class="listPopupMoyen3"><p id="listPopupMoyenp3">-</p><button class="listPopupMoyenb3" onclick="supprimerNotesp3()">Suppr.</button></div>
-            <div class="listPopupMoyen4"><p id="listPopupMoyenp4">-</p><button class="listPopupMoyenb4" onclick="supprimerNotesp4()">Suppr.</button></div>
-            <div class="listPopupMoyen5"><p id="listPopupMoyenp5">-</p><button class="listPopupMoyenb5" onclick="supprimerNotesp5()">Suppr.</button></div>
+            <div class="listPopupMoyen1"><p id="listPopupMoyenp1">-</p><button onclick="supprimerNotesp1()">Suppr.</button></div>
+            <div class="listPopupMoyen2"><p id="listPopupMoyenp2">-</p><button onclick="supprimerNotesp2()">Suppr.</button></div>
+            <div class="listPopupMoyen3"><p id="listPopupMoyenp3">-</p><button onclick="supprimerNotesp3()">Suppr.</button></div>
+            <div class="listPopupMoyen4"><p id="listPopupMoyenp4">-</p><button onclick="supprimerNotesp4()">Suppr.</button></div>
+            <div class="listPopupMoyen5"><p id="listPopupMoyenp5">-</p><button onclick="supprimerNotesp5()">Suppr.</button></div>
             
-            <div style="margin-top:10px;">
+            <div style="margin-top:10px; display:flex; gap:10px;">
                 <button onclick="listPopupMoyenB()">Précédent</button>
                 <button onclick="listPopupMoyenH()">Suivant</button>
             </div>
@@ -261,16 +261,13 @@ async function sendName_create() {
 async function refreshData() {
     if (!window.nom) return;
 
-    // Moyenne Générale
     const mg = await callAPI('notes', 2);
     document.getElementById('afficher_moyen').textContent = (mg.message || 0) + "/20";
 
-    // Moyenne par Matière
     const mat = document.getElementById('matiere_div_left__popup_Moyen').value;
     const mm = await callAPI('notes', 1, { matiere: mat });
     document.getElementById('afficher_moyen_matiere').textContent = (mm.message || 0) + "/20";
 
-    // Liste des notes
     const selMat = document.getElementById("SELlistPopupMoyen").value;
     const list = await callAPI('notes', 3, { selectMatiere: selMat, nmb: current_page });
     
