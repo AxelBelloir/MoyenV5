@@ -204,16 +204,18 @@ async function callAPI(endpoint, action, extraData = {}) {
     }
 }
 
-// ================= NOTIFICATIONS (POPUP RESULT) =================
+// ================= NOTIFICATIONS (RECTIFIÉ) =================
 function notifier(msg) {
     const pop = document.getElementById('popup_result');
     const txt = document.getElementById('result_message');
     
     if (pop && txt) {
         txt.innerText = msg;
-        pop.style.display = 'flex'; // On utilise flex pour l'alignement
+        // Correction : On s'assure que la popup est au-dessus de TOUT (z-index)
+        pop.style.display = 'flex'; 
+        pop.style.zIndex = "20000"; 
         
-        // Disparaît automatiquement après 3 secondes
+        // Auto-fermeture
         setTimeout(() => {
             pop.style.display = 'none';
         }, 3000);
@@ -238,7 +240,6 @@ async function sendName_connexion() {
         window.nom = id_input;
         window.mp = mp_input;
         
-        // Mise à jour interface
         document.getElementById('Welcome_nom').innerText = id_input;
         document.getElementById('buton_se_connecter').style.display = 'none';
         const btnPlace = document.getElementById('text_place_button_se_connecter');
@@ -252,7 +253,6 @@ async function sendName_connexion() {
 
         notifier(res.message);
         showSection('Home');
-        refreshData();
     } else {
         notifier(res.message); 
     }
@@ -278,7 +278,6 @@ async function sendName_create() {
 async function refreshData() {
     if (!window.nom) return;
 
-    // Moyennes
     const mg = await callAPI('notes', 2);
     document.getElementById('afficher_moyen').textContent = (mg.message || 0) + "/20";
 
@@ -286,7 +285,6 @@ async function refreshData() {
     const mm = await callAPI('notes', 1, { matiere: mat });
     document.getElementById('afficher_moyen_matiere').textContent = (mm.message || 0) + "/20";
 
-    // Liste des notes
     const selMat = document.getElementById("SELlistPopupMoyen").value;
     const list = await callAPI('notes', 3, { selectMatiere: selMat, nmb: current_page });
     
@@ -302,7 +300,7 @@ async function sendnote() {
     const coef = document.getElementById('INcoef').value;
     const matiere = document.getElementById('matiere').value;
     
-    if (!note || !sur) return notifier("Note ou Sur quoi vide !");
+    if (!note || !sur) return notifier("Note ou 'Sur quoi' vide !");
 
     let autre = "";
     if (["Anglais", "Espagnole", "Allemand", "Italien"].includes(matiere)) {
@@ -321,34 +319,46 @@ async function sendnote() {
     refreshData();
 }
 
-const supprimerNote = async (index) => {
-    if (pIDs[index]) {
-        await callAPI('notes', 4, { noteID: pIDs[index] });
-        notifier("Note supprimée");
-        refreshData();
-    }
-};
-
-// ================= NAVIGATION =================
+// ================= NAVIGATION (RECTIFIÉE) =================
 
 function showSection(id) {
     const sections = ['popup_se_connecter', 'Admin', 'Logs', 'popup_create_compte', 'popup_Moyen', 'Chess', 'Home'];
+    
     sections.forEach(s => {
         const el = document.getElementById(s);
         if (el) el.style.display = (s === id) ? 'block' : 'none';
     });
     
     const overlay = document.getElementById('overlay');
-    if (overlay) overlay.style.display = (id.includes('popup')) ? 'block' : 'none';
+    if (overlay) {
+        // RECTIFICATION : L'overlay ne s'active QUE pour la connexion ou la création de compte.
+        // On ne l'active PAS pour "popup_Moyen" qui est une section principale de ton site.
+        if (id === 'popup_se_connecter' || id === 'popup_create_compte') {
+            overlay.style.display = 'block';
+        } else {
+            overlay.style.display = 'none';
+        }
+    }
     
     if (id === 'popup_Moyen') refreshData();
 }
 
-// Raccourcis pour le HTML
+// --- Raccourcis ---
 const open_div_Home = () => showSection('Home');
 const open_popup_se_connecter = () => showSection('popup_se_connecter');
 const open_popup_create_compte = () => showSection('popup_create_compte');
 const open_popup_Moyen = () => showSection('popup_Moyen');
+
+const listPopupMoyenH = () => { current_page++; refreshData(); };
+const listPopupMoyenB = () => { if(current_page > 1) { current_page--; refreshData(); } };
+
+const supprimerNote = async (idx) => {
+    if (pIDs[idx]) {
+        await callAPI('notes', 4, { noteID: pIDs[idx] });
+        notifier("Note supprimée");
+        refreshData();
+    }
+};
 
 const supprimerNotesp1 = () => supprimerNote(0);
 const supprimerNotesp2 = () => supprimerNote(1);
@@ -356,13 +366,12 @@ const supprimerNotesp3 = () => supprimerNote(2);
 const supprimerNotesp4 = () => supprimerNote(3);
 const supprimerNotesp5 = () => supprimerNote(4);
 
-// Initialisation au chargement
 window.onload = async () => {
     try {
         await fetch("https://flask-api-1p4y.onrender.com/");
         document.getElementById('chargement').style.display = 'none';
         document.getElementById('site').style.display = 'block';
-    } catch(e) { console.log("Serveur en cours de boot..."); }
+    } catch(e) { console.log("Réveil serveur..."); }
 };
 </script>
 </body>
