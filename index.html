@@ -1,178 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/IMG_5039-Photoroom 2.png">
-  <title>testa35</title>
-  <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/IMG_5039-Photoroom 2.png">
+    <title>testa35 - Gestionnaire de Notes</title>
+    <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+
 <div id="chargement">
-  <div id="spinner" class="spinner"></div>
+    <div id="spinner" class="spinner"></div>
 </div>
+
 <div id="site" style="display:none;">
-  <div class="Barre_task">
-    <button class="buton_se_connecter" id="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
-    <button class="Home_button" onclick="open_div_Home()">Home</button>
-    <button class="buton_Moyen" onclick="open_popup_Moyen()">Moyen</button>
-    <button class="buton_Chess" onclick="open_popup_Chess()">Chess</button>
-    <button class="buton_se_connecter" id="text_place_button_se_connecter" onclick="ParametresCompte()" style="display:none;"></button>
-    <button class="buton_Admin" id="buton_admin" onclick="open_popup_admin()" style="display:none;">Admin</button>
-    <button class="buton_Logs" id="buton_Logs" onclick="open_popup_Logs()" style="display:none;">Logs</button>
-  </div>
-
-  <div id="overlay"></div>
-  <div class="Admin" id="Admin">
-    <p id="donneeCompte" class="pdonneCompte"></p>
-    <p id="titleAdminSuppCompte" class="titleAdminSuppCompte">Compte a supprimer</p>
-    <input id="inputAdminSuppCompte" class="inputAdminSuppCompte">
-    <button id="buttonAdminSupCompte" class="buttonAdminSupCompte" onclick="AdminSupOneCOMPTE()">SUPPRIMER</button>
-    <button id="supALLcompte" class="supALLcompte" onclick="AdminSupALLCompte()">SUPPRIMER TOUT LES COMPTES</button>
-    <button id="supALLnotes" class="supALLnotes" onclick="AdminSupALLnotes()">SUPPRIMER TOUTE LES NOTES</button>
-    <button id="supALLlogs" class="supALLlogs" onclick="AdminSupALLlogs()">SUPPRIMER TOUT LES LOGS</button>
-    <button id="SeconnecterAdmin" class="SeconnecterAdmin" onclick="open_popup_se_connecter()">Se connecter Admin</button>
-  </div>
-  <div class="Logs" id="Logs">
-    <pre id="logs" class="logs"></pre>
-  </div>
-  <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
-    <p class="decors1">__</p>
-    <h2 class="h2_connexion">Connexion</h2>
-    <p class="Inserez_votre_identifiants">Insérez votre identifiant</p>
-    <input type="text" class="input_id" id="input_id" />
-    <p class="Inserez_votre_mp">Insérez votre mot de passe</p>
-    <input type="password" class="input_mp" id="input_mp" />
-    <button class="create_account" type="button" onclick="open_popup_create_compte()">Créer</button>
-    <button class="popup_se_connecter_button" onclick="sendName_connexion()">Suivant</button>
-  </div>
-
-  <div class="popup_create_compte" id="popup_create_compte" style="display:none;">
-    <button class="popup_create_compte_button" onclick="sendName_create()">Créer</button>
-    <button class="ruturn_create_account" onclick="open_popup_se_connecter()">Retour</button>
-    <h2 class="h2_create_account">Créer un compte</h2>
-    <p class="inserez_id_create_account">Insérez un identifiant</p>
-    <p class="inserez_mp_create_account">Insérez un mot de passe</p>
-    <p class="confirm_mp_create_account">Confirmez le mot de passe</p>
-    <input class="input_id_account" id="input_id_account" />
-    <input type="password" class="input_mp_create_account" id="input_mp_create_account" />
-    <input type="password" class="input_confirm_mp_create_account" id="input_confirm_mp_create_account"/>
-    <p class="decors2">__</p>
-  </div>
-
-  <div class="Home" id="Home" style="display:block;">
-    <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
-    <div id="Home_div_left"><p class="ERREUR" style="display:none;">Une erreur interne a lieu veuillez reesayer plus tard </p></div>
-  </div>
-  <div class="Chess" id="Chess" style="display:none;">
-    <div class="ChessWithFriend" id "ChessWithFriend">
-       <h2 class="h2ChessWithFriend"> Joue avec un ami !</h2>
-       <p id="pNameChessWithFriend" class="pNameChessWithFriend"> Le nom de ton ami : </p>
-       <input class="NameChessWithFriend" id="NameChessWithFriend">
-       <button class="BChessWithFriend" id="BChessWithFriend">Jouer</button>
+    
+    <div class="Barre_task">
+        <button class="buton_se_connecter" id="buton_se_connecter" onclick="open_popup_se_connecter()">Se connecter</button>
+        <button class="Home_button" onclick="showSection('Home')">Home</button>
+        <button class="buton_Moyen" onclick="showSection('popup_Moyen')">Moyenne</button>
+        <button class="buton_Chess" onclick="showSection('Chess')">Chess</button>
+        
+        <button class="buton_se_connecter" id="text_place_button_se_connecter" style="display:none;"></button>
+        
+        <button class="buton_Admin" id="buton_admin" onclick="showSection('Admin')" style="display:none;">Admin</button>
+        <button class="buton_Logs" id="buton_Logs" onclick="showSection('Logs')" style="display:none;">Logs</button>
     </div>
-  </div>
 
-  <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
-    <div class="listPopupMoyen" id="listPopupMoyen">
-      <button type="button" onclick="listPopupMoyenH()" class="listPopupMoyenba1" id="listPopupMoyenba1">⥣</button>
-      <button type="button" onclick="listPopupMoyenB()" class="listPopupMoyenba2" id="listPopupMoyenba2">⥥</button>
-      <select class="SELlistPopupMoyen" id="SELlistPopupMoyen" name="matiere">
-        <option value="Mathématiques">Mathématiques</option>
-        <option value="RapportStage">Rapport de stage</option>
-        <option value="Physique">Physique</option>
-        <option value="SVT">SVT</option>
-        <option value="EMC">EMC</option>
-        <option value="Français">Français</option>
-        <option value="Histoire">Histoire</option>
-        <option value="Anglais">Anglais</option>
-        <option value="Espagnole">Espagnole</option>
-        <option value="Allemand">Allemand</option>
-        <option value="Italien">Italien</option>
-        <option value="Sport">Sport</option>
-        <option value="Technologie">Technologie</option>
-        <option value="Musique">Musique</option>
-        <option value="Arts-plastique">Arts-plastique</option>
-        <option value="Latin">Latin</option>
-        <option value="Chorale">Chorale</option>
-      </select>
-      <div class="listPopupMoyen1" id="listPopupMoyen1"><p class="listPopupMoyenp1" id="listPopupMoyenp1">Chargement</p><button type="button" class="listPopupMoyenb1" onclick="supprimerNotesp1()">Delete</button></div>
-      <div class="listPopupMoyen2" id="listPopupMoyen2"><p class="listPopupMoyenp2" id="listPopupMoyenp2">Chargement</p><button type="button" class="listPopupMoyenb2" onclick="supprimerNotesp2()">Delete</button></div>
-      <div class="listPopupMoyen3" id="listPopupMoyen3"><p class="listPopupMoyenp3" id="listPopupMoyenp3">Chargement</p><button type="button" class="listPopupMoyenb3" onclick="supprimerNotesp3()">Delete</button></div>
-      <div class="listPopupMoyen4" id="listPopupMoyen4"><p class="listPopupMoyenp4" id="listPopupMoyenp4">Chargement</p><button type="button" class="listPopupMoyenb4" onclick="supprimerNotesp4()">Delete</button></div>
-      <div class="listPopupMoyen5" id="listPopupMoyen5"><p class="listPopupMoyenp5" id="listPopupMoyenp5">Chargement</p><button type="button" class="listPopupMoyenb5" onclick="supprimerNotesp5()">Delete</button></div>
-    </div>
-    <div class="div_left__popup_Moyen" id="div_left__popup_Moyen">
-      <h2 class="h2_div_left__popup_Moyen">Moyen</h2>
-      <label class="L1_div_left__popup_Moyen">Moyen General</label>
-      <p class="afficher_moyenG" id="afficher_moyen">Aucune Moyen</p>
-      <label class="L2_div_left__popup_Moyen">Moyen par matiere</label>
-      <select class="SELmatiere_div_left__popup_Moyen" id="matiere_div_left__popup_Moyen" name="matiere">
-        <option value="Mathématiques">Mathématiques</option>
-        <option value="RapportStage">Rapport de stage</option>
-        <option value="Physique">Physique</option>
-        <option value="EMC">EMC</option>
-        <option value="SVT">SVT</option>
-        <option value="Français">Français</option>
-        <option value="Histoire">Histoire</option>
-        <option value="Anglais">Anglais</option>
-        <option value="Espagnole">Espagnole</option>
-        <option value="Allemand">Allemand</option>
-        <option value="Italien">Italien</option>
-        <option value="Sport">Sport</option>
-        <option value="Technologie">Technologie</option>
-        <option value="Musique">Musique</option>
-        <option value="Arts-plastique">Arts-plastique</option>
-        <option value="Latin">Latin</option>
-        <option value="Chorale">Chorale</option>
-      </select>
-      <p class="afficher_moyenM" id="afficher_moyen_matiere">Aucune Moyen</p>
-    </div>
-    <div class="ajouter_notes" id="ajouter_notes">
-      <h2 class="h2_div_ajouter_notes">Ajouter une note</h2>
-      <label class="Lnote" for="note">Ta note</label>
-      <label class="Lsur" for="sur">Sur</label>
-      <label class="Lcoef" for="coef">Le coef</label>
-      <input id="INnote" class="INnote">
-      <input id="INsur" class="INsur">
-      <input id="INcoef" class="INcoef">
-      <label class="Lmatiere" for="matiere">Choisis une matière :</label>
-      <select class="SELmatiere" id="matiere" name="matiere">
-        <option value="Mathématiques">Mathématiques</option>
-        <option value="RapportStage">Rapport de stage</option>
-        <option value="Physique">Physique</option>
-        <option value="SVT">SVT</option>
-        <option value="Français">Français</option>
-        <option value="EMC">EMC</option>
-        <option value="Histoire">Histoire</option>
-        <option value="Anglais">Anglais</option>
-        <option value="Espagnole">Espagnole</option>
-        <option value="Allemand">Allemand</option>
-        <option value="Italien">Italien</option>
-        <option value="Sport">Sport</option>
-        <option value="Technologie">Technologie</option>
-        <option value="Musique">Musique</option>
-        <option value="Arts-plastique">Arts-plastique</option>
-        <option value="Latin">Latin</option>
-        <option value="Chorale">Chorale</option>
-      </select>
-      <select class="SELmatiere1" id="SELmatiere1" style="display:none;">
-        <option value="EE">EE</option>
-        <option value="CE">CE</option>
-        <option value="CO">CO</option>
-        <option value="EOC">EOC</option>
-        <option value="EOI">EOI</option>
-      </select> 
-      <button class="button_registe_moyenne" onclick="sendnote()">Enregistrer la note</button>
-    </div>
-  </div>
+    <div id="overlay"></div>
 
-  <div id="popup_result" class="popup_result" style="display:none;">
-    <p id="result_message" class="result_message"></p>
-    <button id="bFermeP1" class="bFermeP1" onclick="close_popup_result()">x</button>
-  </div>
+    <div class="Admin" id="Admin" style="display:none;">
+        <h2 class="titleAdminSuppCompte">Administration</h2>
+        <p id="donneeCompte" class="pdonneCompte"></p>
+        <div style="margin-top:20px;">
+            <label>ID Compte à supprimer :</label>
+            <input id="inputAdminSuppCompte" class="inputAdminSuppCompte">
+            <button class="buttonAdminSupCompte" onclick="AdminSupOneCOMPTE()">SUPPRIMER</button>
+        </div>
+        <button class="supALLcompte" onclick="AdminSupALLCompte()">SUPPRIMER TOUS LES COMPTES</button>
+        <button class="supALLnotes" onclick="AdminSupALLnotes()">SUPPRIMER TOUTES LES NOTES</button>
+        <button class="supALLlogs" onclick="AdminSupALLlogs()">SUPPRIMER TOUS LES LOGS</button>
+    </div>
+
+    <div class="Logs" id="Logs" style="display:none;">
+        <h2>Logs du serveur</h2>
+        <pre id="logs" class="logs"></pre>
+    </div>
+
+    <div class="popup_se_connecter" id="popup_se_connecter" style="display:none;">
+        <h2 class="h2_connexion">Connexion</h2>
+        <p class="Inserez_votre_identifiants">Identifiant</p>
+        <input type="text" class="input_id" id="input_id" />
+        <p class="Inserez_votre_mp">Mot de passe</p>
+        <input type="password" class="input_mp" id="input_mp" />
+        <div style="margin-top:20px; width:100%; display:flex; justify-content: space-between;">
+            <button class="create_account" onclick="showSection('popup_create_compte')">Créer un compte</button>
+            <button class="popup_se_connecter_button" onclick="sendName_connexion()">Suivant</button>
+        </div>
+    </div>
+
+    <div class="popup_create_compte" id="popup_create_compte" style="display:none;">
+        <h2 class="h2_create_account">Créer un compte</h2>
+        <p>Identifiant</p>
+        <input class="input_id_account" id="input_id_account" />
+        <p>Mot de passe</p>
+        <input type="password" class="input_mp_create_account" id="input_mp_create_account" />
+        <p>Confirmer le mot de passe</p>
+        <input type="password" class="input_confirm_mp_create_account" id="input_confirm_mp_create_account"/>
+        <div style="margin-top:20px; width:100%; display:flex; justify-content: space-between;">
+            <button class="ruturn_create_account" onclick="showSection('popup_se_connecter')">Retour</button>
+            <button class="popup_create_compte_button" onclick="sendName_create()">Créer</button>
+        </div>
+    </div>
+
+    <div class="Home" id="Home" style="display:flex;">
+        <h1 id="Welcome" class="Welcome">Welcome <span id="Welcome_nom"></span></h1>
+        <div id="Home_div_left">
+            <p class="ERREUR" id="error_home" style="display:none;">Une erreur interne a eu lieu.</p>
+            <p>Sélectionnez un onglet dans la barre latérale pour commencer.</p>
+        </div>
+    </div>
+
+    <div class="Chess" id="Chess" style="display:none;">
+        <div class="ChessWithFriend">
+           <h2 class="h2ChessWithFriend">Joue avec un ami !</h2>
+           <p class="pNameChessWithFriend">Le nom de ton ami :</p>
+           <input class="NameChessWithFriend" id="NameChessWithFriend">
+           <button class="BChessWithFriend">Jouer</button>
+        </div>
+    </div>
+
+    <div class="popup_Moyen" id="popup_Moyen" style="display:none;">
+        <div class="listPopupMoyen" id="listPopupMoyen">
+            <div style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
+                <h3>Mes Notes</h3>
+                <select class="SELlistPopupMoyen" id="SELlistPopupMoyen" onchange="refreshData()">
+                    <option value="Mathématiques">Mathématiques</option>
+                    <option value="Français">Français</option>
+                    <option value="Physique">Physique</option>
+                    <option value="SVT">SVT</option>
+                    <option value="Histoire">Histoire</option>
+                    <option value="Anglais">Anglais</option>
+                    <option value="Sport">Sport</option>
+                    </select>
+            </div>
+            
+            <div class="listPopupMoyen1"><p id="listPopupMoyenp1">-</p><button class="listPopupMoyenb1" onclick="supprimerNotesp1()">Suppr.</button></div>
+            <div class="listPopupMoyen2"><p id="listPopupMoyenp2">-</p><button class="listPopupMoyenb2" onclick="supprimerNotesp2()">Suppr.</button></div>
+            <div class="listPopupMoyen3"><p id="listPopupMoyenp3">-</p><button class="listPopupMoyenb3" onclick="supprimerNotesp3()">Suppr.</button></div>
+            <div class="listPopupMoyen4"><p id="listPopupMoyenp4">-</p><button class="listPopupMoyenb4" onclick="supprimerNotesp4()">Suppr.</button></div>
+            <div class="listPopupMoyen5"><p id="listPopupMoyenp5">-</p><button class="listPopupMoyenb5" onclick="supprimerNotesp5()">Suppr.</button></div>
+            
+            <div style="margin-top:10px;">
+                <button onclick="listPopupMoyenB()">Précédent</button>
+                <button onclick="listPopupMoyenH()">Suivant</button>
+            </div>
+        </div>
+
+        <div class="div_left__popup_Moyen">
+            <h2 class="h2_div_left__popup_Moyen">Moyennes</h2>
+            <label>Générale :</label>
+            <p class="afficher_moyenG" id="afficher_moyen">-- / 20</p>
+            
+            <label>Par matière :</label>
+            <select class="SELmatiere_div_left__popup_Moyen" id="matiere_div_left__popup_Moyen" onchange="refreshData()">
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Français">Français</option>
+                <option value="Physique">Physique</option>
+                </select>
+            <p class="afficher_moyenM" id="afficher_moyen_matiere">-- / 20</p>
+        </div>
+
+        <div class="ajouter_notes" id="ajouter_notes">
+            <h3>Ajouter une note</h3>
+            <div style="display:flex; gap:10px;">
+                <input id="INnote" placeholder="Note" style="width:50px;">
+                <input id="INsur" placeholder="Sur" style="width:50px;">
+                <input id="INcoef" placeholder="Coef" style="width:50px;">
+            </div>
+            <select class="SELmatiere" id="matiere">
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Français">Français</option>
+                <option value="Physique">Physique</option>
+                <option value="Anglais">Anglais</option>
+            </select>
+            <button class="button_registe_moyenne" onclick="sendnote()">Enregistrer</button>
+        </div>
+    </div>
+
+    <div id="popup_result" class="popup_result">
+        <p id="result_message"></p>
+        <button id="bFermeP1" onclick="close_popup_result()">×</button>
+    </div>
+
 </div>
+
 <script>
+    <script>
 // ================= CONFIGURATION =================
 const API_URL = "https://flask-api-1p4y.onrender.com/api";
 window.nom = null; 
@@ -373,6 +357,7 @@ window.onload = async () => {
         document.getElementById('site').style.display = 'block';
     } catch(e) { console.log("Réveil serveur..."); }
 };
+</script>
 </script>
 </body>
 </html>
