@@ -119,10 +119,10 @@
 
         <div class="div_left__popup_Moyen">
             <h2 class="h2_div_left__popup_Moyen">Moyennes</h2>
-            <label>Générale :</label>
-            <p class="afficher_moyenG" id="afficher_moyen">-- / 20</p>
+            <h4>Générale</h4>
+            <h5 class="afficher_moyenG" id="afficher_moyen"></h5>
             
-            <label>Par matière :</label>
+            <h4>Par matière :</h4>
             <select class="SELmatiere_div_left__popup_Moyen" id="matiere_div_left__popup_Moyen" onchange="refreshData()">
                 <option value="Mathématiques">Mathématiques</option>
                 <option value="Français">Français</option>
@@ -132,15 +132,15 @@
                 <option value="Anglais">Anglais</option>
                 <option value="Sport">Sport</option>
             </select>
-            <p class="afficher_moyenM" id="afficher_moyen_matiere">-- / 20</p>
+            <h5 class="afficher_moyenM" id="afficher_moyen_matiere"></h5>
         </div>
 
         <div class="ajouter_notes" id="ajouter_notes">
             <h2>Ajouter une note</h2>
             <div style="display:flex; gap:10px;">
-                <input id="INnote" placeholder="Note" style="width:50px;color:black;">
-                <input id="INsur" placeholder="Sur" style="width:50px;color:black;">
-                <input id="INcoef" placeholder="Coef" style="width:50px;color:black;">
+                <input id="INnote" placeholder="Note" style="width:50px;">
+                <input id="INsur" placeholder="Sur" style="width:50px;">
+                <input id="INcoef" placeholder="Coef" style="width:50px;">
             </div>
             <select class="SELmatiere" id="matiere">
                 <option value="Mathématiques">Mathématiques</option>
