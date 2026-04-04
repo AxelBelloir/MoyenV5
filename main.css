@@ -45,6 +45,7 @@ input:focus {
     border-color: #3498db;
 }
 button {
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 8px; /* Coins arrondis */
