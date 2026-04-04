@@ -50,6 +50,21 @@ input, select {
 input:focus {
     border-color: #3498db;
 }
+/* La méthode moderne (Chrome, Firefox, Edge, Safari) */
+input::placeholder {
+    color: black; /* Ta couleur ici */
+    opacity: 1;     /* Important pour Firefox qui baisse l'opacité par défaut */
+}
+
+/* Pour les anciennes versions de Chrome/Safari */
+input::-webkit-input-placeholder {
+    color: black;
+}
+
+/* Pour Internet Explorer 10-11 */
+input:-ms-input-placeholder {
+    color: black;
+}
 button {
     color: black;
     background: linear-gradient(#C7EBFF,#C7D2FF);
