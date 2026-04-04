@@ -33,7 +33,39 @@ body {
     margin-bottom: 30px;
     transition: 0.3s;
 }
+input, select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
 
+input:focus {
+    border-color: #3498db;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Coins arrondis */
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animation fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet quand on passe la souris dessus */
+button:hover {
+    transform: translateY(-2px); /* Le bouton monte un peu */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+/* Effet quand on clique */
+button:active {
+    transform: translateY(0);
+}
 .Home_button:hover, .buton_Moyen:hover { color: #3498db; }
 
 /* Positionnement des boutons dans la barre */
