@@ -142,9 +142,9 @@ button:active {
     left: 10px;
     top: 20px;
     width: 90%;
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
-    min-height: 400px;
+    min-height: 450px;
     background: white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     border-radius: 15px;
