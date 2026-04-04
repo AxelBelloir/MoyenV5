@@ -166,6 +166,9 @@ button:active {
 }
 
 .div_left__popup_Moyen {
+    position:absolute;
+    right:10px;
+    top:20px;
     width: 90%;
     max-width: 300px;
     background: white;
@@ -190,6 +193,9 @@ button:active {
 
 /* ================= AJOUTER NOTES ================= */
 #ajouter_notes {
+    position:absolute;
+    right:20px;
+    bottom:10px;
     background: white;
     padding: 20px;
     border-radius: 15px;
