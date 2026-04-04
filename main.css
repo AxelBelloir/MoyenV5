@@ -32,6 +32,7 @@ body {
     cursor: pointer;
     margin-bottom: 30px;
     transition: 0.3s;
+    box-shadow:none;
 }
 input, select {
     padding: 10px;
