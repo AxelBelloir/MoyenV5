@@ -35,10 +35,14 @@ body {
 }
 input, select {
     padding: 10px;
+    color: black;
     border: 2px solid #ddd;
     background: linear-gradient(#C7EBFF,#C7D2FF);
+    border: none;
+    font-family: 'Segoe UI', sans-serif;
     border-radius: 8px;
     outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s;
 }
 
