@@ -89,7 +89,7 @@ button:hover {
 button:active {
     transform: translateY(0);
 }
-.Home_button:hover, .buton_Moyen:hover { color: #3498db; }
+.Home_button:hover, .buton_Moyen:hover { color: white; }
 
 /* Positionnement des boutons dans la barre */
 .buton_se_connecter { margin-top: 10px; }
