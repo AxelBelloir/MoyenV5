@@ -17,6 +17,6 @@
 .BUT_taskBar{
     border:none;
     background-color:linear-gradient(#BFD6FF,#BAD0FF);
-    border-radius:10px;
-    
+    border-radius:40px;
+    color:black 
 }
