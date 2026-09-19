@@ -12,18 +12,22 @@
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap:30px;
+    gap:50px;
 }
 .DIV_taskBar_DIV_login{
-    
+    position:absolute;
+    right:0px;
+    top:0px;
+    border-style:solid;
+    border-width:0 2.5px 0 0;
+    border-color:#FFE59E;
 }
 .BUT_taskBar{
     border:none;
     border-radius:20px;
     color:black;
     height:75%;
-    width:7.5%;
+    width:10%;
     font-weight:bolder;
     font-size:16px;
 }
