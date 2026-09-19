@@ -6,6 +6,7 @@
     position:absolute;
     left:0px;
     top:0px;
+    background:#FFFEE0;
     border-style:solid;
     border-width:0 0 2.5px 0;
     border-color:#FFE59E;
@@ -29,10 +30,12 @@
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    
+    height:75%;
+    width:80%;
 }
 .BUT_taskBar{
     border:none;
+    background:none;
     border-radius:20px;
     color:black;
     height:75%;
