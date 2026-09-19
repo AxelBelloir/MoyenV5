@@ -18,8 +18,10 @@
     position:absolute;
     right:0px;
     top:0px;
+    height:100%;
+    width:15%;
     border-style:solid;
-    border-width:0 2.5px 0 0;
+    border-width:2.5px 0 0 0;
     border-color:#FFE59E;
 }
 .BUT_taskBar{
