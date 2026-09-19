@@ -21,8 +21,14 @@
     height:100%;
     width:15%;
     border-style:solid;
-    border-width:2.5px 0 0 0;
+    border-width:0 0 0 2.5px;
     border-color:#FFE59E;
+}
+.BUT_taskBar_login{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(
 }
 .BUT_taskBar{
     border:none;
