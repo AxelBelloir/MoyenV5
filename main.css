@@ -10,8 +10,9 @@
     border-width:0 0 2.5px 0;
     border-color:#FFE59E;
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap:20px;
 }
 .DIV_taskBar_DIV_login{
