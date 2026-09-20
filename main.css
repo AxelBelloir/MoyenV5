@@ -28,10 +28,6 @@
     align-items: center;
     justify-content: center;
 }
-.BUT_taskBar_login{
-    height:75%;
-    width:80%;
-}
 .BUT_taskBar{
     border:none;
     background:none;
@@ -41,4 +37,8 @@
     width:10%;
     font-weight:bolder;
     font-size:16px;
+}
+.BUT_taskBar_login{
+    height:75%;
+    width:80%;
 }
