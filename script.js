@@ -1,6 +1,6 @@
 const DIV_principal = ["overlay","DIV_home","DIV_login","DIV_average","DIV_chess"];
 
-function open(DIV){
+function openDIV(DIV){
   for(let i = 0; i < DIV_principal.length;++i){
     document.getElementById(DIV_principal[i]).style.display =  "none";
   }
