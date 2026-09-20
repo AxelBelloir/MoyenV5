@@ -65,8 +65,10 @@
     z-index:2;
     right:0px;
     top:0px;
+    background:red;
 }
 .overlay{
+    background:blue;
     position: absolute;
     top: 0;
     left: 0;
