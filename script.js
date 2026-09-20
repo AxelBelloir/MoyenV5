@@ -1,1 +1,3 @@
-
+function open(const DIV){
+  
+}
