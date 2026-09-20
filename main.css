@@ -31,10 +31,10 @@
 .BUT_taskBar{
     border:none;
     background:none;
-    border-radius:20px;
+    border-radius:10px;
     color:black;
-    height:75%;
-    width:10%;
+    height:50%;
+    width:5%;
     font-weight:bolder;
     font-size:16px;
 }
