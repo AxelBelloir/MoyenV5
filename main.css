@@ -38,6 +38,18 @@
     font-weight:bolder;
     font-size:16px;
 }
+.BUT_taskBar:hover{
+    transform: scale(1.25);
+    border:solid;
+    border-size:1px;
+    border-color:#FFE59E;
+}
+.BUT_taskBar:active{
+    transform: scale(0.75);
+    border:solid;
+    border-size:2.5px;
+    border-color:#FFE59E;
+}
 .BUT_taskBar_login{
     height:75%;
     width:80%;
