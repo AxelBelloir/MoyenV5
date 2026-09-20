@@ -41,13 +41,13 @@
 .BUT_taskBar:hover{
     transform: scale(1.25);
     border:solid;
-    border-width:0.5px;
+    border-width:2.5px;
     border-color:#FFE59E;
 }
 .BUT_taskBar:active{
     transform: scale(0.75);
     border:solid;
-    border-width:1px;
+    border-width:5px;
     border-color:#FFE59E;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
