@@ -59,7 +59,7 @@
 /* ===== DIV_login ===== */
 
 .DIV_login{
-    height:%;
+    height:70%;
     width:20%;
     position:absolute;
     z-index:2;
@@ -75,5 +75,10 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1;
+}
+.H2_login{
+    position: absolute;
+    left:50%;
+    trasnform:translateX(-50%);
 }
 
