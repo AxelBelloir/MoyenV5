@@ -6,10 +6,10 @@
     position:absolute;
     left:0px;
     top:0px;
-    background:#1BFAD5;
+    background:linear-gradient(#D6C3C3,#C48484);
     border-style:solid;
     border-width:0 0 2.5px 0;
-    border-color:#16D9B9;
+    border-color:#8A4343;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -23,7 +23,7 @@
     width:15%;
     border-style:solid;
     border-width:0 0 0 2.5px;
-    border-color:#16D9B9;
+    border-color:#8A4343;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,13 +42,13 @@
     transform: scale(1.25);
     border:solid;
     border-width:2.5px;
-    border-color:#16D9B9;
+    border-color:#8A4343;
 }
 .BUT_taskBar:active{
     transform: scale(0.75);
     border:solid;
     border-width:5px;
-    border-color:#16D9B9;
+    border-color:#8A4343;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .BUT_taskBar_login{
