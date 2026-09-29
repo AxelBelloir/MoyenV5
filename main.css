@@ -92,6 +92,7 @@
 }
 .P_login1{top:40%;}
 .P_login2{top:55%;}
+.P_login3{position:absolute;bottom:15%;left:1%;font-size:5px;}
 .IN_login{
     position: absolute;
     left:50%;
