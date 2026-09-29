@@ -6,7 +6,7 @@
     position:absolute;
     left:0px;
     top:0px;
-    background:linear-gradient(#D6C3C3,#C48484);
+    background:linear-gradient(#FFF2E3,#FFE2BF);
     border-style:solid;
     border-width:0 0 2.5px 0;
     border-color:#8A4343;
@@ -105,4 +105,12 @@
 .IN_login1{top:45%;}
 .IN_login2{top:60%;}
 
+.BUT_login{
+    position:absolute;
+    bottom:7.5%;
+    font-weight:bolder;
+    font-size:20px;
+    baxkground:none;
+    
+}
 
