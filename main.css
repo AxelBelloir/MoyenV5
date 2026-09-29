@@ -91,7 +91,7 @@
 }
 .P_login1{top:40%;}
 .P_login2{top:65%;}
-.IN_login1,.IN_login2{
+.IN_login{
     position: absolute;
     left:50%;
     transoform:translateX(-50%);
