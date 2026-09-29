@@ -80,7 +80,7 @@
     position: absolute;
     top:15%;
     left:50%;
-    trasnform:translateX(-50%);
+    transform:translateX(-50%);
 }
 .P_login1,.P_login2{
     position: absolute;
@@ -98,6 +98,8 @@
     transform:translateX(-50%);
     font-family:arial;
     color:black;
+    height:25px;
+    width:100px;
 }
 .IN_login1{top:45%;}
 .IN_login2{top:70%;}
