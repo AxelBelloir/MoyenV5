@@ -91,7 +91,7 @@
     color:black;
 }
 .P_login1{top:40%;}
-.P_login2{top:65%;}
+.P_login2{top:55%;}
 .IN_login{
     position: absolute;
     left:50%;
@@ -99,8 +99,8 @@
     font-family:arial;
     color:black;
     height:25px;
-    width:100px;
+    width:200px;
 }
 .IN_login1{top:45%;}
-.IN_login2{top:70%;}
+.IN_login2{top:60%;}
 
