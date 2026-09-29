@@ -78,7 +78,26 @@
 }
 .H2_login{
     position: absolute;
+    top:15%;
     left:50%;
     trasnform:translateX(-50%);
 }
+.P_login1,.P_login2{
+    position: absolute;
+    left:50%;
+    transoform:translateX(-50%);
+    font-weight:bolder;
+    color:black;
+}
+.P_login1{top:40%;}
+.P_login2{top:65%;}
+.IN_login1,.IN_login2{
+    position: absolute;
+    left:50%;
+    transoform:translateX(-50%);
+    font-weight:bolder;
+    color:black;
+}
+.IN_login1{top:45%;}
+.IN_login2{top:70%;}
 
