@@ -6,7 +6,7 @@
     position:absolute;
     left:0px;
     top:0px;
-    background:linear-gradient(#FFF2E3,#FFE2BF);
+    background:linear-gradient(to right bottom,#FFF2E3,#FFE2BF);
     border-style:solid;
     border-width:0 0 2.5px 0;
     border-color:#8A4343;
