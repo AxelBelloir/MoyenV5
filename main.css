@@ -110,7 +110,9 @@
     bottom:7.5%;
     font-weight:bolder;
     font-size:20px;
-    baxkground:none;
-    
+    background:linear-gradient(to right bottom,#FFF2E3,#FFE2BF);
+    border:none;
 }
+.BUT_login1{left:15%;}
+.BUT_login2{right:15%;}
 
