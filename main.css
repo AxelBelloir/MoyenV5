@@ -113,22 +113,12 @@
 /* CLASSE COMMUNE */
 
 .BUT {
-  /* Dégradé multi-étapes pour un effet "gélifié" et lumineux plus subtil */
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #fcf2ef 50%,
-    #f4e3df 51%,
-    #e8d3cc 100%
-  );
-  
-  /* Bordure délicate bicolore ou semi-transparente pour plus de profondeur */
+
   border: 1px solid rgba(180, 150, 142, 0.5);
-  border-bottom-color: rgba(150, 120, 112, 0.7); /* Plus sombre en bas pour ancrer le bouton */
-  border-radius: 8px;
+  border-bottom-color: rgba(150, 120, 112, 0.7); 
+  border-radius: 16px;
   
-  /* Typographie */
-  color: #3d2c27;
+  color: black;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
