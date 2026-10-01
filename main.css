@@ -112,27 +112,67 @@
 
 /* CLASSE COMMUNE */
 
-.BUT{
-  background: linear-gradient(to bottom, #fff5f2, #e8d5d0);
-  border: 1px solid #c9b4ae;
-  border-radius: 8px; 
-  color: #4a3b37; 
+.BUT {
+  /* Dégradé multi-étapes pour un effet "gélifié" et lumineux plus subtil */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #fcf2ef 50%,
+    #f4e3df 51%,
+    #e8d3cc 100%
+  );
+  
+  /* Bordure délicate bicolore ou semi-transparente pour plus de profondeur */
+  border: 1px solid rgba(180, 150, 142, 0.5);
+  border-bottom-color: rgba(150, 120, 112, 0.7); /* Plus sombre en bas pour ancrer le bouton */
+  border-radius: 8px;
+  
+  /* Typographie */
+  color: #3d2c27;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 500;
-  padding: 10px 20px;
+  padding: 10px 22px;
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  transition: all 0.2s ease;
+  
+  /* Double ombre : une lueur interne lumineuse + une ombre portée très douce */
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9), 
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 1px 1px rgba(0, 0, 0, 0.04);
+  
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Effet au survol : le bouton s'illumine légèrement */
 .BUT:hover {
-  background: linear-gradient(to bottom, #fff9f7, #f0ded8);
-  border-color: #bfa59e;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #fff6f4 50%,
+    #f8eae6 51%,
+    #eeddd6 100%
+  );
+  border-color: rgba(160, 130, 122, 0.6);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 1), 
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.04);
 }
 
+/* Effet au clic : inversion de l'ombre et assombrissement */
 .BUT:active {
-  background: linear-gradient(to bottom, #dfccc6, #ebd7d2);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    to bottom,
+    #dfcb3 0%,
+    #e4cec6 50%,
+    #dbb9b3 51%,
+    #d1bbb4 100%
+  );
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  transform: translateY(1px); /* Léger mouvement d'enfoncement */
 }
-
