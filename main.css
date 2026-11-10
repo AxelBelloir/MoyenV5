@@ -88,7 +88,7 @@
 .BUT_login1{left:15%;}
 .BUT_login2{right:15%;}
 
-/* CLASSE COMMUNE */
+/* CLASSE COMMUNE
 
 .BUT {
 
@@ -103,7 +103,7 @@
   padding: 10px 22px;
   cursor: pointer;
   
-  /* Double ombre : une lueur interne lumineuse + une ombre portée très douce */
+
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.9), 
     inset 0 -1px 0 rgba(0, 0, 0, 0.05),
@@ -113,7 +113,7 @@
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Effet au survol : le bouton s'illumine légèrement */
+
 .BUT:hover {
   background: linear-gradient(
     to bottom,
@@ -130,7 +130,6 @@
     0 2px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* Effet au clic : inversion de l'ombre et assombrissement */
 .BUT:active {
   background: linear-gradient(
     to bottom,
@@ -142,5 +141,5 @@
   box-shadow: 
     inset 0 2px 4px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.08);
-  transform: translateY(1px); /* Léger mouvement d'enfoncement */
-}
+  transform: translateY(1px);
+} */
