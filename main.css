@@ -6,7 +6,7 @@
     position:absolute;
     left:0px;
     top:0px;
-    background: linear-gradient(-90deg, #FFFFFF 0%, #F0F5FF 100%);
+    background: linear-gradient(-90deg, #FFFFFF 0%, #A1C8FF 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(226, 232, 240, 0.8);
@@ -15,19 +15,6 @@
     flex-direction: row;
     align-items: center;
     gap:50px;
-}
-.DIV_taskBar_DIV_login{
-    position:absolute;
-    right:0px;
-    top:0px;
-    height:100%;
-    width:15%;
-    border-style:solid;
-    border-width:0 0 0 2.5px;
-    border-color:#8A4343;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .BUT_taskBar{
     border:none;
@@ -42,17 +29,8 @@
 /*
 .BUT_taskBar:hover{
     transform: scale(1.25);
-    border:solid;
-    border-width:2.5px;
-    border-color:#8A4343;
+    background:#
 }
- .BUT_taskBar:active{
-    transform: scale(0.75);
-    border:solid;
-    border-width:5px;
-    border-color:#8A4343;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-} */
 .BUT_taskBar_login{
     height:50%;
     width:70%;
