@@ -43,12 +43,21 @@
     top:0px;
 background: linear-gradient(
   135deg,
-  #B2E8ED 0%,
-  #B2E8ED 10%,
+  #FFEBBA 0%,
+  #FFEBBA 10%,
   #FFFFFF 30%,
   #FFFFFF 70%,
-  #B2E8ED 90%,
-  #B2E8ED 100%
+  #FFEBBA 90%,
+  #FFEBBA 100%
+);
+background: linear-gradient(
+  45deg,
+  #FFEBBA 0%,
+  #FFEBBA 10%,
+  #FFFFFF 30%,
+  #FFFFFF 70%,
+  #FFEBBA 90%,
+  #FFEBBA 100%
 );
 }
 .H2_login{
