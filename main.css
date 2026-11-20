@@ -35,13 +35,21 @@
 /* ===== DIV_login ===== */
 
 .DIV_login{
-    height:70%;
-    width:20%;
+    height:100%;
+    width:100%;
     position:absolute;
     z-index:2;
     right:0px;
     top:0px;
-    background-color:white;
+    background: linear-gradient(
+  135deg,
+  rgba(59, 130, 246, 0.08) 0%,
+  rgba(59, 130, 246, 0.08) 10%,
+  #ffffff 10%,
+  #ffffff 90%,
+  rgba(59, 130, 246, 0.08) 90%,
+  rgba(59, 130, 246, 0.08) 100%
+);
 }
 .overlay{
     position: absolute;
