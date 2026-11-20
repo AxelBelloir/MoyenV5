@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "MaPolice"; /* Nom que vous choisissez librement */
+  src:url("fonts/MaPolice.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Évite que le texte reste invisible pendant le chargement */
+}
+
+
+
+
+
+
+
+
 /* ===== TaskBar ===== */
 .DIV_taskBar{
     height:100%;
