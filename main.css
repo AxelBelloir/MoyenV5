@@ -41,24 +41,8 @@
     z-index:2;
     right:0px;
     top:0px;
-background: linear-gradient(
-  135deg,
-  #FFEBBA 0%,
-  #FFEBBA 10%,
-  #FFFFFF 30%,
-  #FFFFFF 70%,
-  #FFEBBA 90%,
-  #FFEBBA 100%
-);
-background: linear-gradient(
-  45deg,
-  #FFEBBA 0%,
-  #FFEBBA 10%,
-  #FFFFFF 30%,
-  #FFFFFF 70%,
-  #FFEBBA 90%,
-  #FFEBBA 100%
-);
+    radial-gradient(ellipse 60% 100% at 50% 50%, #FFFFFF 0%, #FFFFFF 55%, transparent 56%),
+    linear-gradient(90deg, #FFEBBA 0%, #9adce3 50%, #FFEBBA 100%);
 }
 .H2_login{
     position: absolute;
