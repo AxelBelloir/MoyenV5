@@ -43,7 +43,7 @@
     top:0px;
     background-color: #FFEBBA;
     background-image:
-    radial-gradient(ellipse 60% 100% at 50% 50%, #FFFFFF 0%, #FFFFFF 55%, transparent 56%),
+    radial-gradient(ellipse 90% 100% at 50% 50%, #FFFFFF 0%, #FFFFFF 55%, transparent 56%),
     linear-gradient(90deg, #FFEBBA 0%, #9adce3 50%, #FFEBBA 100%);
 }
 .H2_login{
