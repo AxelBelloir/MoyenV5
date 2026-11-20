@@ -41,6 +41,8 @@
     z-index:2;
     right:0px;
     top:0px;
+    background-color: #FFEBBA;
+    background-image:
     radial-gradient(ellipse 60% 100% at 50% 50%, #FFFFFF 0%, #FFFFFF 55%, transparent 56%),
     linear-gradient(90deg, #FFEBBA 0%, #9adce3 50%, #FFEBBA 100%);
 }
