@@ -34,11 +34,11 @@
 
 /* ===== DIV_login ===== */
 .overlay{
-  position: fixed;
-  inset: 0; 
-  background-color: rgba(0, 0, 0, 0.55); 
-  backdrop-filter: blur(4px);
-  z-index: 1;
+    position: fixed;
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0.55); 
+    backdrop-filter: blur(4px);
+    z-index: 1;
 }
 .DIV_login{
     height:50%;
@@ -64,6 +64,13 @@
     font-weight:bolder;
     font-family:arial;
     color:black;
+}
+.DIV_login_IMG_logo{
+    position:absolute;
+    left:10px;
+    top:10px;
+    height:20px;
+    width:auto;
 }
 .P_login1{top:40%;}
 .P_login2{top:55%;}
