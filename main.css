@@ -69,9 +69,9 @@
 .H2_login{
     position: absolute;
     top:150px;
-    left:25px;
+    left:50px;
     font-family:MaPolice;
-    font-size:50px;
+    font-size:75px;
 }
 .P_login1,.P_login2{
     position: absolute;
