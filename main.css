@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MaPolice"; /* Nom que vous choisissez librement */
-  src:url("fonts/MaPolice.ttf") format("truetype");
+  src:url("Matcha Squishy.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Évite que le texte reste invisible pendant le chargement */
@@ -70,7 +70,7 @@
     position: absolute;
     top:150px;
     left:25px;
-    font-family:Arial;
+    font-family:MaPolice;
     font-size:50px;
 }
 .P_login1,.P_login2{
