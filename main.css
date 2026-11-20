@@ -53,9 +53,11 @@
 }
 .H2_login{
     position: absolute;
-    top:15%;
-    left:50%;
+    top:150px;
+    left:25px;
     transform:translateX(-50%);
+    font-family:Arial;
+    font-size:35px;
 }
 .P_login1,.P_login2{
     position: absolute;
