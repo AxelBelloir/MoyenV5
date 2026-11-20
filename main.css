@@ -43,12 +43,10 @@
     top:0px;
     background: linear-gradient(
   135deg,
-  rgba(59, 130, 246, 0.08) 0%,
-  rgba(59, 130, 246, 0.08) 20%,
-  #B2E8ED 10%,
-  #B2E8ED 90%,
-  rgba(59, 130, 246, 0.08) 80%,
-  rgba(59, 130, 246, 0.08) 100%
+  #B2E8ED 0%,
+  #FFFFFF 20%,
+  #FFFFFF 80%,
+  #B2E8ED 100%,
 );
 }
 .overlay{
