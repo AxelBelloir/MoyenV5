@@ -55,9 +55,8 @@
     position: absolute;
     top:150px;
     left:25px;
-    transform:translateX(-50%);
     font-family:Arial;
-    font-size:35px;
+    font-size:50px;
 }
 .P_login1,.P_login2{
     position: absolute;
