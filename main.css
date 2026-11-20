@@ -33,18 +33,23 @@
 }
 
 /* ===== DIV_login ===== */
-
+.overlay{
+  position: fixed;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.55); 
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
 .DIV_login{
-    height:100%;
-    width:100%;
+    height:50%;
+    width:50%;
     position:absolute;
     z-index:2;
-    right:0px;
-    top:0px;
-    background-color: #FFEBBA;
-    background-image:
-    radial-gradient(ellipse 90% 100% at 50% 50%, #FFFFFF 0%, #FFFFFF 55%, transparent 56%),
-    linear-gradient(90deg, #FFEBBA 0%, #9adce3 50%, #FFEBBA 100%);
+    right:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+
 }
 .H2_login{
     position: absolute;
