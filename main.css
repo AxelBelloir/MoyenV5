@@ -128,6 +128,7 @@
 .BUT_login{
   position:absolute;
   bottom:7.5%;
+  transform:translateX(-50%);
   height:7.5%;
   width:10%;
   background:none;
@@ -135,6 +136,10 @@
   font-family:MaPolice;
   font-size:20px;
 }
-.BUT_login1{left:15%;}
-.BUT_login2{right:15%;}
+.BUT_login:hover{
+    transform: scale(1.25);
+    background:#F2EFEB;                                                                                                                                                                                                                                                                                                                                    
+}
+.BUT_login1{left:25%;}
+.BUT_login2{right:25%;}
 
