@@ -5,7 +5,7 @@ let dataSend = "login";
 
 
 
-function createPage(){ // Change la page de Login vers Create et inversement (sans dupliquer en html)
+function createPage(forceMode = null){ // Change la page de Login vers Create et inversement (sans dupliquer en html)
   const elmentTOcreate = ["create", "create", "back login", "create"];
   const elmentTOlogin = ["login", "login", "create", "login"];
 
