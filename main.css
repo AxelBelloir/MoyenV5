@@ -110,9 +110,8 @@
     height:75px;
     width:auto;
 }
-.P_login1{top:30%;}
-.P_login2{top:55%;}
-.P_login3{position:absolute;bottom:15%;left:1%;font-size:10px;}
+.P_login1{top:20%;}
+.P_login2{top:45%;}
 .IN_login{
     position: absolute;
     left:50%;
@@ -122,8 +121,8 @@
     height:25px;
     width:200px;
 }
-.IN_login1{top:40%;}
-.IN_login2{top:65%;}
+.IN_login1{top:30%;}
+.IN_login2{top:55%;}
 
 .BUT_login{
   position:absolute;
