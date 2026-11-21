@@ -86,7 +86,7 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.22);
 }
 .H2_login{
     position: absolute;
