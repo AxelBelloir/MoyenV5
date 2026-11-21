@@ -8,7 +8,7 @@ let dataSend = "login";
 function createPage(){ // Change la page de Login vers Create et inversement (sans dupliquer en html)
   const elmentTOcreate = ["create","create","back login","create"];
   const elmentTOlogin = ["login","login","create","login"];
-  if(dataSend == "login"){const elment = elmentTOcreate,} else {const elment = elmentTOlogin,}
+  if(dataSend == "login"){const elment = elmentTOcreate;} else {const elment = elmentTOlogin;}
     dataSend = elment[0];
     document.getElementById("H2_login").textContent = elment[1];
     document.getElementById("BUT_login1").texteContent= elment[2];
