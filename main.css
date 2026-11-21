@@ -125,7 +125,16 @@
 .IN_login1{top:40%;}
 .IN_login2{top:65%;}
 
-.BUT_login{position:absolute;bottom:7.5%;}
+.BUT_login{
+  position:absolute;
+  bottom:7.5%;
+  height:7.5%;
+  width:10%;
+  background:none;
+  border:none;
+  font-family:MaPolice;
+  font-size:20px;
+}
 .BUT_login1{left:15%;}
 .BUT_login2{right:15%;}
 
