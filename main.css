@@ -77,16 +77,11 @@
   background-image:
     linear-gradient(white, white),
     linear-gradient(135deg,
-      #ff0000 0%,
-      #ff7a00 11%,
-      #ffd500 22%,
-      #78e000 33%,
-      #00c853 44%,
-      #00b0ff 56%,
-      #2962ff 67%,
-      #651fff 78%,
-      #d500f9 89%,
-      #ff1744 100%
+     #ff512f,
+      #dd2476,
+      #7b2cbf,
+      #00b4d8,
+      #06d6a0
     );
   background-origin: border-box;
   background-clip: padding-box, border-box;
