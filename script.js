@@ -9,10 +9,10 @@ function createPage(){ // Change la page de Login vers Create et inversement (sa
   const elmentTOcreate = ["create","create","back login","create"];
   const elmentTOlogin = ["login","login","create","login"];
   if(dataSend == "login"){const elment = elmentTOcreate;} else {const elment = elmentTOlogin;}
-    dataSend = elment[0];
-    document.getElementById("H2_login").textContent = elment[1];
-    document.getElementById("BUT_login1").texteContent= elment[2];
-    document.getElementById("BUT_login2").texteContent= elment[3];
+  dataSend = elment[0];
+  document.getElementById("H2_login").textContent = elment[1];
+  document.getElementById("BUT_login1").texteContent= elment[2];
+  document.getElementById("BUT_login2").texteContent= elment[3];
 }
 
 function openDIV(DIV){ // Ferme les ancienne div et ouvre la nouvelle
@@ -21,6 +21,6 @@ function openDIV(DIV){ // Ferme les ancienne div et ouvre la nouvelle
       document.getElementById(DIV_principal[i]).style.display =  "none";
     }
   } else { document.getElementById("overlay").style.display = "block";}
-  createPage();
   document.getElementById(DIV).style.display = "block";
+  createPage();
 }
