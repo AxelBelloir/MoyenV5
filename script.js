@@ -8,11 +8,12 @@ let dataSend = "login";
 function createPage(){ // Change la page de Login vers Create et inversement (sans dupliquer en html)
   const elmentTOcreate = ["create","create","back login","create"];
   const elmentTOlogin = ["login","login","create","login"];
-  if(dataSend == "login"){const elment = elmentTOcreate;} else {const elment = elmentTOlogin;}
+  let elment;
+  if(dataSend == "login"){elment = elmentTOcreate;} else {elment = elmentTOlogin;}
   dataSend = elment[0];
   document.getElementById("H2_login").textContent = elment[1];
-  document.getElementById("BUT_login1").texteContent= elment[2];
-  document.getElementById("BUT_login2").texteContent= elment[3];
+  document.getElementById("BUT_login1").textContent= elment[2];
+  document.getElementById("BUT_login2").textContent= elment[3];
 }
 
 function openDIV(DIV){ // Ferme les ancienne div et ouvre la nouvelle
