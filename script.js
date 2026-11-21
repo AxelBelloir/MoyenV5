@@ -27,6 +27,6 @@ function openDIV(DIV){ // Ferme les ancienne div et ouvre la nouvelle
       document.getElementById(DIV_principal[i]).style.display =  "none";
     }
   } else { document.getElementById("overlay").style.display = "block";}
-  document.getElementById(DIV).style.display = "block";
   reinsertionText();
+  document.getElementById(DIV).style.display = "block";
 }
