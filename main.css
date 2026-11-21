@@ -128,7 +128,6 @@
 .BUT_login{
   position:absolute;
   bottom:7.5%;
-  transform:translateX(-50%);
   height:10%;
   width:15%;
   background:none;
@@ -140,6 +139,6 @@
 .BUT_login:hover{
     background:#F2EFEB;                                                                                                                                                                                                                                                                                                                                    
 }
-.BUT_login1{left:25%;}
-.BUT_login2{right:25%;}
+.BUT_login1{left:50px;width:20%;}
+.BUT_login2{right:50px;}
 
