@@ -66,6 +66,15 @@
     background-color:white;
     border-radius:10px;
 }
+.DIV_login2{
+  height:90%;
+  width:50%;
+  position:absolute;
+  right:2.5%;
+  top:5%;
+  border: 2px solid black;
+  border-radius:10px;
+}
 .H2_login{
     position: absolute;
     top:125px;
@@ -75,7 +84,7 @@
 }
 .P_login1,.P_login2{
     position: absolute;
-    left:70%;
+    left:50%;
     transform:translateX(-50%);
     font-weight:bolder;
     font-family:arial;
@@ -93,7 +102,7 @@
 .P_login3{position:absolute;bottom:15%;left:1%;font-size:10px;}
 .IN_login{
     position: absolute;
-    left:70%;
+    left:50%;
     transform:translateX(-50%);
     font-family:arial;
     color:black;
